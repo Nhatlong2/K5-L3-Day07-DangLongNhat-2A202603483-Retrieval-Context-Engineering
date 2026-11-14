@@ -1,0 +1,5 @@
+# Preserve corpus, configuration and implementation hashes across operating systems.
+*.json text eol=lf
+*.jsonl text eol=lf
+*.py text eol=lf
+*.txt text eol=lf

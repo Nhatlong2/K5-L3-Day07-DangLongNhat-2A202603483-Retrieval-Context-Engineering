@@ -1,0 +1,454 @@
+{
+  "split": "test",
+  "mode": "agent",
+  "benchmark_sha256": "5fdd6235b62ba797eb2a3b87056428f2a3bbc7abccb85d1dbf8a098abb274ed3",
+  "inputs_sha256": {
+    "src/__init__.py": "77ccb1315d39f7705dc40d5131053dec2aaa328c3a89346d1ae5957374f5ef70",
+    "src/agent.py": "426b30ac905bff9b3f2d800cf60307dc2a3ad921e9e6a763955e20aaecec0f15",
+    "src/common.py": "f4258173c6bd13285e76524d8caed785bda64188258da03ddc03a9a0c101b473",
+    "src/day06.py": "8ecd592f83bfaa892f50af95d89209b15643d9583b1a77b86db7bf45dbe2d33b",
+    "src/experiment.py": "9ca01a042407b8e2939c289c7b1d59a421ef360c11f470ee923ebdb829111ed7",
+    "src/grading.py": "d3011a6df26f593c9224a4c9c63c95d8a8fc593429606b552d07cad6e57cda8a",
+    "src/provider.py": "867338473d1a0986782edda99e53caca7b8cca0e32e882ee7b19d39d5cf63d0e",
+    "src/retrieval.py": "773dfa5672a66b36f2203be73212e80a1efc90ae6babeafabca321f0b5fe70f4",
+    "src/run.py": "3da41c73284fdb053db1a22a59d213ec9d7a07768dcb475127f5fda87ee73c6c",
+    "starter/baseline.py": "7bb18eb2a3fbadf5ff7a9b76ce94659f59975d173ffa67ed82e56817d9787fc2",
+    "starter/agent_metrics.py": "c82ed0321b2a227fdf3c9d29970c2a4a35d32754d288dc8c14b1a1f10336dfe4",
+    "starter/convert_day6.py": "db904579fc16cff42bd0d2a8702cf9beb7f1726274520df8e6c5d07d7afe8be3",
+    "requirements.txt": "bc4a1ebb4be916cae7e3a194ee182f66568e7c2a358ab0b0f16285fe61fef6c2",
+    "benchmark/experiments.json": "18b844ef05264052d2dc0b641a36dd19fd3ae484b02874a15a09ecd2a81c5c5d",
+    "benchmark/prices.json": "a6c1f040169c8760dcdf2dd836ad1a5691450d8219e54736dda271f03dd85032",
+    "benchmark/day06_reference.json": "1c9e7963a9b1636151f969fccb27ad657f67d44cebb63ab23add838afaffaef9"
+  },
+  "provenance": {
+    "status": "store_verified",
+    "day06_commit": "7d7c7ea42a620ae88cea16dabcb58f546c778ef5",
+    "day06_branch": "## HEAD (no branch)",
+    "corpus_sha256": "7507144bf56c9e6c7cf89ff9deac60fe5ba7786e46a68017a6f81ceecb09a840",
+    "source_units": 45,
+    "chunk_count": 264,
+    "chunks_sha256": "e4a7e029da185337e2b85ed3f598e990d83c5f10013da978f03751e9d3ed510f",
+    "signatures": {
+      "corpus": "7507144bf56c9e6c7cf89ff9deac60fe5ba7786e46a68017a6f81ceecb09a840",
+      "configuration": "b6d74d9a0322681b48f7d65b69fb3bf5fa024e4de6c6af3338e472cd1a3f84d8",
+      "implementation": {
+        "chunking.py": "3428e968d36c9503d35ea335096768366f847a044ccfdd18438452109aa361c3",
+        "embeddings.py": "77880ede99c646e9377cd003c9333cdf506e5f6faa765de669d80ba03a51f5ef",
+        "store.py": "da8eae4f2af2ad5bf28c5848c55255c63efcb59106bbe17c1a537fb1e6f8efb0",
+        "openai_embeddings.py": "3a32ce54c970e2c7520cfcc9b486dc93110e5369beb4ec974f04f5152f95543a"
+      },
+      "provider": "openai",
+      "model_configuration": "110f92bb0d78c8c8f644051575a7c840b58e63b8cb737642d1109fb3a443d3c6"
+    },
+    "store": {
+      "engine": "qdrant-local",
+      "qdrant_client": "1.15.1",
+      "embedding_provider": "openai",
+      "embedding_model": "text-embedding-3-large",
+      "distance": "cosine",
+      "dimensions": 3072,
+      "point_count": 264,
+      "ingest_id": "ef88203d5d4e4aef9caf78a77aacf394",
+      "collection": "day06_b_b9b9410547c04aeaa8a13e9b90ec7ada",
+      "ingest_started_at_utc": "2026-11-13T05:03:06.077+00:00",
+      "ingest_finished_at_utc": "2026-11-13T05:03:37.183+00:00",
+      "B_ingest_seconds": 14.827480399981141,
+      "B_ingest_input_tokens": 21468,
+      "B_ingest_usd": 0.00279084
+    }
+  },
+  "versions": {
+    "python": "3.11.9",
+    "platform": "Windows",
+    "openai": "2.8.1",
+    "qdrant-client": "1.15.1",
+    "numpy": "2.2.6",
+    "pypdf": "6.21.4",
+    "python-dotenv": "1.2.2",
+    "httpx": "0.28.1"
+  },
+  "price_table": {
+    "checked_on": "2026-11-14",
+    "unit": "USD per million tokens",
+    "embedding": {
+      "text-embedding-3-large": {
+        "input": 0.13,
+        "source": "https://developers.openai.com/api/docs/models/text-embedding-3-large"
+      }
+    },
+    "agent": {
+      "gpt-5.4-mini-2026-03-17": {
+        "input": 0.75,
+        "cached_input": 0.075,
+        "output": 4.5,
+        "source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini"
+      }
+    }
+  },
+  "shared_setup_ms": 1620.8764000039082,
+  "selection_sha256": "c68908d408171d5e9335aba859a512381336b8a48e0033096c81b6e75823261c",
+  "configuration": {
+    "max_searches": 2,
+    "ranking_cutoff": 3,
+    "rrf_candidates": 10,
+    "rrf_k": 60,
+    "max_completion_tokens": 1200,
+    "method": "hybrid",
+    "top_k": 3,
+    "context_budget_chars": 1800,
+    "agent_model": "gpt-5.4-mini-2026-03-17",
+    "id": "hybrid"
+  },
+  "configuration_sha256": "b17a4e3764d8b62d4d1fec373e5c587f7fdc36ed5e5e53a2af86904563c6d289",
+  "started_at_utc": "2026-11-14T05:20:32+00:00",
+  "finished_at_utc": "2026-11-14T05:20:52+00:00",
+  "traces_sha256": "f5d9f88c74dbcc83ba4a24d990cdbf00936c800e692d76f568518f47c04fab0e",
+  "query_count": 7,
+  "answerable_count": 5,
+  "status_counts": {
+    "abstain": 6,
+    "answered": 1
+  },
+  "ranking_errors": 0,
+  "ranking_errors_answerable": 0,
+  "retrieval": {
+    "hit_at_1": {
+      "n": 4,
+      "N": 5,
+      "ratio": 0.8
+    },
+    "evidence_hit_at_3": {
+      "n": 4,
+      "N": 5,
+      "ratio": 0.8
+    },
+    "agent_tool_candidate_evidence_hit": {
+      "n": 5,
+      "N": 5,
+      "ratio": 1.0
+    },
+    "automatic_context_gold_match": {
+      "n": 5,
+      "N": 5,
+      "ratio": 1.0
+    },
+    "rows": [
+      {
+        "query_id": "T07-01",
+        "hit1": true,
+        "hit3": true,
+        "top3_hit_ids": [
+          "59b814de-f20b-586d-a6d2-1c466ce9e39f"
+        ],
+        "context_gold_ids": [
+          "59b814de-f20b-586d-a6d2-1c466ce9e39f"
+        ],
+        "packed_context_hit": true,
+        "context_measured": true,
+        "agent_context_sent": true,
+        "agent_tool_gold_ids": [
+          "59b814de-f20b-586d-a6d2-1c466ce9e39f"
+        ]
+      },
+      {
+        "query_id": "T07-02",
+        "hit1": true,
+        "hit3": true,
+        "top3_hit_ids": [
+          "e78b08dd-3f2e-5375-8128-b8d4f87d5811"
+        ],
+        "context_gold_ids": [
+          "e78b08dd-3f2e-5375-8128-b8d4f87d5811"
+        ],
+        "packed_context_hit": true,
+        "context_measured": true,
+        "agent_context_sent": true,
+        "agent_tool_gold_ids": [
+          "e78b08dd-3f2e-5375-8128-b8d4f87d5811"
+        ]
+      },
+      {
+        "query_id": "T07-03",
+        "hit1": false,
+        "hit3": false,
+        "top3_hit_ids": [],
+        "context_gold_ids": [
+          "87333265-390f-5e20-8197-f00fdae1b621"
+        ],
+        "packed_context_hit": true,
+        "context_measured": true,
+        "agent_context_sent": true,
+        "agent_tool_gold_ids": [
+          "87333265-390f-5e20-8197-f00fdae1b621"
+        ]
+      },
+      {
+        "query_id": "T07-04",
+        "hit1": true,
+        "hit3": true,
+        "top3_hit_ids": [
+          "dccf08ed-6294-5f3c-b5e6-e22442441284"
+        ],
+        "context_gold_ids": [
+          "dccf08ed-6294-5f3c-b5e6-e22442441284"
+        ],
+        "packed_context_hit": true,
+        "context_measured": true,
+        "agent_context_sent": true,
+        "agent_tool_gold_ids": [
+          "dccf08ed-6294-5f3c-b5e6-e22442441284"
+        ]
+      },
+      {
+        "query_id": "T07-05",
+        "hit1": true,
+        "hit3": true,
+        "top3_hit_ids": [
+          "b6a4624c-946e-54f2-b54f-965c9538e5a7"
+        ],
+        "context_gold_ids": [
+          "b6a4624c-946e-54f2-b54f-965c9538e5a7"
+        ],
+        "packed_context_hit": true,
+        "context_measured": true,
+        "agent_context_sent": true,
+        "agent_tool_gold_ids": [
+          "b6a4624c-946e-54f2-b54f-965c9538e5a7"
+        ]
+      }
+    ]
+  },
+  "usage": {
+    "query_embedding": {
+      "requests_with_response": 9,
+      "models": [
+        "text-embedding-3-large"
+      ],
+      "input_tokens": 179,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "estimated_usd": 2.327e-05
+    },
+    "agent": {
+      "requests_with_response": 16,
+      "models": [
+        "gpt-5.4-mini-2026-03-17"
+      ],
+      "input_tokens": 10134,
+      "cached_input_tokens": 0,
+      "output_tokens": 697,
+      "reasoning_tokens": 0,
+      "estimated_usd": 0.010737000000000002
+    },
+    "total_usd": 0.010760270000000002,
+    "calls": [
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 17,
+        "elapsed_ms": 340.6245999794919
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 373,
+        "cached_input_tokens": 0,
+        "output_tokens": 34,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 873.1443999859039
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 827,
+        "cached_input_tokens": 0,
+        "output_tokens": 53,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 979.6128000016324
+      },
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 17,
+        "elapsed_ms": 418.1989000062458
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 373,
+        "cached_input_tokens": 0,
+        "output_tokens": 34,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 979.5799999847077
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 810,
+        "cached_input_tokens": 0,
+        "output_tokens": 63,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 1138.5620000073686
+      },
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 20,
+        "elapsed_ms": 284.241799992742
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 384,
+        "cached_input_tokens": 0,
+        "output_tokens": 40,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 941.2639000220224
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 806,
+        "cached_input_tokens": 0,
+        "output_tokens": 31,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 872.9434999986552
+      },
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 14,
+        "elapsed_ms": 403.4183000039775
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 810,
+        "cached_input_tokens": 0,
+        "output_tokens": 83,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 1060.5845000245608
+      },
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 22,
+        "elapsed_ms": 396.79110000724904
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 378,
+        "cached_input_tokens": 0,
+        "output_tokens": 39,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 768.8819000031799
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 856,
+        "cached_input_tokens": 0,
+        "output_tokens": 61,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 1046.642500004964
+      },
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 18,
+        "elapsed_ms": 409.0033999818843
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 374,
+        "cached_input_tokens": 0,
+        "output_tokens": 35,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 921.8477999966126
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 752,
+        "cached_input_tokens": 0,
+        "output_tokens": 60,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 1354.0875999897253
+      },
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 28,
+        "elapsed_ms": 415.1261000079103
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 390,
+        "cached_input_tokens": 0,
+        "output_tokens": 45,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 935.5788000102621
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 898,
+        "cached_input_tokens": 0,
+        "output_tokens": 39,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 1140.7098000054248
+      },
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 22,
+        "elapsed_ms": 443.4461999917403
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 909,
+        "cached_input_tokens": 0,
+        "output_tokens": 21,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 942.783500009682
+      },
+      {
+        "kind": "query_embedding",
+        "model": "text-embedding-3-large",
+        "input_tokens": 21,
+        "elapsed_ms": 329.89640001324005
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 385,
+        "cached_input_tokens": 0,
+        "output_tokens": 38,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 925.9307999745943
+      },
+      {
+        "kind": "agent",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "input_tokens": 809,
+        "cached_input_tokens": 0,
+        "output_tokens": 21,
+        "reasoning_tokens": 0,
+        "elapsed_ms": 765.7695999951102
+      }
+    ]
+  },
+  "successful_api_cost_usd": 0.010760270000000002,
+  "elapsed_ms_total": 19209.65529998648,
+  "median_success_ms": 2550.1262999896426,
+  "context_chars": {
+    "N": 7,
+    "mean": 1512.4285714285713,
+    "max": 1784
+  }
+}

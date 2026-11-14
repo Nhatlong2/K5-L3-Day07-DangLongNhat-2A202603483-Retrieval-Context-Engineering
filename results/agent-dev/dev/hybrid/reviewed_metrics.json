@@ -1,0 +1,70 @@
+{
+  "split": "dev",
+  "configuration": {
+    "max_searches": 2,
+    "ranking_cutoff": 3,
+    "rrf_candidates": 10,
+    "rrf_k": 60,
+    "max_completion_tokens": 1200,
+    "method": "hybrid",
+    "top_k": 3,
+    "context_budget_chars": 1800,
+    "agent_model": "gpt-5.4-mini-2026-03-17",
+    "id": "hybrid"
+  },
+  "traces_sha256": "4b8b0813e9169ba1ece6499af526f6eb4aefbd6ef550e4274eb437628c2218d8",
+  "cases": 17,
+  "provider_errors": 0,
+  "tool_use": {
+    "n": 17,
+    "N": 17,
+    "ratio": 1.0
+  },
+  "grounded_answer": {
+    "0": 4,
+    "1": 1,
+    "2": 10,
+    "N": 15,
+    "mean": 1.4
+  },
+  "citation_validity": {
+    "n": 11,
+    "N": 11,
+    "ratio": 1.0
+  },
+  "answer_citation_coverage": {
+    "n": 11,
+    "N": 11,
+    "ratio": 1.0
+  },
+  "abstention": {
+    "n": 2,
+    "N": 2,
+    "ratio": 1.0
+  },
+  "false_abstention": {
+    "n": 4,
+    "N": 15,
+    "ratio": 0.26666666666666666
+  },
+  "reviewers": [
+    {
+      "name": "ChatGPT",
+      "state": "ai_assisted_unverified"
+    }
+  ],
+  "context_grade_distribution": {
+    "0": 0,
+    "1": 0,
+    "2": 15
+  },
+  "context_evidence_rate": {
+    "n": 15,
+    "N": 15,
+    "ratio": 1.0
+  },
+  "search_distribution": {
+    "1": 13,
+    "2": 4
+  }
+}

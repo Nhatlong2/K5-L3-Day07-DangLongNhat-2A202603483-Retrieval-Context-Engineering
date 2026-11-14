@@ -61,3 +61,7 @@ Thay đường dẫn trong `< >`. Script tổng hợp nhãn bạn đã chấm, k
 TF-IDF dùng cách tách từ đơn giản. `baseline.py` dùng mặc định context budget 800 ký tự, gồm cả nguồn; chunk không vừa bị bỏ. Bạn có thể chọn cách khác. File kết quả cùng tên sẽ bị ghi đè. `starter/data/` và `starter/results/` không được Git theo dõi mặc định; nếu được phép chia sẻ, dùng `git add -f <đường-dẫn>`, hoặc ghi cách tái tạo. Không nộp dữ liệu mật và secret.
 
 Khung agent ưu tiên giữ chunk từ lần search trước. Khi chunk đầu chiếm gần hết budget, lần search sau có thể không thêm được evidence; hãy kiểm tra trace và thử cách chọn context phù hợp trên dev. Citation ID hợp lệ hoặc verifier trả “đúng” không đảm bảo câu trả lời được hỗ trợ; cần chấm thủ công.
+
+## Mã bài làm Day 07
+
+Dùng [`python -m src.run`](../README.md) để chạy dense, lexical có `api_family`, hybrid, agent và benchmark đầy đủ. `baseline.py` vẫn chạy được với dữ liệu ví dụ và lớp `TfidfIndex` của nó hỗ trợ scope trong mã bài làm.

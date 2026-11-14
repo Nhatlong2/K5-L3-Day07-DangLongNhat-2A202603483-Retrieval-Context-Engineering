@@ -1,0 +1,200 @@
+[
+  {
+    "query_id": "D01",
+    "trace_sha256": "c6b5666c96e20ef146121119b51dd50f402b0d51a7c42a3c30e413015580cfe2",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về giữ tham chiếu đến task vì event loop chỉ giữ tham chiếu yếu, task có thể bị thu gom sớm. Đoạn 8f5a495e (#creating-tasks). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D02",
+    "trace_sha256": "b96aaf3955ec7abd91410db3ebf0d874f78d18bdb1ff67f5f657266467a638ad",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về lỗi đầu tiên khác CancelledError khiến các task còn lại trong nhóm bị hủy. Đoạn ea737bc4 (#task-groups). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D03",
+    "trace_sha256": "b47d2328a4ca9a0df40443ae7a1a0f61ebd8436dabe2b2000549ec5274a9e946",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về gather mặc định truyền ngoại lệ đầu tiên cho task đang await và các awaitable còn lại tiếp tục chạy. Đoạn 244643e1 (#running-tasks-concurrently). Nêu đúng mặc định return_exceptions=False, ngoại lệ đầu tiên truyền đến bên chờ và các awaitable khác không bị hủy.",
+    "context_grade": 2,
+    "answer_grade": 2,
+    "citation_reviews": [
+      {
+        "id": "244643e1-e6d4-53da-8d50-db827721547c",
+        "supports_claim": true,
+        "reason": "Đoạn gather mô tả rõ mặc định return_exceptions=False, truyền ngoại lệ đầu tiên và các awaitable khác tiếp tục. Nguồn: https://docs.python.org/release/3.11.9/library/asyncio-task.html#running-tasks-concurrently."
+      }
+    ]
+  },
+  {
+    "query_id": "D04",
+    "trace_sha256": "687f45105258220663f1f0363f6b0d097fc04cb3fe52779821786b85986d0e68",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về asyncio.to_thread chạy lời gọi I/O chặn trong thread riêng để event loop có thể tiếp tục chạy. Đoạn b0e4de19 (#running-in-threads). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D05",
+    "trace_sha256": "83753c95d82f745bf031ffc53de629ec491f23873beaa8ee5dd56f1e028f3c7b",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về loop.call_soon_threadsafe là biến thể an toàn khi đặt lịch callback từ thread khác. Đoạn e17d0cdc (#scheduling-callbacks). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D06",
+    "trace_sha256": "7a83c903664e1adad45d8c9700326e37795c40de604f28b81b72e93b214859bd",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về loop.close yêu cầu loop đã dừng và loại bỏ pending callbacks. Đoạn 4c3f6f17 (#running-and-stopping-the-loop). Nêu đủ pending callbacks bị loại bỏ khi loop đã dừng. Nguồn cũng xác nhận chi tiết xóa hàng đợi và shutdown executor.",
+    "context_grade": 2,
+    "answer_grade": 2,
+    "citation_reviews": [
+      {
+        "id": "4c3f6f17-373a-5a09-8c19-787eb6bf779d",
+        "supports_claim": true,
+        "reason": "Nguồn về close ghi rõ loop phải dừng, pending callbacks bị bỏ và các hàng đợi được xóa. Nguồn: https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#running-and-stopping-the-loop."
+      }
+    ]
+  },
+  {
+    "query_id": "D07",
+    "trace_sha256": "e11a15112a57724dc1b3b77e1a84400a6706d1e564d18ca5c627f6ec2b9ae5f0",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Các đoạn về task cancellation, condition wait và timeout không cung cấp quy tắc chọn coroutine kế tiếp của asyncio.Lock. Model trả abstain cho một câu có đáp án trong corpus.",
+    "context_grade": 0,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D08",
+    "trace_sha256": "86a5c9d0f7afe4490b87e869e619cc70e2b8970562f1b4d1c1ecc4dd1cc57d62",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về khi bộ đếm bằng 0, acquire chờ release rồi trả True. Đoạn 0bf00c39 (#semaphore). Nêu đúng acquire chờ release khi bộ đếm bằng 0, nhưng thiếu giá trị trả về True có trong đáp án chuẩn.",
+    "context_grade": 2,
+    "answer_grade": 1,
+    "citation_reviews": [
+      {
+        "id": "60f55108-12c9-579c-a4c0-8eff6cb3003a",
+        "supports_claim": true,
+        "reason": "Nguồn xác nhận mệnh đề thực tế trong câu trả lời là acquire chờ release khi bộ đếm bằng 0. Câu trả lời chưa nêu giá trị trả về. Nguồn: https://docs.python.org/release/3.11.9/library/asyncio-sync.html#semaphore."
+      }
+    ]
+  },
+  {
+    "query_id": "D09",
+    "trace_sha256": "a62da7591ccdeeec16cb18cd56713de68b30fe387d7b194b55b3926590eb791b",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về khi Barrier đang filling, task bị hủy rời barrier và số task đang chờ giảm một. Đoạn ce79efe2 (#barrier). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D10",
+    "trace_sha256": "890e72b878b0c30c5074d64abfc52a183ff407d1ec2090c0361193fea0997dbc",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về join trở về sau khi tất cả item được xử lý và gọi task_done, đưa số việc chưa hoàn thành về 0. Đoạn 652b9e74 (#queue). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D11",
+    "trace_sha256": "c72174a56ac4b76bb2643bf60ba997a13ed7c408b98cadbe7aad03147512d751",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về cùng một asyncio.Future có thể await nhiều lần với cùng kết quả. Đoạn ef26e9fe (#future-object). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D12",
+    "trace_sha256": "fa8a9c4f28a539ee06ec1f2e73602971fe75663ea5c7a0d511da9b7f4bacc2ee",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về asyncio.wrap_future chuyển concurrent.futures.Future thành asyncio.Future. Đoạn dd84d772 (#future-functions). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản. ID đề xuất d7644311 nói về ví dụ Future, trong khi bằng chứng wrap_future nằm ở dd84d772.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "D13",
+    "trace_sha256": "8613598a9d68bac234b9c93a954431459520f7f986defcd587ad7f52c7fb8090",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về ProcessPoolExecutor cần worker subprocess import được __main__, điều kiện thiếu trong interactive interpreter. Đoạn 175ce5bb (#processpoolexecutor). Nêu đúng yêu cầu worker subprocess import __main__ và lý do interactive interpreter không đáp ứng.",
+    "context_grade": 2,
+    "answer_grade": 2,
+    "citation_reviews": [
+      {
+        "id": "175ce5bb-0032-523a-943f-224e0b76273a",
+        "supports_claim": true,
+        "reason": "Nguồn ProcessPoolExecutor nêu worker phải import được __main__ và vì sao interactive interpreter không dùng được. Nguồn: https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor."
+      }
+    ]
+  },
+  {
+    "query_id": "D14",
+    "trace_sha256": "d313f5b393a027aa2aafe1ce1183f3312d84f142332c8eebd549ba43ed4cd417",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về Future chờ kết quả của Future khác có thể deadlock, minh họa bằng hai công việc chờ nhau. Đoạn b1a4e56e (#threadpoolexecutor). Mô tả đúng phụ thuộc giữa Future trong cùng pool và minh họa vòng chờ.",
+    "context_grade": 2,
+    "answer_grade": 2,
+    "citation_reviews": [
+      {
+        "id": "b1a4e56e-2964-5c09-a431-3d548a407b04",
+        "supports_claim": true,
+        "reason": "Đoạn ThreadPoolExecutor mô tả deadlock khi một callable chờ Future khác và minh họa vòng phụ thuộc a/b. Nguồn: https://docs.python.org/release/3.11.9/library/concurrent.futures.html#threadpoolexecutor."
+      }
+    ]
+  },
+  {
+    "query_id": "D15",
+    "trace_sha256": "3ef6431549dc44e7ffa8341ae1d1b024818e85d0b0807725b3ed73b24d456190",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context đủ bằng chứng về stop trong run_forever cho chạy hết batch hiện tại rồi thoát, callback mới chờ lần chạy loop kế tiếp. Đoạn 269fac4b (#running-and-stopping-the-loop). Đầu ra là abstain vì bản đề xuất có trường citations nhưng thiếu [chunk-id] trong văn bản.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "DN01",
+    "trace_sha256": "b8e86605370431ca01792ffffccb384c29929af3bed19078e6f5cd9f82a38557",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Agent tìm 2 lượt rồi từ chối rõ ràng, không đoán số byte. Các mục về Thread đề cập vòng đời, daemon, định danh hoặc cách join. Kho Day 06 không nêu kích thước stack mặc định trên Windows.",
+    "abstention_correct": true,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "DN02",
+    "trace_sha256": "27fc50beedf80d81ae97d0d4d64591874e6ac1d2dc98c6c1f7852ade6104b41d",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Agent tìm 2 lượt rồi từ chối rõ ràng, không đoán số byte. Các mục về executor đề cập worker, multiprocessing và tham số cấu hình. Kho Day 06 không nêu dung lượng byte của result pipe trên Windows.",
+    "abstention_correct": true,
+    "citation_reviews": []
+  }
+]

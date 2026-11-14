@@ -1,0 +1,229 @@
+{
+  "checked_at_utc": "2026-11-14T04:06:40+00:00",
+  "provenance": {
+    "status": "corpus_rebuilt",
+    "day06_commit": "7d7c7ea42a620ae88cea16dabcb58f546c778ef5",
+    "day06_branch": "## main...origin/main",
+    "corpus_sha256": "7507144bf56c9e6c7cf89ff9deac60fe5ba7786e46a68017a6f81ceecb09a840",
+    "source_units": 45,
+    "chunk_count": 264,
+    "chunks_sha256": "e4a7e029da185337e2b85ed3f598e990d83c5f10013da978f03751e9d3ed510f",
+    "signatures": {
+      "corpus": "7507144bf56c9e6c7cf89ff9deac60fe5ba7786e46a68017a6f81ceecb09a840",
+      "configuration": "b6d74d9a0322681b48f7d65b69fb3bf5fa024e4de6c6af3338e472cd1a3f84d8",
+      "implementation": {
+        "chunking.py": "3428e968d36c9503d35ea335096768366f847a044ccfdd18438452109aa361c3",
+        "embeddings.py": "77880ede99c646e9377cd003c9333cdf506e5f6faa765de669d80ba03a51f5ef",
+        "store.py": "da8eae4f2af2ad5bf28c5848c55255c63efcb59106bbe17c1a537fb1e6f8efb0",
+        "openai_embeddings.py": "3a32ce54c970e2c7520cfcc9b486dc93110e5369beb4ec974f04f5152f95543a"
+      },
+      "provider": "openai",
+      "model_configuration": "110f92bb0d78c8c8f644051575a7c840b58e63b8cb737642d1109fb3a443d3c6"
+    },
+    "store": null
+  },
+  "benchmark_sha256": {
+    "dev": "a606a6bb903cce7b66d3f1c350355ba4f22d82751f2aad0eb6a9c1c98bd76d0a",
+    "test": "5fdd6235b62ba797eb2a3b87056428f2a3bbc7abccb85d1dbf8a098abb274ed3"
+  },
+  "checks": {
+    "dev": {
+      "split": "dev",
+      "answerable": 15,
+      "unanswerable": 2,
+      "gold_matches": [
+        {
+          "query_id": "D01",
+          "source_id": "asyncio-task",
+          "page": "creating-tasks",
+          "chunk_ids": [
+            "8f5a495e-57d2-5674-b60b-f411f7edea0a"
+          ]
+        },
+        {
+          "query_id": "D01",
+          "source_id": "asyncio-task",
+          "page": "shielding-from-cancellation",
+          "chunk_ids": [
+            "806c0a9d-7ef8-5f0d-9370-34624b27295e"
+          ]
+        },
+        {
+          "query_id": "D02",
+          "source_id": "asyncio-task",
+          "page": "task-groups",
+          "chunk_ids": [
+            "ea737bc4-7072-52b1-835d-08a7dd9cd444"
+          ]
+        },
+        {
+          "query_id": "D03",
+          "source_id": "asyncio-task",
+          "page": "running-tasks-concurrently",
+          "chunk_ids": [
+            "244643e1-e6d4-53da-8d50-db827721547c"
+          ]
+        },
+        {
+          "query_id": "D04",
+          "source_id": "asyncio-task",
+          "page": "running-in-threads",
+          "chunk_ids": [
+            "b0e4de19-7fe7-579a-8981-b30cec596929"
+          ]
+        },
+        {
+          "query_id": "D05",
+          "source_id": "asyncio-eventloop",
+          "page": "scheduling-callbacks",
+          "chunk_ids": [
+            "e17d0cdc-e9b0-566b-86ea-cdf3685a45d7"
+          ]
+        },
+        {
+          "query_id": "D06",
+          "source_id": "asyncio-eventloop",
+          "page": "running-and-stopping-the-loop",
+          "chunk_ids": [
+            "4c3f6f17-373a-5a09-8c19-787eb6bf779d"
+          ]
+        },
+        {
+          "query_id": "D07",
+          "source_id": "asyncio-sync",
+          "page": "lock",
+          "chunk_ids": [
+            "dd465cee-93d4-5b3f-acc4-8e05830754c7"
+          ]
+        },
+        {
+          "query_id": "D08",
+          "source_id": "asyncio-sync",
+          "page": "semaphore",
+          "chunk_ids": [
+            "0bf00c39-9783-5d5e-91df-f500602bc20f"
+          ]
+        },
+        {
+          "query_id": "D09",
+          "source_id": "asyncio-sync",
+          "page": "barrier",
+          "chunk_ids": [
+            "ce79efe2-54cc-5a8f-bb5e-0ca408e0f834"
+          ]
+        },
+        {
+          "query_id": "D10",
+          "source_id": "asyncio-queue",
+          "page": "queue",
+          "chunk_ids": [
+            "652b9e74-1e09-53ac-9475-2d52482dc332"
+          ]
+        },
+        {
+          "query_id": "D10",
+          "source_id": "asyncio-queue",
+          "page": "queue",
+          "chunk_ids": [
+            "60ab963b-ac8a-56e0-9e56-dd2c44f504b3"
+          ]
+        },
+        {
+          "query_id": "D11",
+          "source_id": "asyncio-future",
+          "page": "future-object",
+          "chunk_ids": [
+            "ef26e9fe-1a71-5c23-9431-6cdb60716eac"
+          ]
+        },
+        {
+          "query_id": "D12",
+          "source_id": "asyncio-future",
+          "page": "future-functions",
+          "chunk_ids": [
+            "dd84d772-5c99-5862-b0ba-8693894da47d"
+          ]
+        },
+        {
+          "query_id": "D13",
+          "source_id": "concurrent.futures",
+          "page": "processpoolexecutor",
+          "chunk_ids": [
+            "175ce5bb-0032-523a-943f-224e0b76273a"
+          ]
+        },
+        {
+          "query_id": "D14",
+          "source_id": "concurrent.futures",
+          "page": "threadpoolexecutor",
+          "chunk_ids": [
+            "b1a4e56e-2964-5c09-a431-3d548a407b04"
+          ]
+        },
+        {
+          "query_id": "D14",
+          "source_id": "concurrent.futures",
+          "page": "threadpoolexecutor",
+          "chunk_ids": [
+            "94d3c965-2673-5a96-a8df-e4177a55b913"
+          ]
+        },
+        {
+          "query_id": "D15",
+          "source_id": "asyncio-eventloop",
+          "page": "running-and-stopping-the-loop",
+          "chunk_ids": [
+            "269fac4b-7441-5a02-beb5-802eecd0f641"
+          ]
+        }
+      ]
+    },
+    "test": {
+      "split": "test",
+      "answerable": 5,
+      "unanswerable": 2,
+      "gold_matches": [
+        {
+          "query_id": "T07-01",
+          "source_id": "asyncio-sync",
+          "page": "event",
+          "chunk_ids": [
+            "59b814de-f20b-586d-a6d2-1c466ce9e39f"
+          ]
+        },
+        {
+          "query_id": "T07-02",
+          "source_id": "asyncio-queue",
+          "page": "priority-queue",
+          "chunk_ids": [
+            "e78b08dd-3f2e-5375-8128-b8d4f87d5811"
+          ]
+        },
+        {
+          "query_id": "T07-03",
+          "source_id": "concurrent.futures",
+          "page": "future-objects",
+          "chunk_ids": [
+            "87333265-390f-5e20-8197-f00fdae1b621"
+          ]
+        },
+        {
+          "query_id": "T07-04",
+          "source_id": "asyncio-runner",
+          "page": "runner-context-manager",
+          "chunk_ids": [
+            "dccf08ed-6294-5f3c-b5e6-e22442441284"
+          ]
+        },
+        {
+          "query_id": "T07-05",
+          "source_id": "asyncio-eventloop",
+          "page": "enabling-debug-mode",
+          "chunk_ids": [
+            "b6a4624c-946e-54f2-b54f-965c9538e5a7"
+          ]
+        }
+      ]
+    }
+  }
+}

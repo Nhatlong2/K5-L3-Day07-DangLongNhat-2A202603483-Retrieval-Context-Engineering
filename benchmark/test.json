@@ -1,0 +1,100 @@
+[
+  {
+    "id": "T07-01",
+    "split": "test",
+    "question": "Immediately after an asyncio.Event is created, what is the state of its internal flag?",
+    "answerable": true,
+    "expected_answer": "The flag is initially false.",
+    "gold": [
+      {
+        "source_id": "asyncio-sync",
+        "page": "event",
+        "evidence": "The flag is set to false initially."
+      }
+    ]
+  },
+  {
+    "id": "T07-02",
+    "split": "test",
+    "question": "In an asyncio.PriorityQueue, does get retrieve the lowest or highest priority number first?",
+    "answerable": true,
+    "expected_answer": "The entry with the lowest priority number is retrieved first.",
+    "gold": [
+      {
+        "source_id": "asyncio-queue",
+        "page": "priority-queue",
+        "evidence": "A variant of Queue; retrieves entries in priority order (lowest first)."
+      }
+    ]
+  },
+  {
+    "id": "T07-03",
+    "split": "test",
+    "question": "When I register add_done_callback on a Future that has already completed, when does the callback run?",
+    "answerable": true,
+    "expected_answer": "It runs immediately on registration.",
+    "gold": [
+      {
+        "source_id": "concurrent.futures",
+        "page": "future-objects",
+        "evidence": "If the future has already completed or been cancelled, fn will be called immediately."
+      }
+    ],
+    "filter": {
+      "api_family": "concurrent.futures"
+    },
+    "filter_context": "Requested API family: concurrent.futures"
+  },
+  {
+    "id": "T07-04",
+    "split": "test",
+    "question": "When passing a custom loop_factory to asyncio.Runner, who is responsible for setting the new loop as current?",
+    "answerable": true,
+    "expected_answer": "The supplied loop_factory must set the loop it creates as the current event loop.",
+    "gold": [
+      {
+        "source_id": "asyncio-runner",
+        "page": "runner-context-manager",
+        "evidence": "It is the responsibility of the loop_factory to set the created loop as the current one."
+      }
+    ]
+  },
+  {
+    "id": "T07-05",
+    "split": "test",
+    "question": "What is the default duration threshold for a callback to count as slow in asyncio debug mode?",
+    "answerable": true,
+    "expected_answer": "100 milliseconds (0.1 seconds).",
+    "gold": [
+      {
+        "source_id": "asyncio-eventloop",
+        "page": "enabling-debug-mode",
+        "evidence": "This attribute can be used to set the minimum execution duration in seconds that is considered “slow”. When debug mode is enabled, “slow” callbacks are logged.\n\nDefault value is 100 milliseconds."
+      }
+    ]
+  },
+  {
+    "id": "TN07-01",
+    "split": "test",
+    "question": "In Python 3.11.9, how many pending callbacks can an asyncio event loop queue before call_soon refuses the next one?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The event-loop scheduling and stop/close sections explain callback ordering, safety and disposal. The corpus gives no maximum number of pending callbacks accepted by call_soon.",
+    "filter": {
+      "api_family": "asyncio"
+    },
+    "filter_context": "Requested API family: asyncio"
+  },
+  {
+    "id": "TN07-02",
+    "split": "test",
+    "question": "Which pickle protocol number does Python 3.11.9 ProcessPoolExecutor use to serialize submitted arguments?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The ProcessPoolExecutor and Executor sections mention picklability and submitting a callable. No pickle protocol number for submitted arguments is given in the corpus.",
+    "filter": {
+      "api_family": "concurrent.futures"
+    },
+    "filter_context": "Requested API family: concurrent.futures"
+  }
+]

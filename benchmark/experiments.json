@@ -1,0 +1,26 @@
+{
+  "agent_model": "gpt-5.4-mini-2026-03-17",
+  "max_completion_tokens": 1200,
+  "max_searches": 2,
+  "ranking_cutoff": 3,
+  "rrf_candidates": 10,
+  "rrf_k": 60,
+  "baseline": "dense",
+  "variants": {
+    "dense": {"method": "dense", "top_k": 3, "context_budget_chars": 1800},
+    "lexical": {"method": "lexical", "top_k": 3, "context_budget_chars": 1800},
+    "hybrid": {"method": "hybrid", "top_k": 3, "context_budget_chars": 1800},
+    "lexical_k6": {"method": "lexical", "top_k": 6, "context_budget_chars": 1800},
+    "lexical_k6_budget3000": {"method": "lexical", "top_k": 6, "context_budget_chars": 3000}
+  },
+  "selection_order": [
+    "more successful agent queries",
+    "higher mean grounded answer grade",
+    "higher citation validity",
+    "higher reviewed Context Evidence Rate",
+    "higher original-query Evidence Hit@3",
+    "lower API cost on successful queries when known for all candidates",
+    "lower median latency on successful queries",
+    "lexicographically smaller configuration ID"
+  ]
+}

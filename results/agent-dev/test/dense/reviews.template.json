@@ -1,0 +1,81 @@
+[
+  {
+    "query_id": "T07-01",
+    "trace_sha256": "5948bc913920b74d6471bda7f84b8e57816abfae45baa79800d3ec87a6b5028f",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-02",
+    "trace_sha256": "06455e1f79f1c033e38c637e85fc677bf65607f890c8447bb4f1283087969889",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-03",
+    "trace_sha256": "3c0f9e4e6fd55f57dd915de83047df00ad9f93ba9969c9b11b49d6d17b60e6ca",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": [
+      {
+        "id": "233451c4-65bc-52da-b3ea-8874b150a079",
+        "supports_claim": null,
+        "reason": ""
+      },
+      {
+        "id": "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492",
+        "supports_claim": null,
+        "reason": ""
+      }
+    ]
+  },
+  {
+    "query_id": "T07-04",
+    "trace_sha256": "23253c32b438ac34d623db10697bf072fc30132ab60f278780f818b1c687ab9e",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-05",
+    "trace_sha256": "54101901138472da24a2ea45140beb040305be462f63553b33ef727b98d32185",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "TN07-01",
+    "trace_sha256": "b6978aeb25b8a15e1b9389f609193c79bd552f049dba1439a4c8a77e49d5b1fb",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "abstention_correct": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "TN07-02",
+    "trace_sha256": "a5f8b17d80494b10a54e40ab46f7e168ab599e54d207b215172dd0e2851e6dc0",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "abstention_correct": null,
+    "citation_reviews": []
+  }
+]

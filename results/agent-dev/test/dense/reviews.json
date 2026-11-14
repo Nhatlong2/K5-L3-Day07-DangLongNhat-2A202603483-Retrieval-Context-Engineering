@@ -1,0 +1,81 @@
+[
+  {
+    "query_id": "T07-01",
+    "trace_sha256": "5948bc913920b74d6471bda7f84b8e57816abfae45baa79800d3ec87a6b5028f",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Chunk 59b814de ở mục Event xác nhận cờ nội bộ ban đầu là false. Bản đề xuất trả lời đúng và có ID nguồn trong mảng citations, nhưng thiếu [chunk-id] trong văn bản. Bộ kiểm tra chuyển đầu ra thành abstain, nên câu trả lời cuối nhận 0.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-02",
+    "trace_sha256": "06455e1f79f1c033e38c637e85fc677bf65607f890c8447bb4f1283087969889",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Chunk e78b08dd ở mục PriorityQueue xác nhận lấy phần tử có số ưu tiên nhỏ nhất trước. Bản đề xuất trả lời đúng và có ID nguồn trong mảng citations, nhưng thiếu [chunk-id] trong văn bản. Bộ kiểm tra chuyển đầu ra thành abstain, nên câu trả lời cuối nhận 0.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-03",
+    "trace_sha256": "3c0f9e4e6fd55f57dd915de83047df00ad9f93ba9969c9b11b49d6d17b60e6ca",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Context có mô tả callback thông thường tại d8cd4e59 và thiếu quy tắc đăng ký sau khi Future hoàn tất. Agent gán ghi chú InvalidStateError của set_exception() cho add_done_callback(). Với Future đã hoàn tất, callback đăng ký qua add_done_callback() chạy ngay.",
+    "context_grade": 1,
+    "answer_grade": 0,
+    "citation_reviews": [
+      {
+        "id": "233451c4-65bc-52da-b3ea-8874b150a079",
+        "supports_claim": false,
+        "reason": "Trong văn bản gốc, ghi chú InvalidStateError ở offset 3535 thuộc Future.set_exception(). Chunk này không hỗ trợ việc add_done_callback() ném lỗi khi đăng ký sau khi Future hoàn tất. Nguồn https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects"
+      },
+      {
+        "id": "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492",
+        "supports_claim": false,
+        "reason": "Chunk mô tả thời điểm gọi callback thông thường khi Future hoàn tất hoặc bị hủy, thiếu quy tắc đăng ký sau khi đã hoàn tất. Tài liệu chỉ nêu một thread thuộc cùng process, chưa xác nhận callback chạy trên chính thread đăng ký. Nguồn https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects"
+      }
+    ]
+  },
+  {
+    "query_id": "T07-04",
+    "trace_sha256": "23253c32b438ac34d623db10697bf072fc30132ab60f278780f818b1c687ab9e",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Chunk dccf08ed ở mục Runner xác nhận loop_factory chịu trách nhiệm đặt loop mới làm loop hiện tại. Bản đề xuất trả lời đúng và có ID nguồn trong mảng citations, nhưng thiếu [chunk-id] trong văn bản. Bộ kiểm tra chuyển đầu ra thành abstain, nên câu trả lời cuối nhận 0.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-05",
+    "trace_sha256": "54101901138472da24a2ea45140beb040305be462f63553b33ef727b98d32185",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Chunk b6a4624c ở mục debug mode xác nhận ngưỡng mặc định của slow callback là 100 ms. Bản đề xuất trả lời đúng và có ID nguồn trong mảng citations, nhưng thiếu [chunk-id] trong văn bản. Bộ kiểm tra chuyển đầu ra thành abstain, nên câu trả lời cuối nhận 0.",
+    "context_grade": 2,
+    "answer_grade": 0,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "TN07-01",
+    "trace_sha256": "b6978aeb25b8a15e1b9389f609193c79bd552f049dba1439a4c8a77e49d5b1fb",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Agent gọi search 1 lượt. Agent từ chối rõ ràng mà không nêu một con số. Các mục lập lịch callback nêu thứ tự và thời điểm chạy. Corpus thiếu giới hạn số pending callbacks của call_soon.",
+    "abstention_correct": true,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "TN07-02",
+    "trace_sha256": "a5f8b17d80494b10a54e40ab46f7e168ab599e54d207b215172dd0e2851e6dc0",
+    "reviewer": "ChatGPT",
+    "review_state": "ai_assisted_unverified",
+    "reason": "Agent gọi search 2 lượt. Agent từ chối rõ ràng mà không đoán số protocol. Các mục về ProcessPoolExecutor đề cập điều kiện đối tượng có thể pickle và cấu hình worker. Corpus thiếu số protocol dùng để serialize đối số đã submit.",
+    "abstention_correct": true,
+    "citation_reviews": []
+  }
+]

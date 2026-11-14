@@ -1,0 +1,10 @@
+{
+  "checked_on": "2026-11-14",
+  "unit": "USD per million tokens",
+  "embedding": {
+    "text-embedding-3-large": {"input": 0.13, "source": "https://developers.openai.com/api/docs/models/text-embedding-3-large"}
+  },
+  "agent": {
+    "gpt-5.4-mini-2026-03-17": {"input": 0.75, "cached_input": 0.075, "output": 4.50, "source": "https://developers.openai.com/api/docs/models/gpt-5.4-mini"}
+  }
+}

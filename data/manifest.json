@@ -1,0 +1,487 @@
+{
+  "topic": "Task scheduling, futures and synchronization in Python 3.11",
+  "source_version": "3.11.9",
+  "format": "One JSONL row per named HTML source section",
+  "counting_rule": "Count distinct official headings with an anchor and useful prose or code. Exclude navigation, table of contents, parents used only as containers, and off-topic headings. Short standalone API headings count as source units, with no artificial pagination.",
+  "boundary_rule": "Zero-based, end exclusive character offsets within each source's selected units joined by two LF characters in the order listed; each chunk uses unit-local offsets.",
+  "extraction_notes": "NFC; normalized whitespace, paragraph boundaries retained. Indentation and visual HTML formatting are flattened. No OCR needed. A missing or empty selected section aborts extraction.",
+  "extraction_errors": [],
+  "license_notice": "data/PYTHON_DOC_LICENSE.txt",
+  "corpus_sha256": "7507144bf56c9e6c7cf89ff9deac60fe5ba7786e46a68017a6f81ceecb09a840",
+  "eligible_units": 45,
+  "total_chars": 102913,
+  "sources": [
+    {
+      "source_id": "asyncio-task",
+      "title": "Coroutines and Tasks",
+      "source_path_or_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html",
+      "license_or_permission": "PSF-2.0 (docs); PSF-2.0 OR 0BSD (doc code). https://docs.python.org/release/3.11.9/license.html",
+      "accessed_at": "2026-11-13",
+      "version": "3.11.9",
+      "raw_html_sha256": "8000622579b8501b3a2a9c968f9d8cf78bfcbde7ddcab7949571cdf1c9f21bd0",
+      "api_family": "asyncio",
+      "api_family_origin": "Official API family in the document URL and module names",
+      "unit_count": 14,
+      "units": [
+        {
+          "page": "coroutines",
+          "heading": "Coroutines",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#coroutines",
+          "start_char": 0,
+          "end_char": 2373,
+          "chars": 2373
+        },
+        {
+          "page": "awaitables",
+          "heading": "Awaitables",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#awaitables",
+          "start_char": 2375,
+          "end_char": 4514,
+          "chars": 2139
+        },
+        {
+          "page": "creating-tasks",
+          "heading": "Creating Tasks",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#creating-tasks",
+          "start_char": 4516,
+          "end_char": 6055,
+          "chars": 1539
+        },
+        {
+          "page": "task-cancellation",
+          "heading": "Task Cancellation",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#task-cancellation",
+          "start_char": 6057,
+          "end_char": 6967,
+          "chars": 910
+        },
+        {
+          "page": "task-groups",
+          "heading": "Task Groups",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#task-groups",
+          "start_char": 6969,
+          "end_char": 9560,
+          "chars": 2591
+        },
+        {
+          "page": "sleeping",
+          "heading": "Sleeping",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#sleeping",
+          "start_char": 9562,
+          "end_char": 10387,
+          "chars": 825
+        },
+        {
+          "page": "running-tasks-concurrently",
+          "heading": "Running Tasks Concurrently",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#running-tasks-concurrently",
+          "start_char": 10389,
+          "end_char": 13173,
+          "chars": 2784
+        },
+        {
+          "page": "shielding-from-cancellation",
+          "heading": "Shielding From Cancellation",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#shielding-from-cancellation",
+          "start_char": 13175,
+          "end_char": 14551,
+          "chars": 1376
+        },
+        {
+          "page": "timeouts",
+          "heading": "Timeouts",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#timeouts",
+          "start_char": 14553,
+          "end_char": 18548,
+          "chars": 3995
+        },
+        {
+          "page": "waiting-primitives",
+          "heading": "Waiting Primitives",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#waiting-primitives",
+          "start_char": 18550,
+          "end_char": 20608,
+          "chars": 2058
+        },
+        {
+          "page": "running-in-threads",
+          "heading": "Running in Threads",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#running-in-threads",
+          "start_char": 20610,
+          "end_char": 22391,
+          "chars": 1781
+        },
+        {
+          "page": "scheduling-from-other-threads",
+          "heading": "Scheduling From Other Threads",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#scheduling-from-other-threads",
+          "start_char": 22393,
+          "end_char": 23567,
+          "chars": 1174
+        },
+        {
+          "page": "introspection",
+          "heading": "Introspection",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#introspection",
+          "start_char": 23569,
+          "end_char": 24057,
+          "chars": 488
+        },
+        {
+          "page": "task-object",
+          "heading": "Task Object",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-task.html#task-object",
+          "start_char": 24059,
+          "end_char": 32532,
+          "chars": 8473
+        }
+      ]
+    },
+    {
+      "source_id": "asyncio-eventloop",
+      "title": "Event Loop",
+      "source_path_or_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+      "license_or_permission": "PSF-2.0 (docs); PSF-2.0 OR 0BSD (doc code). https://docs.python.org/release/3.11.9/license.html",
+      "accessed_at": "2026-11-13",
+      "version": "3.11.9",
+      "raw_html_sha256": "960cc7f7846fb7bea45a8f5d2c0ff72f08078ad076a50977ae520dfc3164485a",
+      "api_family": "asyncio",
+      "api_family_origin": "Official API family in the document URL and module names",
+      "unit_count": 7,
+      "units": [
+        {
+          "page": "running-and-stopping-the-loop",
+          "heading": "Running and stopping the loop",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#running-and-stopping-the-loop",
+          "start_char": 0,
+          "end_char": 2300,
+          "chars": 2300
+        },
+        {
+          "page": "scheduling-callbacks",
+          "heading": "Scheduling callbacks",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-callbacks",
+          "start_char": 2302,
+          "end_char": 3802,
+          "chars": 1500
+        },
+        {
+          "page": "scheduling-delayed-callbacks",
+          "heading": "Scheduling delayed callbacks",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-delayed-callbacks",
+          "start_char": 3804,
+          "end_char": 5943,
+          "chars": 2139
+        },
+        {
+          "page": "creating-futures-and-tasks",
+          "heading": "Creating Futures and Tasks",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#creating-futures-and-tasks",
+          "start_char": 5945,
+          "end_char": 7389,
+          "chars": 1444
+        },
+        {
+          "page": "executing-code-in-thread-or-process-pools",
+          "heading": "Executing code in thread or process pools",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#executing-code-in-thread-or-process-pools",
+          "start_char": 7391,
+          "end_char": 9434,
+          "chars": 2043
+        },
+        {
+          "page": "error-handling-api",
+          "heading": "Error Handling API",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#error-handling-api",
+          "start_char": 9436,
+          "end_char": 11164,
+          "chars": 1728
+        },
+        {
+          "page": "enabling-debug-mode",
+          "heading": "Enabling debug mode",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+          "start_char": 11166,
+          "end_char": 11808,
+          "chars": 642
+        }
+      ]
+    },
+    {
+      "source_id": "asyncio-sync",
+      "title": "Synchronization Primitives",
+      "source_path_or_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+      "license_or_permission": "PSF-2.0 (docs); PSF-2.0 OR 0BSD (doc code). https://docs.python.org/release/3.11.9/license.html",
+      "accessed_at": "2026-11-13",
+      "version": "3.11.9",
+      "raw_html_sha256": "53d505cfec819757d2cb3bf4d25090f52dca2b5db9f2fca58e16103dd0802f1a",
+      "api_family": "asyncio",
+      "api_family_origin": "Official API family in the document URL and module names",
+      "unit_count": 6,
+      "units": [
+        {
+          "page": "lock",
+          "heading": "Lock",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#lock",
+          "start_char": 0,
+          "end_char": 1047,
+          "chars": 1047
+        },
+        {
+          "page": "event",
+          "heading": "Event",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+          "start_char": 1049,
+          "end_char": 2302,
+          "chars": 1253
+        },
+        {
+          "page": "condition",
+          "heading": "Condition",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#condition",
+          "start_char": 2304,
+          "end_char": 4654,
+          "chars": 2350
+        },
+        {
+          "page": "semaphore",
+          "heading": "Semaphore",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#semaphore",
+          "start_char": 4656,
+          "end_char": 5985,
+          "chars": 1329
+        },
+        {
+          "page": "boundedsemaphore",
+          "heading": "BoundedSemaphore",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#boundedsemaphore",
+          "start_char": 5987,
+          "end_char": 6289,
+          "chars": 302
+        },
+        {
+          "page": "barrier",
+          "heading": "Barrier",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#barrier",
+          "start_char": 6291,
+          "end_char": 9190,
+          "chars": 2899
+        }
+      ]
+    },
+    {
+      "source_id": "asyncio-runner",
+      "title": "Runners",
+      "source_path_or_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+      "license_or_permission": "PSF-2.0 (docs); PSF-2.0 OR 0BSD (doc code). https://docs.python.org/release/3.11.9/license.html",
+      "accessed_at": "2026-11-13",
+      "version": "3.11.9",
+      "raw_html_sha256": "ba92b7e7079bf5cc72f5f1f0c3a6814816e85801a152912badbed44ca353f9fa",
+      "api_family": "asyncio",
+      "api_family_origin": "Official API family in the document URL and module names",
+      "unit_count": 3,
+      "units": [
+        {
+          "page": "running-an-asyncio-program",
+          "heading": "Running an asyncio Program",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#running-an-asyncio-program",
+          "start_char": 0,
+          "end_char": 967,
+          "chars": 967
+        },
+        {
+          "page": "runner-context-manager",
+          "heading": "Runner context manager",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+          "start_char": 969,
+          "end_char": 2719,
+          "chars": 1750
+        },
+        {
+          "page": "handling-keyboard-interruption",
+          "heading": "Handling Keyboard Interruption",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#handling-keyboard-interruption",
+          "start_char": 2721,
+          "end_char": 3864,
+          "chars": 1143
+        }
+      ]
+    },
+    {
+      "source_id": "asyncio-future",
+      "title": "Futures",
+      "source_path_or_url": "https://docs.python.org/release/3.11.9/library/asyncio-future.html",
+      "license_or_permission": "PSF-2.0 (docs); PSF-2.0 OR 0BSD (doc code). https://docs.python.org/release/3.11.9/license.html",
+      "accessed_at": "2026-11-13",
+      "version": "3.11.9",
+      "raw_html_sha256": "75329c8a566c29d098aa6d7761819e6ec3d50fdcd3a6edfbf3b55b61a963f6e0",
+      "api_family": "asyncio",
+      "api_family_origin": "Official API family in the document URL and module names",
+      "unit_count": 2,
+      "units": [
+        {
+          "page": "future-functions",
+          "heading": "Future Functions",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-future.html#future-functions",
+          "start_char": 0,
+          "end_char": 1396,
+          "chars": 1396
+        },
+        {
+          "page": "future-object",
+          "heading": "Future Object",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-future.html#future-object",
+          "start_char": 1398,
+          "end_char": 6681,
+          "chars": 5283
+        }
+      ]
+    },
+    {
+      "source_id": "asyncio-queue",
+      "title": "Queues",
+      "source_path_or_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+      "license_or_permission": "PSF-2.0 (docs); PSF-2.0 OR 0BSD (doc code). https://docs.python.org/release/3.11.9/license.html",
+      "accessed_at": "2026-11-13",
+      "version": "3.11.9",
+      "raw_html_sha256": "7b30158deeb17ab6a291e1ce85a9acdcfa5ddeb4b867e35724085429778c4eb7",
+      "api_family": "asyncio",
+      "api_family_origin": "Official API family in the document URL and module names",
+      "unit_count": 3,
+      "units": [
+        {
+          "page": "queue",
+          "heading": "Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+          "start_char": 0,
+          "end_char": 2125,
+          "chars": 2125
+        },
+        {
+          "page": "priority-queue",
+          "heading": "Priority Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#priority-queue",
+          "start_char": 2127,
+          "end_char": 2310,
+          "chars": 183
+        },
+        {
+          "page": "examples",
+          "heading": "Examples",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#examples",
+          "start_char": 2312,
+          "end_char": 3696,
+          "chars": 1384
+        }
+      ]
+    },
+    {
+      "source_id": "concurrent.futures",
+      "title": "concurrent.futures",
+      "source_path_or_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+      "license_or_permission": "PSF-2.0 (docs); PSF-2.0 OR 0BSD (doc code). https://docs.python.org/release/3.11.9/license.html",
+      "accessed_at": "2026-11-13",
+      "version": "3.11.9",
+      "raw_html_sha256": "2ed72eb3be07fa145b3d9036324a9a1788b68410e2ac9ddebb682e0517552c37",
+      "api_family": "concurrent.futures",
+      "api_family_origin": "Official API family in the document URL and module names",
+      "unit_count": 6,
+      "units": [
+        {
+          "page": "executor-objects",
+          "heading": "Executor Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#executor-objects",
+          "start_char": 0,
+          "end_char": 3163,
+          "chars": 3163
+        },
+        {
+          "page": "threadpoolexecutor",
+          "heading": "ThreadPoolExecutor",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#threadpoolexecutor",
+          "start_char": 3165,
+          "end_char": 5911,
+          "chars": 2746
+        },
+        {
+          "page": "processpoolexecutor",
+          "heading": "ProcessPoolExecutor",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+          "start_char": 5913,
+          "end_char": 8618,
+          "chars": 2705
+        },
+        {
+          "page": "future-objects",
+          "heading": "Future Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+          "start_char": 8620,
+          "end_char": 12265,
+          "chars": 3645
+        },
+        {
+          "page": "module-functions",
+          "heading": "Module Functions",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#module-functions",
+          "start_char": 12267,
+          "end_char": 14310,
+          "chars": 2043
+        },
+        {
+          "page": "exception-classes",
+          "heading": "Exception classes",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#exception-classes",
+          "start_char": 14312,
+          "end_char": 15510,
+          "chars": 1198
+        }
+      ]
+    },
+    {
+      "source_id": "threading",
+      "title": "threading",
+      "source_path_or_url": "https://docs.python.org/release/3.11.9/library/threading.html",
+      "license_or_permission": "PSF-2.0 (docs); PSF-2.0 OR 0BSD (doc code). https://docs.python.org/release/3.11.9/license.html",
+      "accessed_at": "2026-11-13",
+      "version": "3.11.9",
+      "raw_html_sha256": "1323c91d9fe31d1cf7944067adc09f6e9bb0361df5755f1380e74dd1b1cf36dd",
+      "api_family": "threading",
+      "api_family_origin": "Official API family in the document URL and module names",
+      "unit_count": 4,
+      "units": [
+        {
+          "page": "thread-objects",
+          "heading": "Thread Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/threading.html#thread-objects",
+          "start_char": 0,
+          "end_char": 7330,
+          "chars": 7330
+        },
+        {
+          "page": "lock-objects",
+          "heading": "Lock Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/threading.html#lock-objects",
+          "start_char": 7332,
+          "end_char": 10364,
+          "chars": 3032
+        },
+        {
+          "page": "condition-objects",
+          "heading": "Condition Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/threading.html#condition-objects",
+          "start_char": 10366,
+          "end_char": 16706,
+          "chars": 6340
+        },
+        {
+          "page": "barrier-objects",
+          "heading": "Barrier Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/threading.html#barrier-objects",
+          "start_char": 16708,
+          "end_char": 19706,
+          "chars": 2998
+        }
+      ]
+    }
+  ]
+}

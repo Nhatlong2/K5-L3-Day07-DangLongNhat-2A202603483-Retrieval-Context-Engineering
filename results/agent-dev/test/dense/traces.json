@@ -1,0 +1,3022 @@
+[
+  {
+    "query_id": "T07-01",
+    "split": "test",
+    "question": "Immediately after an asyncio.Event is created, what is the state of its internal flag?",
+    "filter": null,
+    "configuration": "dense",
+    "method": "dense",
+    "mode": "agent",
+    "original_top3": [
+      {
+        "id": "59b814de-f20b-586d-a6d2-1c466ce9e39f",
+        "source_id": "asyncio-sync",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+        "page": "event",
+        "text": "Event\n\nclass asyncio.Event\n\nAn event object. Not thread-safe.\n\nAn asyncio event can be used to notify multiple asyncio tasks that some event has happened.\n\nAn Event object manages an internal flag that can be set to true with the set() method and reset to false with the clear() method. The wait() method blocks until the flag is set to true. The flag is set to false initially.\n\nChanged in version 3.10: Removed the loop parameter.\n\nExample:",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Event",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+          "start_char": 0,
+          "end_char": 442
+        },
+        "score": 0.5543353777320272,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "1b1da420-83b4-51a4-8dfe-16addc69e5a6",
+        "source_id": "asyncio-sync",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+        "page": "event",
+        "text": "async def waiter(event):\nprint('waiting for it ...')\nawait event.wait()\nprint('... got it!')\n\nasync def main():\n# Create an Event object.\nevent = asyncio.Event()\n\n# Spawn a Task to wait until 'event' is set.\nwaiter_task = asyncio.create_task(waiter(event))\n\n# Sleep for 1 second and set the event.\nawait asyncio.sleep(1)\nevent.set()\n\n# Wait until the waiter task is finished.\nawait waiter_task\n\nasyncio.run(main())\n\ncoroutine wait()\n\nWait until the event is set.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Event",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+          "start_char": 444,
+          "end_char": 906
+        },
+        "score": 0.4343545140336519,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd",
+        "source_id": "asyncio-sync",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+        "page": "event",
+        "text": "If the event is set, return True immediately. Otherwise block until another task calls set().\n\nset()\n\nSet the event.\n\nAll tasks waiting for event to be set will be immediately awakened.\n\nclear()\n\nClear (unset) the event.\n\nTasks awaiting on wait() will now block until the set() method is called again.\n\nis_set()\n\nReturn True if the event is set.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Event",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+          "start_char": 908,
+          "end_char": 1253
+        },
+        "score": 0.43341653067558233,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "original_candidates": [
+      {
+        "id": "59b814de-f20b-586d-a6d2-1c466ce9e39f",
+        "source_id": "asyncio-sync",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+        "page": "event",
+        "text": "Event\n\nclass asyncio.Event\n\nAn event object. Not thread-safe.\n\nAn asyncio event can be used to notify multiple asyncio tasks that some event has happened.\n\nAn Event object manages an internal flag that can be set to true with the set() method and reset to false with the clear() method. The wait() method blocks until the flag is set to true. The flag is set to false initially.\n\nChanged in version 3.10: Removed the loop parameter.\n\nExample:",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Event",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+          "start_char": 0,
+          "end_char": 442
+        },
+        "score": 0.5543353777320272,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "1b1da420-83b4-51a4-8dfe-16addc69e5a6",
+        "source_id": "asyncio-sync",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+        "page": "event",
+        "text": "async def waiter(event):\nprint('waiting for it ...')\nawait event.wait()\nprint('... got it!')\n\nasync def main():\n# Create an Event object.\nevent = asyncio.Event()\n\n# Spawn a Task to wait until 'event' is set.\nwaiter_task = asyncio.create_task(waiter(event))\n\n# Sleep for 1 second and set the event.\nawait asyncio.sleep(1)\nevent.set()\n\n# Wait until the waiter task is finished.\nawait waiter_task\n\nasyncio.run(main())\n\ncoroutine wait()\n\nWait until the event is set.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Event",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+          "start_char": 444,
+          "end_char": 906
+        },
+        "score": 0.4343545140336519,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd",
+        "source_id": "asyncio-sync",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+        "page": "event",
+        "text": "If the event is set, return True immediately. Otherwise block until another task calls set().\n\nset()\n\nSet the event.\n\nAll tasks waiting for event to be set will be immediately awakened.\n\nclear()\n\nClear (unset) the event.\n\nTasks awaiting on wait() will now block until the set() method is called again.\n\nis_set()\n\nReturn True if the event is set.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Event",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+          "start_char": 908,
+          "end_char": 1253
+        },
+        "score": 0.43341653067558233,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "ranking_status": "ok",
+    "ranking_ms": 2473.417800007155,
+    "events": [
+      {
+        "event": "model",
+        "turn": 1,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "search_corpus"
+          }
+        },
+        "sent_context": null,
+        "finish_reason": "tool_calls",
+        "elapsed_ms": 1827.5607000105083
+      },
+      {
+        "event": "search",
+        "tool": "search_corpus",
+        "call_id": "call_XeRciHyopiNVUXKY9jxp66oE",
+        "arguments": {
+          "query": "Immediately after an asyncio.Event is created, what is the state of its internal flag?"
+        },
+        "query": "Immediately after an asyncio.Event is created, what is the state of its internal flag?",
+        "filter": null,
+        "top_k": 3,
+        "reused_original": true,
+        "candidates": [
+          {
+            "id": "59b814de-f20b-586d-a6d2-1c466ce9e39f",
+            "source_id": "asyncio-sync",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+            "page": "event",
+            "text": "Event\n\nclass asyncio.Event\n\nAn event object. Not thread-safe.\n\nAn asyncio event can be used to notify multiple asyncio tasks that some event has happened.\n\nAn Event object manages an internal flag that can be set to true with the set() method and reset to false with the clear() method. The wait() method blocks until the flag is set to true. The flag is set to false initially.\n\nChanged in version 3.10: Removed the loop parameter.\n\nExample:",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Event",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+              "start_char": 0,
+              "end_char": 442
+            },
+            "score": 0.5543353777320272,
+            "strategy": "dense",
+            "rank": 1
+          },
+          {
+            "id": "1b1da420-83b4-51a4-8dfe-16addc69e5a6",
+            "source_id": "asyncio-sync",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+            "page": "event",
+            "text": "async def waiter(event):\nprint('waiting for it ...')\nawait event.wait()\nprint('... got it!')\n\nasync def main():\n# Create an Event object.\nevent = asyncio.Event()\n\n# Spawn a Task to wait until 'event' is set.\nwaiter_task = asyncio.create_task(waiter(event))\n\n# Sleep for 1 second and set the event.\nawait asyncio.sleep(1)\nevent.set()\n\n# Wait until the waiter task is finished.\nawait waiter_task\n\nasyncio.run(main())\n\ncoroutine wait()\n\nWait until the event is set.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Event",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+              "start_char": 444,
+              "end_char": 906
+            },
+            "score": 0.4343545140336519,
+            "strategy": "dense",
+            "rank": 2
+          },
+          {
+            "id": "e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd",
+            "source_id": "asyncio-sync",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+            "page": "event",
+            "text": "If the event is set, return True immediately. Otherwise block until another task calls set().\n\nset()\n\nSet the event.\n\nAll tasks waiting for event to be set will be immediately awakened.\n\nclear()\n\nClear (unset) the event.\n\nTasks awaiting on wait() will now block until the set() method is called again.\n\nis_set()\n\nReturn True if the event is set.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Event",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+              "start_char": 908,
+              "end_char": 1253
+            },
+            "score": 0.43341653067558233,
+            "strategy": "dense",
+            "rank": 3
+          }
+        ],
+        "packed_ids": [
+          "59b814de-f20b-586d-a6d2-1c466ce9e39f",
+          "1b1da420-83b4-51a4-8dfe-16addc69e5a6",
+          "e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd"
+        ],
+        "elapsed_ms": 0.022299995180219412
+      },
+      {
+        "event": "model",
+        "turn": 2,
+        "tool_choice": "auto",
+        "sent_context": {
+          "text": "[59b814de-f20b-586d-a6d2-1c466ce9e39f | https://docs.python.org/release/3.11.9/library/asyncio-sync.html | page event]\nEvent\n\nclass asyncio.Event\n\nAn event object. Not thread-safe.\n\nAn asyncio event can be used to notify multiple asyncio tasks that some event has happened.\n\nAn Event object manages an internal flag that can be set to true with the set() method and reset to false with the clear() method. The wait() method blocks until the flag is set to true. The flag is set to false initially.\n\nChanged in version 3.10: Removed the loop parameter.\n\nExample:\n\n[1b1da420-83b4-51a4-8dfe-16addc69e5a6 | https://docs.python.org/release/3.11.9/library/asyncio-sync.html | page event]\nasync def waiter(event):\nprint('waiting for it ...')\nawait event.wait()\nprint('... got it!')\n\nasync def main():\n# Create an Event object.\nevent = asyncio.Event()\n\n# Spawn a Task to wait until 'event' is set.\nwaiter_task = asyncio.create_task(waiter(event))\n\n# Sleep for 1 second and set the event.\nawait asyncio.sleep(1)\nevent.set()\n\n# Wait until the waiter task is finished.\nawait waiter_task\n\nasyncio.run(main())\n\ncoroutine wait()\n\nWait until the event is set.\n\n[e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd | https://docs.python.org/release/3.11.9/library/asyncio-sync.html | page event]\nIf the event is set, return True immediately. Otherwise block until another task calls set().\n\nset()\n\nSet the event.\n\nAll tasks waiting for event to be set will be immediately awakened.\n\nclear()\n\nClear (unset) the event.\n\nTasks awaiting on wait() will now block until the set() method is called again.\n\nis_set()\n\nReturn True if the event is set.",
+          "ids": [
+            "59b814de-f20b-586d-a6d2-1c466ce9e39f",
+            "1b1da420-83b4-51a4-8dfe-16addc69e5a6",
+            "e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd"
+          ],
+          "chunks": [
+            {
+              "id": "59b814de-f20b-586d-a6d2-1c466ce9e39f",
+              "source_id": "asyncio-sync",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+              "page": "event",
+              "text": "Event\n\nclass asyncio.Event\n\nAn event object. Not thread-safe.\n\nAn asyncio event can be used to notify multiple asyncio tasks that some event has happened.\n\nAn Event object manages an internal flag that can be set to true with the set() method and reset to false with the clear() method. The wait() method blocks until the flag is set to true. The flag is set to false initially.\n\nChanged in version 3.10: Removed the loop parameter.\n\nExample:",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Event",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+                "start_char": 0,
+                "end_char": 442
+              },
+              "score": 0.5543353777320272,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "1b1da420-83b4-51a4-8dfe-16addc69e5a6",
+              "source_id": "asyncio-sync",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+              "page": "event",
+              "text": "async def waiter(event):\nprint('waiting for it ...')\nawait event.wait()\nprint('... got it!')\n\nasync def main():\n# Create an Event object.\nevent = asyncio.Event()\n\n# Spawn a Task to wait until 'event' is set.\nwaiter_task = asyncio.create_task(waiter(event))\n\n# Sleep for 1 second and set the event.\nawait asyncio.sleep(1)\nevent.set()\n\n# Wait until the waiter task is finished.\nawait waiter_task\n\nasyncio.run(main())\n\ncoroutine wait()\n\nWait until the event is set.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Event",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+                "start_char": 444,
+                "end_char": 906
+              },
+              "score": 0.4343545140336519,
+              "strategy": "dense",
+              "rank": 2
+            },
+            {
+              "id": "e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd",
+              "source_id": "asyncio-sync",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+              "page": "event",
+              "text": "If the event is set, return True immediately. Otherwise block until another task calls set().\n\nset()\n\nSet the event.\n\nAll tasks waiting for event to be set will be immediately awakened.\n\nclear()\n\nClear (unset) the event.\n\nTasks awaiting on wait() will now block until the set() method is called again.\n\nis_set()\n\nReturn True if the event is set.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Event",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+                "start_char": 908,
+                "end_char": 1253
+              },
+              "score": 0.43341653067558233,
+              "strategy": "dense",
+              "rank": 3
+            }
+          ],
+          "chars": 1610,
+          "budget_chars": 1800
+        },
+        "finish_reason": "stop",
+        "elapsed_ms": 981.1214999936055
+      },
+      {
+        "event": "final",
+        "proposal": {
+          "status": "answered",
+          "answer": "Its internal flag is initially false (unset).",
+          "citations": [
+            "59b814de-f20b-586d-a6d2-1c466ce9e39f"
+          ]
+        }
+      }
+    ],
+    "context": {
+      "text": "[59b814de-f20b-586d-a6d2-1c466ce9e39f | https://docs.python.org/release/3.11.9/library/asyncio-sync.html | page event]\nEvent\n\nclass asyncio.Event\n\nAn event object. Not thread-safe.\n\nAn asyncio event can be used to notify multiple asyncio tasks that some event has happened.\n\nAn Event object manages an internal flag that can be set to true with the set() method and reset to false with the clear() method. The wait() method blocks until the flag is set to true. The flag is set to false initially.\n\nChanged in version 3.10: Removed the loop parameter.\n\nExample:\n\n[1b1da420-83b4-51a4-8dfe-16addc69e5a6 | https://docs.python.org/release/3.11.9/library/asyncio-sync.html | page event]\nasync def waiter(event):\nprint('waiting for it ...')\nawait event.wait()\nprint('... got it!')\n\nasync def main():\n# Create an Event object.\nevent = asyncio.Event()\n\n# Spawn a Task to wait until 'event' is set.\nwaiter_task = asyncio.create_task(waiter(event))\n\n# Sleep for 1 second and set the event.\nawait asyncio.sleep(1)\nevent.set()\n\n# Wait until the waiter task is finished.\nawait waiter_task\n\nasyncio.run(main())\n\ncoroutine wait()\n\nWait until the event is set.\n\n[e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd | https://docs.python.org/release/3.11.9/library/asyncio-sync.html | page event]\nIf the event is set, return True immediately. Otherwise block until another task calls set().\n\nset()\n\nSet the event.\n\nAll tasks waiting for event to be set will be immediately awakened.\n\nclear()\n\nClear (unset) the event.\n\nTasks awaiting on wait() will now block until the set() method is called again.\n\nis_set()\n\nReturn True if the event is set.",
+      "ids": [
+        "59b814de-f20b-586d-a6d2-1c466ce9e39f",
+        "1b1da420-83b4-51a4-8dfe-16addc69e5a6",
+        "e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd"
+      ],
+      "chunks": [
+        {
+          "id": "59b814de-f20b-586d-a6d2-1c466ce9e39f",
+          "source_id": "asyncio-sync",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+          "page": "event",
+          "text": "Event\n\nclass asyncio.Event\n\nAn event object. Not thread-safe.\n\nAn asyncio event can be used to notify multiple asyncio tasks that some event has happened.\n\nAn Event object manages an internal flag that can be set to true with the set() method and reset to false with the clear() method. The wait() method blocks until the flag is set to true. The flag is set to false initially.\n\nChanged in version 3.10: Removed the loop parameter.\n\nExample:",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Event",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+            "start_char": 0,
+            "end_char": 442
+          },
+          "score": 0.5543353777320272,
+          "strategy": "dense",
+          "rank": 1
+        },
+        {
+          "id": "1b1da420-83b4-51a4-8dfe-16addc69e5a6",
+          "source_id": "asyncio-sync",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+          "page": "event",
+          "text": "async def waiter(event):\nprint('waiting for it ...')\nawait event.wait()\nprint('... got it!')\n\nasync def main():\n# Create an Event object.\nevent = asyncio.Event()\n\n# Spawn a Task to wait until 'event' is set.\nwaiter_task = asyncio.create_task(waiter(event))\n\n# Sleep for 1 second and set the event.\nawait asyncio.sleep(1)\nevent.set()\n\n# Wait until the waiter task is finished.\nawait waiter_task\n\nasyncio.run(main())\n\ncoroutine wait()\n\nWait until the event is set.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Event",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+            "start_char": 444,
+            "end_char": 906
+          },
+          "score": 0.4343545140336519,
+          "strategy": "dense",
+          "rank": 2
+        },
+        {
+          "id": "e45b5dbf-702b-5be8-b1ca-7cb4cb2a7fbd",
+          "source_id": "asyncio-sync",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html",
+          "page": "event",
+          "text": "If the event is set, return True immediately. Otherwise block until another task calls set().\n\nset()\n\nSet the event.\n\nAll tasks waiting for event to be set will be immediately awakened.\n\nclear()\n\nClear (unset) the event.\n\nTasks awaiting on wait() will now block until the set() method is called again.\n\nis_set()\n\nReturn True if the event is set.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Event",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-sync.html#event",
+            "start_char": 908,
+            "end_char": 1253
+          },
+          "score": 0.43341653067558233,
+          "strategy": "dense",
+          "rank": 3
+        }
+      ],
+      "chars": 1610,
+      "budget_chars": 1800
+    },
+    "citation_sources": [],
+    "citations": [],
+    "answer": "Insufficient evidence in the Day 6 corpus.",
+    "searches": 1,
+    "status": "abstain",
+    "stop_reason": "invalid_citations",
+    "agent_ms": 2809.045400004834,
+    "usage": {
+      "query_embedding": {
+        "requests_with_response": 1,
+        "models": [
+          "text-embedding-3-large"
+        ],
+        "input_tokens": 17,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_usd": 2.21e-06
+      },
+      "agent": {
+        "requests_with_response": 2,
+        "models": [
+          "gpt-5.4-mini-2026-03-17"
+        ],
+        "input_tokens": 1222,
+        "cached_input_tokens": 0,
+        "output_tokens": 87,
+        "reasoning_tokens": 0,
+        "estimated_usd": 0.0013080000000000001
+      },
+      "total_usd": 0.0013102100000000002,
+      "calls": [
+        {
+          "kind": "query_embedding",
+          "model": "text-embedding-3-large",
+          "input_tokens": 17,
+          "elapsed_ms": 2460.829499992542
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 373,
+          "cached_input_tokens": 0,
+          "output_tokens": 34,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1827.5524000055157
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 849,
+          "cached_input_tokens": 0,
+          "output_tokens": 53,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 981.115000002319
+        }
+      ]
+    },
+    "elapsed_ms": 5282.501300011063
+  },
+  {
+    "query_id": "T07-02",
+    "split": "test",
+    "question": "In an asyncio.PriorityQueue, does get retrieve the lowest or highest priority number first?",
+    "filter": null,
+    "configuration": "dense",
+    "method": "dense",
+    "mode": "agent",
+    "original_top3": [
+      {
+        "id": "e78b08dd-3f2e-5375-8128-b8d4f87d5811",
+        "source_id": "asyncio-queue",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+        "page": "priority-queue",
+        "text": "Priority Queue\n\nclass asyncio.PriorityQueue\n\nA variant of Queue; retrieves entries in priority order (lowest first).\n\nEntries are typically tuples of the form (priority_number, data).",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Priority Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#priority-queue",
+          "start_char": 0,
+          "end_char": 183
+        },
+        "score": 0.680443727598356,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "b525767c-1f77-5663-b318-29e89af1449f",
+        "source_id": "asyncio-queue",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+        "page": "queue",
+        "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+          "start_char": 0,
+          "end_char": 492
+        },
+        "score": 0.4314530557756027,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "c52b128d-461b-500d-a011-792df0c75e0b",
+        "source_id": "asyncio-queue",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+        "page": "queue",
+        "text": "maxsize\n\nNumber of items allowed in the queue.\n\nempty()\n\nReturn True if the queue is empty, False otherwise.\n\nfull()\n\nReturn True if there are maxsize items in the queue.\n\nIf the queue was initialized with maxsize=0 (the default), then full() never returns True.\n\ncoroutine get()\n\nRemove and return an item from the queue. If queue is empty, wait until an item is available.\n\nget_nowait()\n\nReturn an item if one is immediately available, else raise QueueEmpty.\n\ncoroutine join()",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+          "start_char": 494,
+          "end_char": 972
+        },
+        "score": 0.37540245231313907,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "original_candidates": [
+      {
+        "id": "e78b08dd-3f2e-5375-8128-b8d4f87d5811",
+        "source_id": "asyncio-queue",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+        "page": "priority-queue",
+        "text": "Priority Queue\n\nclass asyncio.PriorityQueue\n\nA variant of Queue; retrieves entries in priority order (lowest first).\n\nEntries are typically tuples of the form (priority_number, data).",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Priority Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#priority-queue",
+          "start_char": 0,
+          "end_char": 183
+        },
+        "score": 0.680443727598356,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "b525767c-1f77-5663-b318-29e89af1449f",
+        "source_id": "asyncio-queue",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+        "page": "queue",
+        "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+          "start_char": 0,
+          "end_char": 492
+        },
+        "score": 0.4314530557756027,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "c52b128d-461b-500d-a011-792df0c75e0b",
+        "source_id": "asyncio-queue",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+        "page": "queue",
+        "text": "maxsize\n\nNumber of items allowed in the queue.\n\nempty()\n\nReturn True if the queue is empty, False otherwise.\n\nfull()\n\nReturn True if there are maxsize items in the queue.\n\nIf the queue was initialized with maxsize=0 (the default), then full() never returns True.\n\ncoroutine get()\n\nRemove and return an item from the queue. If queue is empty, wait until an item is available.\n\nget_nowait()\n\nReturn an item if one is immediately available, else raise QueueEmpty.\n\ncoroutine join()",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+          "start_char": 494,
+          "end_char": 972
+        },
+        "score": 0.37540245231313907,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "ranking_status": "ok",
+    "ranking_ms": 425.8820000104606,
+    "events": [
+      {
+        "event": "model",
+        "turn": 1,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "search_corpus"
+          }
+        },
+        "sent_context": null,
+        "finish_reason": "tool_calls",
+        "elapsed_ms": 1850.3524000116158
+      },
+      {
+        "event": "search",
+        "tool": "search_corpus",
+        "call_id": "call_Rorf43dBkLkNHOOPglliabGu",
+        "arguments": {
+          "query": "In an asyncio.PriorityQueue, does get retrieve the lowest or highest priority number first?"
+        },
+        "query": "In an asyncio.PriorityQueue, does get retrieve the lowest or highest priority number first?",
+        "filter": null,
+        "top_k": 3,
+        "reused_original": true,
+        "candidates": [
+          {
+            "id": "e78b08dd-3f2e-5375-8128-b8d4f87d5811",
+            "source_id": "asyncio-queue",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+            "page": "priority-queue",
+            "text": "Priority Queue\n\nclass asyncio.PriorityQueue\n\nA variant of Queue; retrieves entries in priority order (lowest first).\n\nEntries are typically tuples of the form (priority_number, data).",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Priority Queue",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#priority-queue",
+              "start_char": 0,
+              "end_char": 183
+            },
+            "score": 0.680443727598356,
+            "strategy": "dense",
+            "rank": 1
+          },
+          {
+            "id": "b525767c-1f77-5663-b318-29e89af1449f",
+            "source_id": "asyncio-queue",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+            "page": "queue",
+            "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Queue",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+              "start_char": 0,
+              "end_char": 492
+            },
+            "score": 0.4314530557756027,
+            "strategy": "dense",
+            "rank": 2
+          },
+          {
+            "id": "c52b128d-461b-500d-a011-792df0c75e0b",
+            "source_id": "asyncio-queue",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+            "page": "queue",
+            "text": "maxsize\n\nNumber of items allowed in the queue.\n\nempty()\n\nReturn True if the queue is empty, False otherwise.\n\nfull()\n\nReturn True if there are maxsize items in the queue.\n\nIf the queue was initialized with maxsize=0 (the default), then full() never returns True.\n\ncoroutine get()\n\nRemove and return an item from the queue. If queue is empty, wait until an item is available.\n\nget_nowait()\n\nReturn an item if one is immediately available, else raise QueueEmpty.\n\ncoroutine join()",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Queue",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+              "start_char": 494,
+              "end_char": 972
+            },
+            "score": 0.37540245231313907,
+            "strategy": "dense",
+            "rank": 3
+          }
+        ],
+        "packed_ids": [
+          "e78b08dd-3f2e-5375-8128-b8d4f87d5811",
+          "b525767c-1f77-5663-b318-29e89af1449f",
+          "c52b128d-461b-500d-a011-792df0c75e0b"
+        ],
+        "elapsed_ms": 0.027499976567924023
+      },
+      {
+        "event": "model",
+        "turn": 2,
+        "tool_choice": "auto",
+        "sent_context": {
+          "text": "[e78b08dd-3f2e-5375-8128-b8d4f87d5811 | https://docs.python.org/release/3.11.9/library/asyncio-queue.html | page priority-queue]\nPriority Queue\n\nclass asyncio.PriorityQueue\n\nA variant of Queue; retrieves entries in priority order (lowest first).\n\nEntries are typically tuples of the form (priority_number, data).\n\n[b525767c-1f77-5663-b318-29e89af1449f | https://docs.python.org/release/3.11.9/library/asyncio-queue.html | page queue]\nQueue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.\n\n[c52b128d-461b-500d-a011-792df0c75e0b | https://docs.python.org/release/3.11.9/library/asyncio-queue.html | page queue]\nmaxsize\n\nNumber of items allowed in the queue.\n\nempty()\n\nReturn True if the queue is empty, False otherwise.\n\nfull()\n\nReturn True if there are maxsize items in the queue.\n\nIf the queue was initialized with maxsize=0 (the default), then full() never returns True.\n\ncoroutine get()\n\nRemove and return an item from the queue. If queue is empty, wait until an item is available.\n\nget_nowait()\n\nReturn an item if one is immediately available, else raise QueueEmpty.\n\ncoroutine join()",
+          "ids": [
+            "e78b08dd-3f2e-5375-8128-b8d4f87d5811",
+            "b525767c-1f77-5663-b318-29e89af1449f",
+            "c52b128d-461b-500d-a011-792df0c75e0b"
+          ],
+          "chunks": [
+            {
+              "id": "e78b08dd-3f2e-5375-8128-b8d4f87d5811",
+              "source_id": "asyncio-queue",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+              "page": "priority-queue",
+              "text": "Priority Queue\n\nclass asyncio.PriorityQueue\n\nA variant of Queue; retrieves entries in priority order (lowest first).\n\nEntries are typically tuples of the form (priority_number, data).",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Priority Queue",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#priority-queue",
+                "start_char": 0,
+                "end_char": 183
+              },
+              "score": 0.680443727598356,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "b525767c-1f77-5663-b318-29e89af1449f",
+              "source_id": "asyncio-queue",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+              "page": "queue",
+              "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Queue",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+                "start_char": 0,
+                "end_char": 492
+              },
+              "score": 0.4314530557756027,
+              "strategy": "dense",
+              "rank": 2
+            },
+            {
+              "id": "c52b128d-461b-500d-a011-792df0c75e0b",
+              "source_id": "asyncio-queue",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+              "page": "queue",
+              "text": "maxsize\n\nNumber of items allowed in the queue.\n\nempty()\n\nReturn True if the queue is empty, False otherwise.\n\nfull()\n\nReturn True if there are maxsize items in the queue.\n\nIf the queue was initialized with maxsize=0 (the default), then full() never returns True.\n\ncoroutine get()\n\nRemove and return an item from the queue. If queue is empty, wait until an item is available.\n\nget_nowait()\n\nReturn an item if one is immediately available, else raise QueueEmpty.\n\ncoroutine join()",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Queue",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+                "start_char": 494,
+                "end_char": 972
+              },
+              "score": 0.37540245231313907,
+              "strategy": "dense",
+              "rank": 3
+            }
+          ],
+          "chars": 1526,
+          "budget_chars": 1800
+        },
+        "finish_reason": "stop",
+        "elapsed_ms": 1416.8766999791842
+      },
+      {
+        "event": "final",
+        "proposal": {
+          "status": "answered",
+          "answer": "`asyncio.PriorityQueue.get()` retrieves entries in priority order, with the lowest priority number first. Entries are typically tuples like `(priority_number, data)`.",
+          "citations": [
+            "e78b08dd-3f2e-5375-8128-b8d4f87d5811"
+          ]
+        }
+      }
+    ],
+    "context": {
+      "text": "[e78b08dd-3f2e-5375-8128-b8d4f87d5811 | https://docs.python.org/release/3.11.9/library/asyncio-queue.html | page priority-queue]\nPriority Queue\n\nclass asyncio.PriorityQueue\n\nA variant of Queue; retrieves entries in priority order (lowest first).\n\nEntries are typically tuples of the form (priority_number, data).\n\n[b525767c-1f77-5663-b318-29e89af1449f | https://docs.python.org/release/3.11.9/library/asyncio-queue.html | page queue]\nQueue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.\n\n[c52b128d-461b-500d-a011-792df0c75e0b | https://docs.python.org/release/3.11.9/library/asyncio-queue.html | page queue]\nmaxsize\n\nNumber of items allowed in the queue.\n\nempty()\n\nReturn True if the queue is empty, False otherwise.\n\nfull()\n\nReturn True if there are maxsize items in the queue.\n\nIf the queue was initialized with maxsize=0 (the default), then full() never returns True.\n\ncoroutine get()\n\nRemove and return an item from the queue. If queue is empty, wait until an item is available.\n\nget_nowait()\n\nReturn an item if one is immediately available, else raise QueueEmpty.\n\ncoroutine join()",
+      "ids": [
+        "e78b08dd-3f2e-5375-8128-b8d4f87d5811",
+        "b525767c-1f77-5663-b318-29e89af1449f",
+        "c52b128d-461b-500d-a011-792df0c75e0b"
+      ],
+      "chunks": [
+        {
+          "id": "e78b08dd-3f2e-5375-8128-b8d4f87d5811",
+          "source_id": "asyncio-queue",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+          "page": "priority-queue",
+          "text": "Priority Queue\n\nclass asyncio.PriorityQueue\n\nA variant of Queue; retrieves entries in priority order (lowest first).\n\nEntries are typically tuples of the form (priority_number, data).",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Priority Queue",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#priority-queue",
+            "start_char": 0,
+            "end_char": 183
+          },
+          "score": 0.680443727598356,
+          "strategy": "dense",
+          "rank": 1
+        },
+        {
+          "id": "b525767c-1f77-5663-b318-29e89af1449f",
+          "source_id": "asyncio-queue",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+          "page": "queue",
+          "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Queue",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+            "start_char": 0,
+            "end_char": 492
+          },
+          "score": 0.4314530557756027,
+          "strategy": "dense",
+          "rank": 2
+        },
+        {
+          "id": "c52b128d-461b-500d-a011-792df0c75e0b",
+          "source_id": "asyncio-queue",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+          "page": "queue",
+          "text": "maxsize\n\nNumber of items allowed in the queue.\n\nempty()\n\nReturn True if the queue is empty, False otherwise.\n\nfull()\n\nReturn True if there are maxsize items in the queue.\n\nIf the queue was initialized with maxsize=0 (the default), then full() never returns True.\n\ncoroutine get()\n\nRemove and return an item from the queue. If queue is empty, wait until an item is available.\n\nget_nowait()\n\nReturn an item if one is immediately available, else raise QueueEmpty.\n\ncoroutine join()",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Queue",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+            "start_char": 494,
+            "end_char": 972
+          },
+          "score": 0.37540245231313907,
+          "strategy": "dense",
+          "rank": 3
+        }
+      ],
+      "chars": 1526,
+      "budget_chars": 1800
+    },
+    "citation_sources": [],
+    "citations": [],
+    "answer": "Insufficient evidence in the Day 6 corpus.",
+    "searches": 1,
+    "status": "abstain",
+    "stop_reason": "invalid_citations",
+    "agent_ms": 3267.348800000036,
+    "usage": {
+      "query_embedding": {
+        "requests_with_response": 1,
+        "models": [
+          "text-embedding-3-large"
+        ],
+        "input_tokens": 17,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_usd": 2.21e-06
+      },
+      "agent": {
+        "requests_with_response": 2,
+        "models": [
+          "gpt-5.4-mini-2026-03-17"
+        ],
+        "input_tokens": 1193,
+        "cached_input_tokens": 0,
+        "output_tokens": 112,
+        "reasoning_tokens": 0,
+        "estimated_usd": 0.0013987499999999998
+      },
+      "total_usd": 0.00140096,
+      "calls": [
+        {
+          "kind": "query_embedding",
+          "model": "text-embedding-3-large",
+          "input_tokens": 17,
+          "elapsed_ms": 413.59889999148436
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 373,
+          "cached_input_tokens": 0,
+          "output_tokens": 34,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1850.3449999843724
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 820,
+          "cached_input_tokens": 0,
+          "output_tokens": 78,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1416.8652000080328
+        }
+      ]
+    },
+    "elapsed_ms": 3693.277800019132
+  },
+  {
+    "query_id": "T07-03",
+    "split": "test",
+    "question": "When I register add_done_callback on a Future that has already completed, when does the callback run?",
+    "filter": {
+      "api_family": "concurrent.futures"
+    },
+    "configuration": "dense",
+    "method": "dense",
+    "mode": "agent",
+    "original_top3": [
+      {
+        "id": "ff533165-ba54-5809-b4bc-502f331c903d",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "future-objects",
+        "text": "Return the exception raised by the call. If the call hasn’t yet completed then this method will wait up to timeout seconds. If the call hasn’t completed in timeout seconds, then a TimeoutError will be raised. timeout can be an int or float. If timeout is not specified or None, there is no limit to the wait time.\n\nIf the future is cancelled before completing then CancelledError will be raised.\n\nIf the call completed without raising, None is returned.\n\nadd_done_callback(fn)",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "Future Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+          "start_char": 1317,
+          "end_char": 1793
+        },
+        "score": 0.487509558804341,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "233451c4-65bc-52da-b3ea-8874b150a079",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "future-objects",
+        "text": "Changed in version 3.8: This method raises concurrent.futures.InvalidStateError if the Future is already done.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "Future Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+          "start_char": 3535,
+          "end_char": 3645
+        },
+        "score": 0.4863872858012007,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "future-objects",
+        "text": "Attaches the callable fn to the future. fn will be called, with the future as its only argument, when the future is cancelled or finishes running.\n\nAdded callables are called in the order that they were added and are always called in a thread belonging to the process that added them. If the callable raises an Exception subclass, it will be logged and ignored. If the callable raises a BaseException subclass, the behavior is undefined.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "Future Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+          "start_char": 1795,
+          "end_char": 2232
+        },
+        "score": 0.44634325711296047,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "original_candidates": [
+      {
+        "id": "ff533165-ba54-5809-b4bc-502f331c903d",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "future-objects",
+        "text": "Return the exception raised by the call. If the call hasn’t yet completed then this method will wait up to timeout seconds. If the call hasn’t completed in timeout seconds, then a TimeoutError will be raised. timeout can be an int or float. If timeout is not specified or None, there is no limit to the wait time.\n\nIf the future is cancelled before completing then CancelledError will be raised.\n\nIf the call completed without raising, None is returned.\n\nadd_done_callback(fn)",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "Future Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+          "start_char": 1317,
+          "end_char": 1793
+        },
+        "score": 0.487509558804341,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "233451c4-65bc-52da-b3ea-8874b150a079",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "future-objects",
+        "text": "Changed in version 3.8: This method raises concurrent.futures.InvalidStateError if the Future is already done.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "Future Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+          "start_char": 3535,
+          "end_char": 3645
+        },
+        "score": 0.4863872858012007,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "future-objects",
+        "text": "Attaches the callable fn to the future. fn will be called, with the future as its only argument, when the future is cancelled or finishes running.\n\nAdded callables are called in the order that they were added and are always called in a thread belonging to the process that added them. If the callable raises an Exception subclass, it will be logged and ignored. If the callable raises a BaseException subclass, the behavior is undefined.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "Future Objects",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+          "start_char": 1795,
+          "end_char": 2232
+        },
+        "score": 0.44634325711296047,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "ranking_status": "ok",
+    "ranking_ms": 460.5318999965675,
+    "events": [
+      {
+        "event": "model",
+        "turn": 1,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "search_corpus"
+          }
+        },
+        "sent_context": null,
+        "finish_reason": "tool_calls",
+        "elapsed_ms": 1286.9737999862991
+      },
+      {
+        "event": "search",
+        "tool": "search_corpus",
+        "call_id": "call_3pbjth535N3Wivhtzdb0B6Ug",
+        "arguments": {
+          "query": "When I register add_done_callback on a Future that has already completed, when does the callback run? concurrent.futures"
+        },
+        "query": "When I register add_done_callback on a Future that has already completed, when does the callback run?",
+        "filter": {
+          "api_family": "concurrent.futures"
+        },
+        "top_k": 3,
+        "reused_original": true,
+        "candidates": [
+          {
+            "id": "ff533165-ba54-5809-b4bc-502f331c903d",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "future-objects",
+            "text": "Return the exception raised by the call. If the call hasn’t yet completed then this method will wait up to timeout seconds. If the call hasn’t completed in timeout seconds, then a TimeoutError will be raised. timeout can be an int or float. If timeout is not specified or None, there is no limit to the wait time.\n\nIf the future is cancelled before completing then CancelledError will be raised.\n\nIf the call completed without raising, None is returned.\n\nadd_done_callback(fn)",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "Future Objects",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+              "start_char": 1317,
+              "end_char": 1793
+            },
+            "score": 0.487509558804341,
+            "strategy": "dense",
+            "rank": 1
+          },
+          {
+            "id": "233451c4-65bc-52da-b3ea-8874b150a079",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "future-objects",
+            "text": "Changed in version 3.8: This method raises concurrent.futures.InvalidStateError if the Future is already done.",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "Future Objects",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+              "start_char": 3535,
+              "end_char": 3645
+            },
+            "score": 0.4863872858012007,
+            "strategy": "dense",
+            "rank": 2
+          },
+          {
+            "id": "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "future-objects",
+            "text": "Attaches the callable fn to the future. fn will be called, with the future as its only argument, when the future is cancelled or finishes running.\n\nAdded callables are called in the order that they were added and are always called in a thread belonging to the process that added them. If the callable raises an Exception subclass, it will be logged and ignored. If the callable raises a BaseException subclass, the behavior is undefined.",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "Future Objects",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+              "start_char": 1795,
+              "end_char": 2232
+            },
+            "score": 0.44634325711296047,
+            "strategy": "dense",
+            "rank": 3
+          }
+        ],
+        "packed_ids": [
+          "ff533165-ba54-5809-b4bc-502f331c903d",
+          "233451c4-65bc-52da-b3ea-8874b150a079",
+          "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492"
+        ],
+        "elapsed_ms": 0.025699991965666413
+      },
+      {
+        "event": "model",
+        "turn": 2,
+        "tool_choice": "auto",
+        "sent_context": {
+          "text": "[ff533165-ba54-5809-b4bc-502f331c903d | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page future-objects]\nReturn the exception raised by the call. If the call hasn’t yet completed then this method will wait up to timeout seconds. If the call hasn’t completed in timeout seconds, then a TimeoutError will be raised. timeout can be an int or float. If timeout is not specified or None, there is no limit to the wait time.\n\nIf the future is cancelled before completing then CancelledError will be raised.\n\nIf the call completed without raising, None is returned.\n\nadd_done_callback(fn)\n\n[233451c4-65bc-52da-b3ea-8874b150a079 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page future-objects]\nChanged in version 3.8: This method raises concurrent.futures.InvalidStateError if the Future is already done.\n\n[d8cd4e59-92fc-5777-85d8-6eb2ae6ef492 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page future-objects]\nAttaches the callable fn to the future. fn will be called, with the future as its only argument, when the future is cancelled or finishes running.\n\nAdded callables are called in the order that they were added and are always called in a thread belonging to the process that added them. If the callable raises an Exception subclass, it will be logged and ignored. If the callable raises a BaseException subclass, the behavior is undefined.",
+          "ids": [
+            "ff533165-ba54-5809-b4bc-502f331c903d",
+            "233451c4-65bc-52da-b3ea-8874b150a079",
+            "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492"
+          ],
+          "chunks": [
+            {
+              "id": "ff533165-ba54-5809-b4bc-502f331c903d",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "future-objects",
+              "text": "Return the exception raised by the call. If the call hasn’t yet completed then this method will wait up to timeout seconds. If the call hasn’t completed in timeout seconds, then a TimeoutError will be raised. timeout can be an int or float. If timeout is not specified or None, there is no limit to the wait time.\n\nIf the future is cancelled before completing then CancelledError will be raised.\n\nIf the call completed without raising, None is returned.\n\nadd_done_callback(fn)",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "Future Objects",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+                "start_char": 1317,
+                "end_char": 1793
+              },
+              "score": 0.487509558804341,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "233451c4-65bc-52da-b3ea-8874b150a079",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "future-objects",
+              "text": "Changed in version 3.8: This method raises concurrent.futures.InvalidStateError if the Future is already done.",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "Future Objects",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+                "start_char": 3535,
+                "end_char": 3645
+              },
+              "score": 0.4863872858012007,
+              "strategy": "dense",
+              "rank": 2
+            },
+            {
+              "id": "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "future-objects",
+              "text": "Attaches the callable fn to the future. fn will be called, with the future as its only argument, when the future is cancelled or finishes running.\n\nAdded callables are called in the order that they were added and are always called in a thread belonging to the process that added them. If the callable raises an Exception subclass, it will be logged and ignored. If the callable raises a BaseException subclass, the behavior is undefined.",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "Future Objects",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+                "start_char": 1795,
+                "end_char": 2232
+              },
+              "score": 0.44634325711296047,
+              "strategy": "dense",
+              "rank": 3
+            }
+          ],
+          "chars": 1429,
+          "budget_chars": 1800
+        },
+        "finish_reason": "stop",
+        "elapsed_ms": 1981.2843000108842
+      },
+      {
+        "event": "final",
+        "proposal": {
+          "status": "answered",
+          "answer": "If the Future is already done, `add_done_callback()` does not wait; since Python 3.8 it raises `concurrent.futures.InvalidStateError` instead of registering the callback. Normally, when a callback is accepted, it is called when the future is cancelled or finishes running, in the process thread that added it.[233451c4-65bc-52da-b3ea-8874b150a079][d8cd4e59-92fc-5777-85d8-6eb2ae6ef492]",
+          "citations": [
+            "233451c4-65bc-52da-b3ea-8874b150a079",
+            "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492"
+          ]
+        }
+      }
+    ],
+    "context": {
+      "text": "[ff533165-ba54-5809-b4bc-502f331c903d | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page future-objects]\nReturn the exception raised by the call. If the call hasn’t yet completed then this method will wait up to timeout seconds. If the call hasn’t completed in timeout seconds, then a TimeoutError will be raised. timeout can be an int or float. If timeout is not specified or None, there is no limit to the wait time.\n\nIf the future is cancelled before completing then CancelledError will be raised.\n\nIf the call completed without raising, None is returned.\n\nadd_done_callback(fn)\n\n[233451c4-65bc-52da-b3ea-8874b150a079 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page future-objects]\nChanged in version 3.8: This method raises concurrent.futures.InvalidStateError if the Future is already done.\n\n[d8cd4e59-92fc-5777-85d8-6eb2ae6ef492 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page future-objects]\nAttaches the callable fn to the future. fn will be called, with the future as its only argument, when the future is cancelled or finishes running.\n\nAdded callables are called in the order that they were added and are always called in a thread belonging to the process that added them. If the callable raises an Exception subclass, it will be logged and ignored. If the callable raises a BaseException subclass, the behavior is undefined.",
+      "ids": [
+        "ff533165-ba54-5809-b4bc-502f331c903d",
+        "233451c4-65bc-52da-b3ea-8874b150a079",
+        "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492"
+      ],
+      "chunks": [
+        {
+          "id": "ff533165-ba54-5809-b4bc-502f331c903d",
+          "source_id": "concurrent.futures",
+          "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+          "page": "future-objects",
+          "text": "Return the exception raised by the call. If the call hasn’t yet completed then this method will wait up to timeout seconds. If the call hasn’t completed in timeout seconds, then a TimeoutError will be raised. timeout can be an int or float. If timeout is not specified or None, there is no limit to the wait time.\n\nIf the future is cancelled before completing then CancelledError will be raised.\n\nIf the call completed without raising, None is returned.\n\nadd_done_callback(fn)",
+          "metadata": {
+            "api_family": "concurrent.futures",
+            "heading": "Future Objects",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+            "start_char": 1317,
+            "end_char": 1793
+          },
+          "score": 0.487509558804341,
+          "strategy": "dense",
+          "rank": 1
+        },
+        {
+          "id": "233451c4-65bc-52da-b3ea-8874b150a079",
+          "source_id": "concurrent.futures",
+          "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+          "page": "future-objects",
+          "text": "Changed in version 3.8: This method raises concurrent.futures.InvalidStateError if the Future is already done.",
+          "metadata": {
+            "api_family": "concurrent.futures",
+            "heading": "Future Objects",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+            "start_char": 3535,
+            "end_char": 3645
+          },
+          "score": 0.4863872858012007,
+          "strategy": "dense",
+          "rank": 2
+        },
+        {
+          "id": "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492",
+          "source_id": "concurrent.futures",
+          "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+          "page": "future-objects",
+          "text": "Attaches the callable fn to the future. fn will be called, with the future as its only argument, when the future is cancelled or finishes running.\n\nAdded callables are called in the order that they were added and are always called in a thread belonging to the process that added them. If the callable raises an Exception subclass, it will be logged and ignored. If the callable raises a BaseException subclass, the behavior is undefined.",
+          "metadata": {
+            "api_family": "concurrent.futures",
+            "heading": "Future Objects",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects",
+            "start_char": 1795,
+            "end_char": 2232
+          },
+          "score": 0.44634325711296047,
+          "strategy": "dense",
+          "rank": 3
+        }
+      ],
+      "chars": 1429,
+      "budget_chars": 1800
+    },
+    "citation_sources": [
+      {
+        "id": "233451c4-65bc-52da-b3ea-8874b150a079",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "future-objects",
+        "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects"
+      },
+      {
+        "id": "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "future-objects",
+        "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#future-objects"
+      }
+    ],
+    "citations": [
+      "233451c4-65bc-52da-b3ea-8874b150a079",
+      "d8cd4e59-92fc-5777-85d8-6eb2ae6ef492"
+    ],
+    "answer": "If the Future is already done, `add_done_callback()` does not wait; since Python 3.8 it raises `concurrent.futures.InvalidStateError` instead of registering the callback. Normally, when a callback is accepted, it is called when the future is cancelled or finishes running, in the process thread that added it.[233451c4-65bc-52da-b3ea-8874b150a079][d8cd4e59-92fc-5777-85d8-6eb2ae6ef492]",
+    "searches": 1,
+    "status": "answered",
+    "stop_reason": "model_answered",
+    "agent_ms": 3268.376599997282,
+    "usage": {
+      "query_embedding": {
+        "requests_with_response": 1,
+        "models": [
+          "text-embedding-3-large"
+        ],
+        "input_tokens": 20,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_usd": 2.6e-06
+      },
+      "agent": {
+        "requests_with_response": 2,
+        "models": [
+          "gpt-5.4-mini-2026-03-17"
+        ],
+        "input_tokens": 1172,
+        "cached_input_tokens": 0,
+        "output_tokens": 219,
+        "reasoning_tokens": 0,
+        "estimated_usd": 0.0018644999999999998
+      },
+      "total_usd": 0.0018670999999999998,
+      "calls": [
+        {
+          "kind": "query_embedding",
+          "model": "text-embedding-3-large",
+          "input_tokens": 20,
+          "elapsed_ms": 448.8186999806203
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 384,
+          "cached_input_tokens": 0,
+          "output_tokens": 40,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1286.9660999858752
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 788,
+          "cached_input_tokens": 0,
+          "output_tokens": 179,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1981.2768000119831
+        }
+      ]
+    },
+    "elapsed_ms": 3728.9376000117045
+  },
+  {
+    "query_id": "T07-04",
+    "split": "test",
+    "question": "When passing a custom loop_factory to asyncio.Runner, who is responsible for setting the new loop as current?",
+    "filter": null,
+    "configuration": "dense",
+    "method": "dense",
+    "mode": "agent",
+    "original_top3": [
+      {
+        "id": "dccf08ed-6294-5f3c-b5e6-e22442441284",
+        "source_id": "asyncio-runner",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+        "page": "runner-context-manager",
+        "text": "loop_factory could be used for overriding the loop creation. It is the responsibility of the loop_factory to set the created loop as the current one. By default asyncio.new_event_loop() is used and set as current event loop with asyncio.set_event_loop() if loop_factory is None.\n\nBasically, asyncio.run() example can be rewritten with the runner usage:\n\nasync def main():\nawait asyncio.sleep(1)\nprint('hello')\n\nwith asyncio.Runner() as runner:\nrunner.run(main())\n\nNew in version 3.11.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Runner context manager",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+          "start_char": 431,
+          "end_char": 915
+        },
+        "score": 0.703603781745979,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "77c347ea-5e34-5fbf-b0de-47ec69abd791",
+        "source_id": "asyncio-runner",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+        "page": "runner-context-manager",
+        "text": "Runner context manager\n\nclass asyncio.Runner(*, debug=None, loop_factory=None)\n\nA context manager that simplifies multiple async function calls in the same context.\n\nSometimes several top-level async functions should be called in the same event loop and contextvars.Context.\n\nIf debug is True, the event loop will be run in debug mode. False disables debug mode explicitly. None is used to respect the global Debug Mode settings.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Runner context manager",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+          "start_char": 0,
+          "end_char": 429
+        },
+        "score": 0.5513932221682933,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "f068ba10-f33d-5a78-b0f7-7a803a625976",
+        "source_id": "asyncio-runner",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+        "page": "runner-context-manager",
+        "text": "Finalize asynchronous generators, shutdown default executor, close the event loop and release embedded contextvars.Context.\n\nget_loop()\n\nReturn the event loop associated with the runner instance.\n\nNote\n\nRunner uses the lazy initialization strategy, its constructor doesn’t initialize underlying low-level structures.\n\nEmbedded loop and context are created at the with body entering or the first call of run() or get_loop().",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Runner context manager",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+          "start_char": 1327,
+          "end_char": 1750
+        },
+        "score": 0.5220518963271635,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "original_candidates": [
+      {
+        "id": "dccf08ed-6294-5f3c-b5e6-e22442441284",
+        "source_id": "asyncio-runner",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+        "page": "runner-context-manager",
+        "text": "loop_factory could be used for overriding the loop creation. It is the responsibility of the loop_factory to set the created loop as the current one. By default asyncio.new_event_loop() is used and set as current event loop with asyncio.set_event_loop() if loop_factory is None.\n\nBasically, asyncio.run() example can be rewritten with the runner usage:\n\nasync def main():\nawait asyncio.sleep(1)\nprint('hello')\n\nwith asyncio.Runner() as runner:\nrunner.run(main())\n\nNew in version 3.11.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Runner context manager",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+          "start_char": 431,
+          "end_char": 915
+        },
+        "score": 0.703603781745979,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "77c347ea-5e34-5fbf-b0de-47ec69abd791",
+        "source_id": "asyncio-runner",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+        "page": "runner-context-manager",
+        "text": "Runner context manager\n\nclass asyncio.Runner(*, debug=None, loop_factory=None)\n\nA context manager that simplifies multiple async function calls in the same context.\n\nSometimes several top-level async functions should be called in the same event loop and contextvars.Context.\n\nIf debug is True, the event loop will be run in debug mode. False disables debug mode explicitly. None is used to respect the global Debug Mode settings.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Runner context manager",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+          "start_char": 0,
+          "end_char": 429
+        },
+        "score": 0.5513932221682933,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "f068ba10-f33d-5a78-b0f7-7a803a625976",
+        "source_id": "asyncio-runner",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+        "page": "runner-context-manager",
+        "text": "Finalize asynchronous generators, shutdown default executor, close the event loop and release embedded contextvars.Context.\n\nget_loop()\n\nReturn the event loop associated with the runner instance.\n\nNote\n\nRunner uses the lazy initialization strategy, its constructor doesn’t initialize underlying low-level structures.\n\nEmbedded loop and context are created at the with body entering or the first call of run() or get_loop().",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Runner context manager",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+          "start_char": 1327,
+          "end_char": 1750
+        },
+        "score": 0.5220518963271635,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "ranking_status": "ok",
+    "ranking_ms": 1043.01029999624,
+    "events": [
+      {
+        "event": "model",
+        "turn": 1,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "search_corpus"
+          }
+        },
+        "sent_context": null,
+        "finish_reason": "tool_calls",
+        "elapsed_ms": 1665.0170999928378
+      },
+      {
+        "event": "search",
+        "tool": "search_corpus",
+        "call_id": "call_guNdaiessQuzT7nqoiUH7LiW",
+        "arguments": {
+          "query": "When passing a custom loop_factory to asyncio.Runner, who is responsible for setting the new loop as current?"
+        },
+        "query": "When passing a custom loop_factory to asyncio.Runner, who is responsible for setting the new loop as current?",
+        "filter": null,
+        "top_k": 3,
+        "reused_original": true,
+        "candidates": [
+          {
+            "id": "dccf08ed-6294-5f3c-b5e6-e22442441284",
+            "source_id": "asyncio-runner",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+            "page": "runner-context-manager",
+            "text": "loop_factory could be used for overriding the loop creation. It is the responsibility of the loop_factory to set the created loop as the current one. By default asyncio.new_event_loop() is used and set as current event loop with asyncio.set_event_loop() if loop_factory is None.\n\nBasically, asyncio.run() example can be rewritten with the runner usage:\n\nasync def main():\nawait asyncio.sleep(1)\nprint('hello')\n\nwith asyncio.Runner() as runner:\nrunner.run(main())\n\nNew in version 3.11.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Runner context manager",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+              "start_char": 431,
+              "end_char": 915
+            },
+            "score": 0.703603781745979,
+            "strategy": "dense",
+            "rank": 1
+          },
+          {
+            "id": "77c347ea-5e34-5fbf-b0de-47ec69abd791",
+            "source_id": "asyncio-runner",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+            "page": "runner-context-manager",
+            "text": "Runner context manager\n\nclass asyncio.Runner(*, debug=None, loop_factory=None)\n\nA context manager that simplifies multiple async function calls in the same context.\n\nSometimes several top-level async functions should be called in the same event loop and contextvars.Context.\n\nIf debug is True, the event loop will be run in debug mode. False disables debug mode explicitly. None is used to respect the global Debug Mode settings.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Runner context manager",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+              "start_char": 0,
+              "end_char": 429
+            },
+            "score": 0.5513932221682933,
+            "strategy": "dense",
+            "rank": 2
+          },
+          {
+            "id": "f068ba10-f33d-5a78-b0f7-7a803a625976",
+            "source_id": "asyncio-runner",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+            "page": "runner-context-manager",
+            "text": "Finalize asynchronous generators, shutdown default executor, close the event loop and release embedded contextvars.Context.\n\nget_loop()\n\nReturn the event loop associated with the runner instance.\n\nNote\n\nRunner uses the lazy initialization strategy, its constructor doesn’t initialize underlying low-level structures.\n\nEmbedded loop and context are created at the with body entering or the first call of run() or get_loop().",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Runner context manager",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+              "start_char": 1327,
+              "end_char": 1750
+            },
+            "score": 0.5220518963271635,
+            "strategy": "dense",
+            "rank": 3
+          }
+        ],
+        "packed_ids": [
+          "dccf08ed-6294-5f3c-b5e6-e22442441284",
+          "77c347ea-5e34-5fbf-b0de-47ec69abd791",
+          "f068ba10-f33d-5a78-b0f7-7a803a625976"
+        ],
+        "elapsed_ms": 0.02030000905506313
+      },
+      {
+        "event": "model",
+        "turn": 2,
+        "tool_choice": "auto",
+        "sent_context": {
+          "text": "[dccf08ed-6294-5f3c-b5e6-e22442441284 | https://docs.python.org/release/3.11.9/library/asyncio-runner.html | page runner-context-manager]\nloop_factory could be used for overriding the loop creation. It is the responsibility of the loop_factory to set the created loop as the current one. By default asyncio.new_event_loop() is used and set as current event loop with asyncio.set_event_loop() if loop_factory is None.\n\nBasically, asyncio.run() example can be rewritten with the runner usage:\n\nasync def main():\nawait asyncio.sleep(1)\nprint('hello')\n\nwith asyncio.Runner() as runner:\nrunner.run(main())\n\nNew in version 3.11.\n\n[77c347ea-5e34-5fbf-b0de-47ec69abd791 | https://docs.python.org/release/3.11.9/library/asyncio-runner.html | page runner-context-manager]\nRunner context manager\n\nclass asyncio.Runner(*, debug=None, loop_factory=None)\n\nA context manager that simplifies multiple async function calls in the same context.\n\nSometimes several top-level async functions should be called in the same event loop and contextvars.Context.\n\nIf debug is True, the event loop will be run in debug mode. False disables debug mode explicitly. None is used to respect the global Debug Mode settings.\n\n[f068ba10-f33d-5a78-b0f7-7a803a625976 | https://docs.python.org/release/3.11.9/library/asyncio-runner.html | page runner-context-manager]\nFinalize asynchronous generators, shutdown default executor, close the event loop and release embedded contextvars.Context.\n\nget_loop()\n\nReturn the event loop associated with the runner instance.\n\nNote\n\nRunner uses the lazy initialization strategy, its constructor doesn’t initialize underlying low-level structures.\n\nEmbedded loop and context are created at the with body entering or the first call of run() or get_loop().",
+          "ids": [
+            "dccf08ed-6294-5f3c-b5e6-e22442441284",
+            "77c347ea-5e34-5fbf-b0de-47ec69abd791",
+            "f068ba10-f33d-5a78-b0f7-7a803a625976"
+          ],
+          "chunks": [
+            {
+              "id": "dccf08ed-6294-5f3c-b5e6-e22442441284",
+              "source_id": "asyncio-runner",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+              "page": "runner-context-manager",
+              "text": "loop_factory could be used for overriding the loop creation. It is the responsibility of the loop_factory to set the created loop as the current one. By default asyncio.new_event_loop() is used and set as current event loop with asyncio.set_event_loop() if loop_factory is None.\n\nBasically, asyncio.run() example can be rewritten with the runner usage:\n\nasync def main():\nawait asyncio.sleep(1)\nprint('hello')\n\nwith asyncio.Runner() as runner:\nrunner.run(main())\n\nNew in version 3.11.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Runner context manager",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+                "start_char": 431,
+                "end_char": 915
+              },
+              "score": 0.703603781745979,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "77c347ea-5e34-5fbf-b0de-47ec69abd791",
+              "source_id": "asyncio-runner",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+              "page": "runner-context-manager",
+              "text": "Runner context manager\n\nclass asyncio.Runner(*, debug=None, loop_factory=None)\n\nA context manager that simplifies multiple async function calls in the same context.\n\nSometimes several top-level async functions should be called in the same event loop and contextvars.Context.\n\nIf debug is True, the event loop will be run in debug mode. False disables debug mode explicitly. None is used to respect the global Debug Mode settings.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Runner context manager",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+                "start_char": 0,
+                "end_char": 429
+              },
+              "score": 0.5513932221682933,
+              "strategy": "dense",
+              "rank": 2
+            },
+            {
+              "id": "f068ba10-f33d-5a78-b0f7-7a803a625976",
+              "source_id": "asyncio-runner",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+              "page": "runner-context-manager",
+              "text": "Finalize asynchronous generators, shutdown default executor, close the event loop and release embedded contextvars.Context.\n\nget_loop()\n\nReturn the event loop associated with the runner instance.\n\nNote\n\nRunner uses the lazy initialization strategy, its constructor doesn’t initialize underlying low-level structures.\n\nEmbedded loop and context are created at the with body entering or the first call of run() or get_loop().",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Runner context manager",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+                "start_char": 1327,
+                "end_char": 1750
+              },
+              "score": 0.5220518963271635,
+              "strategy": "dense",
+              "rank": 3
+            }
+          ],
+          "chars": 1754,
+          "budget_chars": 1800
+        },
+        "finish_reason": "stop",
+        "elapsed_ms": 1248.4875000081956
+      },
+      {
+        "event": "final",
+        "proposal": {
+          "status": "answered",
+          "answer": "The loop factory is responsible for setting the newly created loop as the current event loop.",
+          "citations": [
+            "dccf08ed-6294-5f3c-b5e6-e22442441284"
+          ]
+        }
+      }
+    ],
+    "context": {
+      "text": "[dccf08ed-6294-5f3c-b5e6-e22442441284 | https://docs.python.org/release/3.11.9/library/asyncio-runner.html | page runner-context-manager]\nloop_factory could be used for overriding the loop creation. It is the responsibility of the loop_factory to set the created loop as the current one. By default asyncio.new_event_loop() is used and set as current event loop with asyncio.set_event_loop() if loop_factory is None.\n\nBasically, asyncio.run() example can be rewritten with the runner usage:\n\nasync def main():\nawait asyncio.sleep(1)\nprint('hello')\n\nwith asyncio.Runner() as runner:\nrunner.run(main())\n\nNew in version 3.11.\n\n[77c347ea-5e34-5fbf-b0de-47ec69abd791 | https://docs.python.org/release/3.11.9/library/asyncio-runner.html | page runner-context-manager]\nRunner context manager\n\nclass asyncio.Runner(*, debug=None, loop_factory=None)\n\nA context manager that simplifies multiple async function calls in the same context.\n\nSometimes several top-level async functions should be called in the same event loop and contextvars.Context.\n\nIf debug is True, the event loop will be run in debug mode. False disables debug mode explicitly. None is used to respect the global Debug Mode settings.\n\n[f068ba10-f33d-5a78-b0f7-7a803a625976 | https://docs.python.org/release/3.11.9/library/asyncio-runner.html | page runner-context-manager]\nFinalize asynchronous generators, shutdown default executor, close the event loop and release embedded contextvars.Context.\n\nget_loop()\n\nReturn the event loop associated with the runner instance.\n\nNote\n\nRunner uses the lazy initialization strategy, its constructor doesn’t initialize underlying low-level structures.\n\nEmbedded loop and context are created at the with body entering or the first call of run() or get_loop().",
+      "ids": [
+        "dccf08ed-6294-5f3c-b5e6-e22442441284",
+        "77c347ea-5e34-5fbf-b0de-47ec69abd791",
+        "f068ba10-f33d-5a78-b0f7-7a803a625976"
+      ],
+      "chunks": [
+        {
+          "id": "dccf08ed-6294-5f3c-b5e6-e22442441284",
+          "source_id": "asyncio-runner",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+          "page": "runner-context-manager",
+          "text": "loop_factory could be used for overriding the loop creation. It is the responsibility of the loop_factory to set the created loop as the current one. By default asyncio.new_event_loop() is used and set as current event loop with asyncio.set_event_loop() if loop_factory is None.\n\nBasically, asyncio.run() example can be rewritten with the runner usage:\n\nasync def main():\nawait asyncio.sleep(1)\nprint('hello')\n\nwith asyncio.Runner() as runner:\nrunner.run(main())\n\nNew in version 3.11.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Runner context manager",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+            "start_char": 431,
+            "end_char": 915
+          },
+          "score": 0.703603781745979,
+          "strategy": "dense",
+          "rank": 1
+        },
+        {
+          "id": "77c347ea-5e34-5fbf-b0de-47ec69abd791",
+          "source_id": "asyncio-runner",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+          "page": "runner-context-manager",
+          "text": "Runner context manager\n\nclass asyncio.Runner(*, debug=None, loop_factory=None)\n\nA context manager that simplifies multiple async function calls in the same context.\n\nSometimes several top-level async functions should be called in the same event loop and contextvars.Context.\n\nIf debug is True, the event loop will be run in debug mode. False disables debug mode explicitly. None is used to respect the global Debug Mode settings.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Runner context manager",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+            "start_char": 0,
+            "end_char": 429
+          },
+          "score": 0.5513932221682933,
+          "strategy": "dense",
+          "rank": 2
+        },
+        {
+          "id": "f068ba10-f33d-5a78-b0f7-7a803a625976",
+          "source_id": "asyncio-runner",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+          "page": "runner-context-manager",
+          "text": "Finalize asynchronous generators, shutdown default executor, close the event loop and release embedded contextvars.Context.\n\nget_loop()\n\nReturn the event loop associated with the runner instance.\n\nNote\n\nRunner uses the lazy initialization strategy, its constructor doesn’t initialize underlying low-level structures.\n\nEmbedded loop and context are created at the with body entering or the first call of run() or get_loop().",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Runner context manager",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#runner-context-manager",
+            "start_char": 1327,
+            "end_char": 1750
+          },
+          "score": 0.5220518963271635,
+          "strategy": "dense",
+          "rank": 3
+        }
+      ],
+      "chars": 1754,
+      "budget_chars": 1800
+    },
+    "citation_sources": [],
+    "citations": [],
+    "answer": "Insufficient evidence in the Day 6 corpus.",
+    "searches": 1,
+    "status": "abstain",
+    "stop_reason": "invalid_citations",
+    "agent_ms": 2913.6068999941926,
+    "usage": {
+      "query_embedding": {
+        "requests_with_response": 1,
+        "models": [
+          "text-embedding-3-large"
+        ],
+        "input_tokens": 22,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_usd": 2.86e-06
+      },
+      "agent": {
+        "requests_with_response": 2,
+        "models": [
+          "gpt-5.4-mini-2026-03-17"
+        ],
+        "input_tokens": 1213,
+        "cached_input_tokens": 0,
+        "output_tokens": 97,
+        "reasoning_tokens": 0,
+        "estimated_usd": 0.00134625
+      },
+      "total_usd": 0.00134911,
+      "calls": [
+        {
+          "kind": "query_embedding",
+          "model": "text-embedding-3-large",
+          "input_tokens": 22,
+          "elapsed_ms": 1030.2631999948062
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 378,
+          "cached_input_tokens": 0,
+          "output_tokens": 39,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1665.009500022279
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 835,
+          "cached_input_tokens": 0,
+          "output_tokens": 58,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1248.479400004726
+        }
+      ]
+    },
+    "elapsed_ms": 3956.6431999846827
+  },
+  {
+    "query_id": "T07-05",
+    "split": "test",
+    "question": "What is the default duration threshold for a callback to count as slow in asyncio debug mode?",
+    "filter": null,
+    "configuration": "dense",
+    "method": "dense",
+    "mode": "agent",
+    "original_top3": [
+      {
+        "id": "b6a4624c-946e-54f2-b54f-965c9538e5a7",
+        "source_id": "asyncio-eventloop",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+        "page": "enabling-debug-mode",
+        "text": "This attribute can be used to set the minimum execution duration in seconds that is considered “slow”. When debug mode is enabled, “slow” callbacks are logged.\n\nDefault value is 100 milliseconds.\n\nSee also\n\nThe debug mode of asyncio.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Enabling debug mode",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+          "start_char": 409,
+          "end_char": 642
+        },
+        "score": 0.756274345429786,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "06eff08b-d90f-522d-9ac6-dfd3e5627356",
+        "source_id": "asyncio-eventloop",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+        "page": "enabling-debug-mode",
+        "text": "Enabling debug mode\n\nloop.get_debug()\n\nGet the debug mode (bool) of the event loop.\n\nThe default value is True if the environment variable PYTHONASYNCIODEBUG is set to a non-empty string, False otherwise.\n\nloop.set_debug(enabled: bool)\n\nSet the debug mode of the event loop.\n\nChanged in version 3.7: The new Python Development Mode can now also be used to enable the debug mode.\n\nloop.slow_callback_duration",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Enabling debug mode",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+          "start_char": 0,
+          "end_char": 407
+        },
+        "score": 0.5653569064617114,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "61d2ed08-f095-5beb-84bf-927433e437d0",
+        "source_id": "asyncio-runner",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+        "page": "running-an-asyncio-program",
+        "text": "Changed in version 3.9: Updated to use loop.shutdown_default_executor().\n\nChanged in version 3.10: debug is None by default to respect the global debug mode settings.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Running an asyncio Program",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#running-an-asyncio-program",
+          "start_char": 801,
+          "end_char": 967
+        },
+        "score": 0.38150060681157283,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "original_candidates": [
+      {
+        "id": "b6a4624c-946e-54f2-b54f-965c9538e5a7",
+        "source_id": "asyncio-eventloop",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+        "page": "enabling-debug-mode",
+        "text": "This attribute can be used to set the minimum execution duration in seconds that is considered “slow”. When debug mode is enabled, “slow” callbacks are logged.\n\nDefault value is 100 milliseconds.\n\nSee also\n\nThe debug mode of asyncio.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Enabling debug mode",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+          "start_char": 409,
+          "end_char": 642
+        },
+        "score": 0.756274345429786,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "06eff08b-d90f-522d-9ac6-dfd3e5627356",
+        "source_id": "asyncio-eventloop",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+        "page": "enabling-debug-mode",
+        "text": "Enabling debug mode\n\nloop.get_debug()\n\nGet the debug mode (bool) of the event loop.\n\nThe default value is True if the environment variable PYTHONASYNCIODEBUG is set to a non-empty string, False otherwise.\n\nloop.set_debug(enabled: bool)\n\nSet the debug mode of the event loop.\n\nChanged in version 3.7: The new Python Development Mode can now also be used to enable the debug mode.\n\nloop.slow_callback_duration",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Enabling debug mode",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+          "start_char": 0,
+          "end_char": 407
+        },
+        "score": 0.5653569064617114,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "61d2ed08-f095-5beb-84bf-927433e437d0",
+        "source_id": "asyncio-runner",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+        "page": "running-an-asyncio-program",
+        "text": "Changed in version 3.9: Updated to use loop.shutdown_default_executor().\n\nChanged in version 3.10: debug is None by default to respect the global debug mode settings.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Running an asyncio Program",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#running-an-asyncio-program",
+          "start_char": 801,
+          "end_char": 967
+        },
+        "score": 0.38150060681157283,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "ranking_status": "ok",
+    "ranking_ms": 894.191100000171,
+    "events": [
+      {
+        "event": "model",
+        "turn": 1,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "search_corpus"
+          }
+        },
+        "sent_context": null,
+        "finish_reason": "tool_calls",
+        "elapsed_ms": 1160.1910000026692
+      },
+      {
+        "event": "search",
+        "tool": "search_corpus",
+        "call_id": "call_tmvNBYN6PvVUrLfKoyMSxcyG",
+        "arguments": {
+          "query": "What is the default duration threshold for a callback to count as slow in asyncio debug mode?"
+        },
+        "query": "What is the default duration threshold for a callback to count as slow in asyncio debug mode?",
+        "filter": null,
+        "top_k": 3,
+        "reused_original": true,
+        "candidates": [
+          {
+            "id": "b6a4624c-946e-54f2-b54f-965c9538e5a7",
+            "source_id": "asyncio-eventloop",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+            "page": "enabling-debug-mode",
+            "text": "This attribute can be used to set the minimum execution duration in seconds that is considered “slow”. When debug mode is enabled, “slow” callbacks are logged.\n\nDefault value is 100 milliseconds.\n\nSee also\n\nThe debug mode of asyncio.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Enabling debug mode",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+              "start_char": 409,
+              "end_char": 642
+            },
+            "score": 0.756274345429786,
+            "strategy": "dense",
+            "rank": 1
+          },
+          {
+            "id": "06eff08b-d90f-522d-9ac6-dfd3e5627356",
+            "source_id": "asyncio-eventloop",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+            "page": "enabling-debug-mode",
+            "text": "Enabling debug mode\n\nloop.get_debug()\n\nGet the debug mode (bool) of the event loop.\n\nThe default value is True if the environment variable PYTHONASYNCIODEBUG is set to a non-empty string, False otherwise.\n\nloop.set_debug(enabled: bool)\n\nSet the debug mode of the event loop.\n\nChanged in version 3.7: The new Python Development Mode can now also be used to enable the debug mode.\n\nloop.slow_callback_duration",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Enabling debug mode",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+              "start_char": 0,
+              "end_char": 407
+            },
+            "score": 0.5653569064617114,
+            "strategy": "dense",
+            "rank": 2
+          },
+          {
+            "id": "61d2ed08-f095-5beb-84bf-927433e437d0",
+            "source_id": "asyncio-runner",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+            "page": "running-an-asyncio-program",
+            "text": "Changed in version 3.9: Updated to use loop.shutdown_default_executor().\n\nChanged in version 3.10: debug is None by default to respect the global debug mode settings.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Running an asyncio Program",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#running-an-asyncio-program",
+              "start_char": 801,
+              "end_char": 967
+            },
+            "score": 0.38150060681157283,
+            "strategy": "dense",
+            "rank": 3
+          }
+        ],
+        "packed_ids": [
+          "b6a4624c-946e-54f2-b54f-965c9538e5a7",
+          "06eff08b-d90f-522d-9ac6-dfd3e5627356",
+          "61d2ed08-f095-5beb-84bf-927433e437d0"
+        ],
+        "elapsed_ms": 0.02680000034160912
+      },
+      {
+        "event": "model",
+        "turn": 2,
+        "tool_choice": "auto",
+        "sent_context": {
+          "text": "[b6a4624c-946e-54f2-b54f-965c9538e5a7 | https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html | page enabling-debug-mode]\nThis attribute can be used to set the minimum execution duration in seconds that is considered “slow”. When debug mode is enabled, “slow” callbacks are logged.\n\nDefault value is 100 milliseconds.\n\nSee also\n\nThe debug mode of asyncio.\n\n[06eff08b-d90f-522d-9ac6-dfd3e5627356 | https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html | page enabling-debug-mode]\nEnabling debug mode\n\nloop.get_debug()\n\nGet the debug mode (bool) of the event loop.\n\nThe default value is True if the environment variable PYTHONASYNCIODEBUG is set to a non-empty string, False otherwise.\n\nloop.set_debug(enabled: bool)\n\nSet the debug mode of the event loop.\n\nChanged in version 3.7: The new Python Development Mode can now also be used to enable the debug mode.\n\nloop.slow_callback_duration\n\n[61d2ed08-f095-5beb-84bf-927433e437d0 | https://docs.python.org/release/3.11.9/library/asyncio-runner.html | page running-an-asyncio-program]\nChanged in version 3.9: Updated to use loop.shutdown_default_executor().\n\nChanged in version 3.10: debug is None by default to respect the global debug mode settings.",
+          "ids": [
+            "b6a4624c-946e-54f2-b54f-965c9538e5a7",
+            "06eff08b-d90f-522d-9ac6-dfd3e5627356",
+            "61d2ed08-f095-5beb-84bf-927433e437d0"
+          ],
+          "chunks": [
+            {
+              "id": "b6a4624c-946e-54f2-b54f-965c9538e5a7",
+              "source_id": "asyncio-eventloop",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+              "page": "enabling-debug-mode",
+              "text": "This attribute can be used to set the minimum execution duration in seconds that is considered “slow”. When debug mode is enabled, “slow” callbacks are logged.\n\nDefault value is 100 milliseconds.\n\nSee also\n\nThe debug mode of asyncio.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Enabling debug mode",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+                "start_char": 409,
+                "end_char": 642
+              },
+              "score": 0.756274345429786,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "06eff08b-d90f-522d-9ac6-dfd3e5627356",
+              "source_id": "asyncio-eventloop",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+              "page": "enabling-debug-mode",
+              "text": "Enabling debug mode\n\nloop.get_debug()\n\nGet the debug mode (bool) of the event loop.\n\nThe default value is True if the environment variable PYTHONASYNCIODEBUG is set to a non-empty string, False otherwise.\n\nloop.set_debug(enabled: bool)\n\nSet the debug mode of the event loop.\n\nChanged in version 3.7: The new Python Development Mode can now also be used to enable the debug mode.\n\nloop.slow_callback_duration",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Enabling debug mode",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+                "start_char": 0,
+                "end_char": 407
+              },
+              "score": 0.5653569064617114,
+              "strategy": "dense",
+              "rank": 2
+            },
+            {
+              "id": "61d2ed08-f095-5beb-84bf-927433e437d0",
+              "source_id": "asyncio-runner",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+              "page": "running-an-asyncio-program",
+              "text": "Changed in version 3.9: Updated to use loop.shutdown_default_executor().\n\nChanged in version 3.10: debug is None by default to respect the global debug mode settings.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Running an asyncio Program",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#running-an-asyncio-program",
+                "start_char": 801,
+                "end_char": 967
+              },
+              "score": 0.38150060681157283,
+              "strategy": "dense",
+              "rank": 3
+            }
+          ],
+          "chars": 1228,
+          "budget_chars": 1800
+        },
+        "finish_reason": "stop",
+        "elapsed_ms": 1017.6009999995586
+      },
+      {
+        "event": "final",
+        "proposal": {
+          "status": "answered",
+          "answer": "100 milliseconds (0.1 seconds).",
+          "citations": [
+            "b6a4624c-946e-54f2-b54f-965c9538e5a7"
+          ]
+        }
+      }
+    ],
+    "context": {
+      "text": "[b6a4624c-946e-54f2-b54f-965c9538e5a7 | https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html | page enabling-debug-mode]\nThis attribute can be used to set the minimum execution duration in seconds that is considered “slow”. When debug mode is enabled, “slow” callbacks are logged.\n\nDefault value is 100 milliseconds.\n\nSee also\n\nThe debug mode of asyncio.\n\n[06eff08b-d90f-522d-9ac6-dfd3e5627356 | https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html | page enabling-debug-mode]\nEnabling debug mode\n\nloop.get_debug()\n\nGet the debug mode (bool) of the event loop.\n\nThe default value is True if the environment variable PYTHONASYNCIODEBUG is set to a non-empty string, False otherwise.\n\nloop.set_debug(enabled: bool)\n\nSet the debug mode of the event loop.\n\nChanged in version 3.7: The new Python Development Mode can now also be used to enable the debug mode.\n\nloop.slow_callback_duration\n\n[61d2ed08-f095-5beb-84bf-927433e437d0 | https://docs.python.org/release/3.11.9/library/asyncio-runner.html | page running-an-asyncio-program]\nChanged in version 3.9: Updated to use loop.shutdown_default_executor().\n\nChanged in version 3.10: debug is None by default to respect the global debug mode settings.",
+      "ids": [
+        "b6a4624c-946e-54f2-b54f-965c9538e5a7",
+        "06eff08b-d90f-522d-9ac6-dfd3e5627356",
+        "61d2ed08-f095-5beb-84bf-927433e437d0"
+      ],
+      "chunks": [
+        {
+          "id": "b6a4624c-946e-54f2-b54f-965c9538e5a7",
+          "source_id": "asyncio-eventloop",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+          "page": "enabling-debug-mode",
+          "text": "This attribute can be used to set the minimum execution duration in seconds that is considered “slow”. When debug mode is enabled, “slow” callbacks are logged.\n\nDefault value is 100 milliseconds.\n\nSee also\n\nThe debug mode of asyncio.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Enabling debug mode",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+            "start_char": 409,
+            "end_char": 642
+          },
+          "score": 0.756274345429786,
+          "strategy": "dense",
+          "rank": 1
+        },
+        {
+          "id": "06eff08b-d90f-522d-9ac6-dfd3e5627356",
+          "source_id": "asyncio-eventloop",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+          "page": "enabling-debug-mode",
+          "text": "Enabling debug mode\n\nloop.get_debug()\n\nGet the debug mode (bool) of the event loop.\n\nThe default value is True if the environment variable PYTHONASYNCIODEBUG is set to a non-empty string, False otherwise.\n\nloop.set_debug(enabled: bool)\n\nSet the debug mode of the event loop.\n\nChanged in version 3.7: The new Python Development Mode can now also be used to enable the debug mode.\n\nloop.slow_callback_duration",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Enabling debug mode",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#enabling-debug-mode",
+            "start_char": 0,
+            "end_char": 407
+          },
+          "score": 0.5653569064617114,
+          "strategy": "dense",
+          "rank": 2
+        },
+        {
+          "id": "61d2ed08-f095-5beb-84bf-927433e437d0",
+          "source_id": "asyncio-runner",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html",
+          "page": "running-an-asyncio-program",
+          "text": "Changed in version 3.9: Updated to use loop.shutdown_default_executor().\n\nChanged in version 3.10: debug is None by default to respect the global debug mode settings.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Running an asyncio Program",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-runner.html#running-an-asyncio-program",
+            "start_char": 801,
+            "end_char": 967
+          },
+          "score": 0.38150060681157283,
+          "strategy": "dense",
+          "rank": 3
+        }
+      ],
+      "chars": 1228,
+      "budget_chars": 1800
+    },
+    "citation_sources": [],
+    "citations": [],
+    "answer": "Insufficient evidence in the Day 6 corpus.",
+    "searches": 1,
+    "status": "abstain",
+    "stop_reason": "invalid_citations",
+    "agent_ms": 2177.902700001141,
+    "usage": {
+      "query_embedding": {
+        "requests_with_response": 1,
+        "models": [
+          "text-embedding-3-large"
+        ],
+        "input_tokens": 18,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_usd": 2.34e-06
+      },
+      "agent": {
+        "requests_with_response": 2,
+        "models": [
+          "gpt-5.4-mini-2026-03-17"
+        ],
+        "input_tokens": 1126,
+        "cached_input_tokens": 0,
+        "output_tokens": 89,
+        "reasoning_tokens": 0,
+        "estimated_usd": 0.001245
+      },
+      "total_usd": 0.00124734,
+      "calls": [
+        {
+          "kind": "query_embedding",
+          "model": "text-embedding-3-large",
+          "input_tokens": 18,
+          "elapsed_ms": 881.9932999904267
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 374,
+          "cached_input_tokens": 0,
+          "output_tokens": 35,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1160.1828999991994
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 752,
+          "cached_input_tokens": 0,
+          "output_tokens": 54,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 1017.5939000037033
+        }
+      ]
+    },
+    "elapsed_ms": 3072.1281000005547
+  },
+  {
+    "query_id": "TN07-01",
+    "split": "test",
+    "question": "In Python 3.11.9, how many pending callbacks can an asyncio event loop queue before call_soon refuses the next one?",
+    "filter": {
+      "api_family": "asyncio"
+    },
+    "configuration": "dense",
+    "method": "dense",
+    "mode": "agent",
+    "original_top3": [
+      {
+        "id": "0b0be0b9-d876-5230-b3df-ce1c719e6f87",
+        "source_id": "asyncio-eventloop",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+        "page": "scheduling-callbacks",
+        "text": "Scheduling callbacks\n\nloop.call_soon(callback, *args, context=None)\n\nSchedule the callback callback to be called with args arguments at the next iteration of the event loop.\n\nReturn an instance of asyncio.Handle, which can be used later to cancel the callback.\n\nCallbacks are called in the order in which they are registered. Each callback will be called exactly once.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Scheduling callbacks",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-callbacks",
+          "start_char": 0,
+          "end_char": 368
+        },
+        "score": 0.44736936940522165,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "b525767c-1f77-5663-b318-29e89af1449f",
+        "source_id": "asyncio-queue",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+        "page": "queue",
+        "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+          "start_char": 0,
+          "end_char": 492
+        },
+        "score": 0.42642758820586046,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "2eed251c-ce78-583f-9c50-5518ed34d405",
+        "source_id": "asyncio-eventloop",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+        "page": "scheduling-delayed-callbacks",
+        "text": "Scheduling delayed callbacks\n\nEvent loop provides mechanisms to schedule callback functions to be called at some point in the future. Event loop uses monotonic clocks to track time.\n\nloop.call_later(delay, callback, *args, context=None)\n\nSchedule callback to be called after the given delay number of seconds (can be either an int or a float).\n\nAn instance of asyncio.TimerHandle is returned which can be used to cancel the callback.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Scheduling delayed callbacks",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-delayed-callbacks",
+          "start_char": 0,
+          "end_char": 433
+        },
+        "score": 0.4226781239645281,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "original_candidates": [
+      {
+        "id": "0b0be0b9-d876-5230-b3df-ce1c719e6f87",
+        "source_id": "asyncio-eventloop",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+        "page": "scheduling-callbacks",
+        "text": "Scheduling callbacks\n\nloop.call_soon(callback, *args, context=None)\n\nSchedule the callback callback to be called with args arguments at the next iteration of the event loop.\n\nReturn an instance of asyncio.Handle, which can be used later to cancel the callback.\n\nCallbacks are called in the order in which they are registered. Each callback will be called exactly once.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Scheduling callbacks",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-callbacks",
+          "start_char": 0,
+          "end_char": 368
+        },
+        "score": 0.44736936940522165,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "b525767c-1f77-5663-b318-29e89af1449f",
+        "source_id": "asyncio-queue",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+        "page": "queue",
+        "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Queue",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+          "start_char": 0,
+          "end_char": 492
+        },
+        "score": 0.42642758820586046,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "2eed251c-ce78-583f-9c50-5518ed34d405",
+        "source_id": "asyncio-eventloop",
+        "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+        "page": "scheduling-delayed-callbacks",
+        "text": "Scheduling delayed callbacks\n\nEvent loop provides mechanisms to schedule callback functions to be called at some point in the future. Event loop uses monotonic clocks to track time.\n\nloop.call_later(delay, callback, *args, context=None)\n\nSchedule callback to be called after the given delay number of seconds (can be either an int or a float).\n\nAn instance of asyncio.TimerHandle is returned which can be used to cancel the callback.",
+        "metadata": {
+          "api_family": "asyncio",
+          "heading": "Scheduling delayed callbacks",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-delayed-callbacks",
+          "start_char": 0,
+          "end_char": 433
+        },
+        "score": 0.4226781239645281,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "ranking_status": "ok",
+    "ranking_ms": 459.85250000376254,
+    "events": [
+      {
+        "event": "model",
+        "turn": 1,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "search_corpus"
+          }
+        },
+        "sent_context": null,
+        "finish_reason": "tool_calls",
+        "elapsed_ms": 957.5010999978986
+      },
+      {
+        "event": "search",
+        "tool": "search_corpus",
+        "call_id": "call_EiJ8dnnRsoYDKQSfRaFxjtBI",
+        "arguments": {
+          "query": "In Python 3.11.9, how many pending callbacks can an asyncio event loop queue before call_soon refuses the next one?"
+        },
+        "query": "In Python 3.11.9, how many pending callbacks can an asyncio event loop queue before call_soon refuses the next one?",
+        "filter": {
+          "api_family": "asyncio"
+        },
+        "top_k": 3,
+        "reused_original": true,
+        "candidates": [
+          {
+            "id": "0b0be0b9-d876-5230-b3df-ce1c719e6f87",
+            "source_id": "asyncio-eventloop",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+            "page": "scheduling-callbacks",
+            "text": "Scheduling callbacks\n\nloop.call_soon(callback, *args, context=None)\n\nSchedule the callback callback to be called with args arguments at the next iteration of the event loop.\n\nReturn an instance of asyncio.Handle, which can be used later to cancel the callback.\n\nCallbacks are called in the order in which they are registered. Each callback will be called exactly once.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Scheduling callbacks",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-callbacks",
+              "start_char": 0,
+              "end_char": 368
+            },
+            "score": 0.44736936940522165,
+            "strategy": "dense",
+            "rank": 1
+          },
+          {
+            "id": "b525767c-1f77-5663-b318-29e89af1449f",
+            "source_id": "asyncio-queue",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+            "page": "queue",
+            "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Queue",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+              "start_char": 0,
+              "end_char": 492
+            },
+            "score": 0.42642758820586046,
+            "strategy": "dense",
+            "rank": 2
+          },
+          {
+            "id": "2eed251c-ce78-583f-9c50-5518ed34d405",
+            "source_id": "asyncio-eventloop",
+            "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+            "page": "scheduling-delayed-callbacks",
+            "text": "Scheduling delayed callbacks\n\nEvent loop provides mechanisms to schedule callback functions to be called at some point in the future. Event loop uses monotonic clocks to track time.\n\nloop.call_later(delay, callback, *args, context=None)\n\nSchedule callback to be called after the given delay number of seconds (can be either an int or a float).\n\nAn instance of asyncio.TimerHandle is returned which can be used to cancel the callback.",
+            "metadata": {
+              "api_family": "asyncio",
+              "heading": "Scheduling delayed callbacks",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-delayed-callbacks",
+              "start_char": 0,
+              "end_char": 433
+            },
+            "score": 0.4226781239645281,
+            "strategy": "dense",
+            "rank": 3
+          }
+        ],
+        "packed_ids": [
+          "0b0be0b9-d876-5230-b3df-ce1c719e6f87",
+          "b525767c-1f77-5663-b318-29e89af1449f",
+          "2eed251c-ce78-583f-9c50-5518ed34d405"
+        ],
+        "elapsed_ms": 0.021799991372972727
+      },
+      {
+        "event": "model",
+        "turn": 2,
+        "tool_choice": "auto",
+        "sent_context": {
+          "text": "[0b0be0b9-d876-5230-b3df-ce1c719e6f87 | https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html | page scheduling-callbacks]\nScheduling callbacks\n\nloop.call_soon(callback, *args, context=None)\n\nSchedule the callback callback to be called with args arguments at the next iteration of the event loop.\n\nReturn an instance of asyncio.Handle, which can be used later to cancel the callback.\n\nCallbacks are called in the order in which they are registered. Each callback will be called exactly once.\n\n[b525767c-1f77-5663-b318-29e89af1449f | https://docs.python.org/release/3.11.9/library/asyncio-queue.html | page queue]\nQueue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.\n\n[2eed251c-ce78-583f-9c50-5518ed34d405 | https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html | page scheduling-delayed-callbacks]\nScheduling delayed callbacks\n\nEvent loop provides mechanisms to schedule callback functions to be called at some point in the future. Event loop uses monotonic clocks to track time.\n\nloop.call_later(delay, callback, *args, context=None)\n\nSchedule callback to be called after the given delay number of seconds (can be either an int or a float).\n\nAn instance of asyncio.TimerHandle is returned which can be used to cancel the callback.",
+          "ids": [
+            "0b0be0b9-d876-5230-b3df-ce1c719e6f87",
+            "b525767c-1f77-5663-b318-29e89af1449f",
+            "2eed251c-ce78-583f-9c50-5518ed34d405"
+          ],
+          "chunks": [
+            {
+              "id": "0b0be0b9-d876-5230-b3df-ce1c719e6f87",
+              "source_id": "asyncio-eventloop",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+              "page": "scheduling-callbacks",
+              "text": "Scheduling callbacks\n\nloop.call_soon(callback, *args, context=None)\n\nSchedule the callback callback to be called with args arguments at the next iteration of the event loop.\n\nReturn an instance of asyncio.Handle, which can be used later to cancel the callback.\n\nCallbacks are called in the order in which they are registered. Each callback will be called exactly once.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Scheduling callbacks",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-callbacks",
+                "start_char": 0,
+                "end_char": 368
+              },
+              "score": 0.44736936940522165,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "b525767c-1f77-5663-b318-29e89af1449f",
+              "source_id": "asyncio-queue",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+              "page": "queue",
+              "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Queue",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+                "start_char": 0,
+                "end_char": 492
+              },
+              "score": 0.42642758820586046,
+              "strategy": "dense",
+              "rank": 2
+            },
+            {
+              "id": "2eed251c-ce78-583f-9c50-5518ed34d405",
+              "source_id": "asyncio-eventloop",
+              "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+              "page": "scheduling-delayed-callbacks",
+              "text": "Scheduling delayed callbacks\n\nEvent loop provides mechanisms to schedule callback functions to be called at some point in the future. Event loop uses monotonic clocks to track time.\n\nloop.call_later(delay, callback, *args, context=None)\n\nSchedule callback to be called after the given delay number of seconds (can be either an int or a float).\n\nAn instance of asyncio.TimerHandle is returned which can be used to cancel the callback.",
+              "metadata": {
+                "api_family": "asyncio",
+                "heading": "Scheduling delayed callbacks",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-delayed-callbacks",
+                "start_char": 0,
+                "end_char": 433
+              },
+              "score": 0.4226781239645281,
+              "strategy": "dense",
+              "rank": 3
+            }
+          ],
+          "chars": 1703,
+          "budget_chars": 1800
+        },
+        "finish_reason": "stop",
+        "elapsed_ms": 942.3737999750301
+      },
+      {
+        "event": "final",
+        "proposal": {
+          "status": "abstain",
+          "answer": "",
+          "citations": []
+        }
+      }
+    ],
+    "context": {
+      "text": "[0b0be0b9-d876-5230-b3df-ce1c719e6f87 | https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html | page scheduling-callbacks]\nScheduling callbacks\n\nloop.call_soon(callback, *args, context=None)\n\nSchedule the callback callback to be called with args arguments at the next iteration of the event loop.\n\nReturn an instance of asyncio.Handle, which can be used later to cancel the callback.\n\nCallbacks are called in the order in which they are registered. Each callback will be called exactly once.\n\n[b525767c-1f77-5663-b318-29e89af1449f | https://docs.python.org/release/3.11.9/library/asyncio-queue.html | page queue]\nQueue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.\n\n[2eed251c-ce78-583f-9c50-5518ed34d405 | https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html | page scheduling-delayed-callbacks]\nScheduling delayed callbacks\n\nEvent loop provides mechanisms to schedule callback functions to be called at some point in the future. Event loop uses monotonic clocks to track time.\n\nloop.call_later(delay, callback, *args, context=None)\n\nSchedule callback to be called after the given delay number of seconds (can be either an int or a float).\n\nAn instance of asyncio.TimerHandle is returned which can be used to cancel the callback.",
+      "ids": [
+        "0b0be0b9-d876-5230-b3df-ce1c719e6f87",
+        "b525767c-1f77-5663-b318-29e89af1449f",
+        "2eed251c-ce78-583f-9c50-5518ed34d405"
+      ],
+      "chunks": [
+        {
+          "id": "0b0be0b9-d876-5230-b3df-ce1c719e6f87",
+          "source_id": "asyncio-eventloop",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+          "page": "scheduling-callbacks",
+          "text": "Scheduling callbacks\n\nloop.call_soon(callback, *args, context=None)\n\nSchedule the callback callback to be called with args arguments at the next iteration of the event loop.\n\nReturn an instance of asyncio.Handle, which can be used later to cancel the callback.\n\nCallbacks are called in the order in which they are registered. Each callback will be called exactly once.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Scheduling callbacks",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-callbacks",
+            "start_char": 0,
+            "end_char": 368
+          },
+          "score": 0.44736936940522165,
+          "strategy": "dense",
+          "rank": 1
+        },
+        {
+          "id": "b525767c-1f77-5663-b318-29e89af1449f",
+          "source_id": "asyncio-queue",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html",
+          "page": "queue",
+          "text": "Queue\n\nclass asyncio.Queue(maxsize=0)\n\nA first in, first out (FIFO) queue.\n\nIf maxsize is less than or equal to zero, the queue size is infinite. If it is an integer greater than 0, then await put() blocks when the queue reaches maxsize until an item is removed by get().\n\nUnlike the standard library threading queue, the size of the queue is always known and can be returned by calling the qsize() method.\n\nChanged in version 3.10: Removed the loop parameter.\n\nThis class is not thread safe.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Queue",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-queue.html#queue",
+            "start_char": 0,
+            "end_char": 492
+          },
+          "score": 0.42642758820586046,
+          "strategy": "dense",
+          "rank": 2
+        },
+        {
+          "id": "2eed251c-ce78-583f-9c50-5518ed34d405",
+          "source_id": "asyncio-eventloop",
+          "source": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html",
+          "page": "scheduling-delayed-callbacks",
+          "text": "Scheduling delayed callbacks\n\nEvent loop provides mechanisms to schedule callback functions to be called at some point in the future. Event loop uses monotonic clocks to track time.\n\nloop.call_later(delay, callback, *args, context=None)\n\nSchedule callback to be called after the given delay number of seconds (can be either an int or a float).\n\nAn instance of asyncio.TimerHandle is returned which can be used to cancel the callback.",
+          "metadata": {
+            "api_family": "asyncio",
+            "heading": "Scheduling delayed callbacks",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/asyncio-eventloop.html#scheduling-delayed-callbacks",
+            "start_char": 0,
+            "end_char": 433
+          },
+          "score": 0.4226781239645281,
+          "strategy": "dense",
+          "rank": 3
+        }
+      ],
+      "chars": 1703,
+      "budget_chars": 1800
+    },
+    "citation_sources": [],
+    "citations": [],
+    "answer": "Insufficient evidence in the Day 6 corpus.",
+    "searches": 1,
+    "status": "abstain",
+    "stop_reason": "model_abstained",
+    "agent_ms": 1899.9748999776784,
+    "usage": {
+      "query_embedding": {
+        "requests_with_response": 1,
+        "models": [
+          "text-embedding-3-large"
+        ],
+        "input_tokens": 28,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_usd": 3.6400000000000003e-06
+      },
+      "agent": {
+        "requests_with_response": 2,
+        "models": [
+          "gpt-5.4-mini-2026-03-17"
+        ],
+        "input_tokens": 1257,
+        "cached_input_tokens": 0,
+        "output_tokens": 72,
+        "reasoning_tokens": 0,
+        "estimated_usd": 0.00126675
+      },
+      "total_usd": 0.0012703900000000001,
+      "calls": [
+        {
+          "kind": "query_embedding",
+          "model": "text-embedding-3-large",
+          "input_tokens": 28,
+          "elapsed_ms": 446.7923000047449
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 390,
+          "cached_input_tokens": 0,
+          "output_tokens": 45,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 957.4947000073735
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 867,
+          "cached_input_tokens": 0,
+          "output_tokens": 27,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 942.3647999938112
+        }
+      ]
+    },
+    "elapsed_ms": 2359.869899984915
+  },
+  {
+    "query_id": "TN07-02",
+    "split": "test",
+    "question": "Which pickle protocol number does Python 3.11.9 ProcessPoolExecutor use to serialize submitted arguments?",
+    "filter": {
+      "api_family": "concurrent.futures"
+    },
+    "configuration": "dense",
+    "method": "dense",
+    "mode": "agent",
+    "original_top3": [
+      {
+        "id": "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "processpoolexecutor",
+        "text": "Changed in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "ProcessPoolExecutor",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+          "start_char": 2575,
+          "end_char": 2705
+        },
+        "score": 0.465250525563785,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "175ce5bb-0032-523a-943f-224e0b76273a",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "processpoolexecutor",
+        "text": "ProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "ProcessPoolExecutor",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+          "start_char": 0,
+          "end_char": 466
+        },
+        "score": 0.462409917506022,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "050a988d-2044-5485-97d6-7d610a1f69c8",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "processpoolexecutor",
+        "text": "Changed in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "ProcessPoolExecutor",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+          "start_char": 2150,
+          "end_char": 2573
+        },
+        "score": 0.4432753632769535,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "original_candidates": [
+      {
+        "id": "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "processpoolexecutor",
+        "text": "Changed in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "ProcessPoolExecutor",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+          "start_char": 2575,
+          "end_char": 2705
+        },
+        "score": 0.465250525563785,
+        "strategy": "dense",
+        "rank": 1
+      },
+      {
+        "id": "175ce5bb-0032-523a-943f-224e0b76273a",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "processpoolexecutor",
+        "text": "ProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "ProcessPoolExecutor",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+          "start_char": 0,
+          "end_char": 466
+        },
+        "score": 0.462409917506022,
+        "strategy": "dense",
+        "rank": 2
+      },
+      {
+        "id": "050a988d-2044-5485-97d6-7d610a1f69c8",
+        "source_id": "concurrent.futures",
+        "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+        "page": "processpoolexecutor",
+        "text": "Changed in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.",
+        "metadata": {
+          "api_family": "concurrent.futures",
+          "heading": "ProcessPoolExecutor",
+          "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+          "start_char": 2150,
+          "end_char": 2573
+        },
+        "score": 0.4432753632769535,
+        "strategy": "dense",
+        "rank": 3
+      }
+    ],
+    "ranking_status": "ok",
+    "ranking_ms": 434.9579999980051,
+    "events": [
+      {
+        "event": "model",
+        "turn": 1,
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "search_corpus"
+          }
+        },
+        "sent_context": null,
+        "finish_reason": "tool_calls",
+        "elapsed_ms": 958.9087999775074
+      },
+      {
+        "event": "search",
+        "tool": "search_corpus",
+        "call_id": "call_gjJVKBbb1SVcWKiS4Vy0pmzX",
+        "arguments": {
+          "query": "Which pickle protocol number does Python 3.11.9 ProcessPoolExecutor use to serialize submitted arguments?"
+        },
+        "query": "Which pickle protocol number does Python 3.11.9 ProcessPoolExecutor use to serialize submitted arguments?",
+        "filter": {
+          "api_family": "concurrent.futures"
+        },
+        "top_k": 3,
+        "reused_original": true,
+        "candidates": [
+          {
+            "id": "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "processpoolexecutor",
+            "text": "Changed in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "ProcessPoolExecutor",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+              "start_char": 2575,
+              "end_char": 2705
+            },
+            "score": 0.465250525563785,
+            "strategy": "dense",
+            "rank": 1
+          },
+          {
+            "id": "175ce5bb-0032-523a-943f-224e0b76273a",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "processpoolexecutor",
+            "text": "ProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "ProcessPoolExecutor",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+              "start_char": 0,
+              "end_char": 466
+            },
+            "score": 0.462409917506022,
+            "strategy": "dense",
+            "rank": 2
+          },
+          {
+            "id": "050a988d-2044-5485-97d6-7d610a1f69c8",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "processpoolexecutor",
+            "text": "Changed in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "ProcessPoolExecutor",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+              "start_char": 2150,
+              "end_char": 2573
+            },
+            "score": 0.4432753632769535,
+            "strategy": "dense",
+            "rank": 3
+          }
+        ],
+        "packed_ids": [
+          "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+          "175ce5bb-0032-523a-943f-224e0b76273a",
+          "050a988d-2044-5485-97d6-7d610a1f69c8"
+        ],
+        "elapsed_ms": 0.030099996365606785
+      },
+      {
+        "event": "model",
+        "turn": 2,
+        "tool_choice": "auto",
+        "sent_context": {
+          "text": "[9a3af7e1-b7b7-5594-b3a9-9052461ac8a7 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nChanged in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.\n\n[175ce5bb-0032-523a-943f-224e0b76273a | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.\n\n[050a988d-2044-5485-97d6-7d610a1f69c8 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nChanged in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.",
+          "ids": [
+            "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+            "175ce5bb-0032-523a-943f-224e0b76273a",
+            "050a988d-2044-5485-97d6-7d610a1f69c8"
+          ],
+          "chunks": [
+            {
+              "id": "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "processpoolexecutor",
+              "text": "Changed in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "ProcessPoolExecutor",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+                "start_char": 2575,
+                "end_char": 2705
+              },
+              "score": 0.465250525563785,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "175ce5bb-0032-523a-943f-224e0b76273a",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "processpoolexecutor",
+              "text": "ProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "ProcessPoolExecutor",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+                "start_char": 0,
+                "end_char": 466
+              },
+              "score": 0.462409917506022,
+              "strategy": "dense",
+              "rank": 2
+            },
+            {
+              "id": "050a988d-2044-5485-97d6-7d610a1f69c8",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "processpoolexecutor",
+              "text": "Changed in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "ProcessPoolExecutor",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+                "start_char": 2150,
+                "end_char": 2573
+              },
+              "score": 0.4432753632769535,
+              "strategy": "dense",
+              "rank": 3
+            }
+          ],
+          "chars": 1440,
+          "budget_chars": 1800
+        },
+        "finish_reason": "tool_calls",
+        "elapsed_ms": 921.7146000009961
+      },
+      {
+        "event": "search",
+        "tool": "search_corpus",
+        "call_id": "call_0yZFj0lLDNbTsKLKPSN9zWXF",
+        "arguments": {
+          "query": "ProcessPoolExecutor pickle protocol submitted arguments protocol number 3.11.9"
+        },
+        "query": "ProcessPoolExecutor pickle protocol submitted arguments protocol number 3.11.9",
+        "filter": {
+          "api_family": "concurrent.futures"
+        },
+        "top_k": 3,
+        "reused_original": false,
+        "candidates": [
+          {
+            "id": "050a988d-2044-5485-97d6-7d610a1f69c8",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "processpoolexecutor",
+            "text": "Changed in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "ProcessPoolExecutor",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+              "start_char": 2150,
+              "end_char": 2573
+            },
+            "score": 0.49880425849337706,
+            "strategy": "dense",
+            "rank": 1
+          },
+          {
+            "id": "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "processpoolexecutor",
+            "text": "Changed in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "ProcessPoolExecutor",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+              "start_char": 2575,
+              "end_char": 2705
+            },
+            "score": 0.4840390844319081,
+            "strategy": "dense",
+            "rank": 2
+          },
+          {
+            "id": "175ce5bb-0032-523a-943f-224e0b76273a",
+            "source_id": "concurrent.futures",
+            "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+            "page": "processpoolexecutor",
+            "text": "ProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+            "metadata": {
+              "api_family": "concurrent.futures",
+              "heading": "ProcessPoolExecutor",
+              "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+              "start_char": 0,
+              "end_char": 466
+            },
+            "score": 0.480789032368472,
+            "strategy": "dense",
+            "rank": 3
+          }
+        ],
+        "packed_ids": [
+          "050a988d-2044-5485-97d6-7d610a1f69c8",
+          "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+          "175ce5bb-0032-523a-943f-224e0b76273a"
+        ],
+        "elapsed_ms": 425.00940000172704
+      },
+      {
+        "event": "model",
+        "turn": 3,
+        "tool_choice": "none",
+        "sent_context": {
+          "text": "[050a988d-2044-5485-97d6-7d610a1f69c8 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nChanged in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.\n\n[9a3af7e1-b7b7-5594-b3a9-9052461ac8a7 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nChanged in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.\n\n[175ce5bb-0032-523a-943f-224e0b76273a | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+          "ids": [
+            "050a988d-2044-5485-97d6-7d610a1f69c8",
+            "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+            "175ce5bb-0032-523a-943f-224e0b76273a"
+          ],
+          "chunks": [
+            {
+              "id": "050a988d-2044-5485-97d6-7d610a1f69c8",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "processpoolexecutor",
+              "text": "Changed in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "ProcessPoolExecutor",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+                "start_char": 2150,
+                "end_char": 2573
+              },
+              "score": 0.49880425849337706,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "processpoolexecutor",
+              "text": "Changed in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "ProcessPoolExecutor",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+                "start_char": 2575,
+                "end_char": 2705
+              },
+              "score": 0.465250525563785,
+              "strategy": "dense",
+              "rank": 1
+            },
+            {
+              "id": "175ce5bb-0032-523a-943f-224e0b76273a",
+              "source_id": "concurrent.futures",
+              "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+              "page": "processpoolexecutor",
+              "text": "ProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+              "metadata": {
+                "api_family": "concurrent.futures",
+                "heading": "ProcessPoolExecutor",
+                "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+                "start_char": 0,
+                "end_char": 466
+              },
+              "score": 0.462409917506022,
+              "strategy": "dense",
+              "rank": 2
+            }
+          ],
+          "chars": 1440,
+          "budget_chars": 1800
+        },
+        "finish_reason": "stop",
+        "elapsed_ms": 920.8988999889698
+      },
+      {
+        "event": "final",
+        "proposal": {
+          "status": "abstain",
+          "answer": "",
+          "citations": []
+        }
+      }
+    ],
+    "context": {
+      "text": "[050a988d-2044-5485-97d6-7d610a1f69c8 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nChanged in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.\n\n[9a3af7e1-b7b7-5594-b3a9-9052461ac8a7 | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nChanged in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.\n\n[175ce5bb-0032-523a-943f-224e0b76273a | https://docs.python.org/release/3.11.9/library/concurrent.futures.html | page processpoolexecutor]\nProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+      "ids": [
+        "050a988d-2044-5485-97d6-7d610a1f69c8",
+        "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+        "175ce5bb-0032-523a-943f-224e0b76273a"
+      ],
+      "chunks": [
+        {
+          "id": "050a988d-2044-5485-97d6-7d610a1f69c8",
+          "source_id": "concurrent.futures",
+          "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+          "page": "processpoolexecutor",
+          "text": "Changed in version 3.3: When one of the worker processes terminates abruptly, a BrokenProcessPool error is now raised. Previously, behaviour was undefined but operations on the executor or its futures would often freeze or deadlock.\n\nChanged in version 3.7: The mp_context argument was added to allow users to control the start_method for worker processes created by the pool.\n\nAdded the initializer and initargs arguments.",
+          "metadata": {
+            "api_family": "concurrent.futures",
+            "heading": "ProcessPoolExecutor",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+            "start_char": 2150,
+            "end_char": 2573
+          },
+          "score": 0.49880425849337706,
+          "strategy": "dense",
+          "rank": 1
+        },
+        {
+          "id": "9a3af7e1-b7b7-5594-b3a9-9052461ac8a7",
+          "source_id": "concurrent.futures",
+          "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+          "page": "processpoolexecutor",
+          "text": "Changed in version 3.11: The max_tasks_per_child argument was added to allow users to control the lifetime of workers in the pool.",
+          "metadata": {
+            "api_family": "concurrent.futures",
+            "heading": "ProcessPoolExecutor",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+            "start_char": 2575,
+            "end_char": 2705
+          },
+          "score": 0.465250525563785,
+          "strategy": "dense",
+          "rank": 1
+        },
+        {
+          "id": "175ce5bb-0032-523a-943f-224e0b76273a",
+          "source_id": "concurrent.futures",
+          "source": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html",
+          "page": "processpoolexecutor",
+          "text": "ProcessPoolExecutor\n\nThe ProcessPoolExecutor class is an Executor subclass that uses a pool of processes to execute calls asynchronously. ProcessPoolExecutor uses the multiprocessing module, which allows it to side-step the Global Interpreter Lock but also means that only picklable objects can be executed and returned.\n\nThe __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter.",
+          "metadata": {
+            "api_family": "concurrent.futures",
+            "heading": "ProcessPoolExecutor",
+            "unit_url": "https://docs.python.org/release/3.11.9/library/concurrent.futures.html#processpoolexecutor",
+            "start_char": 0,
+            "end_char": 466
+          },
+          "score": 0.462409917506022,
+          "strategy": "dense",
+          "rank": 2
+        }
+      ],
+      "chars": 1440,
+      "budget_chars": 1800
+    },
+    "citation_sources": [],
+    "citations": [],
+    "answer": "Insufficient evidence in the Day 6 corpus.",
+    "searches": 2,
+    "status": "abstain",
+    "stop_reason": "model_abstained",
+    "agent_ms": 3226.676899997983,
+    "usage": {
+      "query_embedding": {
+        "requests_with_response": 2,
+        "models": [
+          "text-embedding-3-large"
+        ],
+        "input_tokens": 36,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_tokens": 0,
+        "estimated_usd": 4.680000000000001e-06
+      },
+      "agent": {
+        "requests_with_response": 3,
+        "models": [
+          "gpt-5.4-mini-2026-03-17"
+        ],
+        "input_tokens": 2023,
+        "cached_input_tokens": 0,
+        "output_tokens": 91,
+        "reasoning_tokens": 0,
+        "estimated_usd": 0.00192675
+      },
+      "total_usd": 0.00193143,
+      "calls": [
+        {
+          "kind": "query_embedding",
+          "model": "text-embedding-3-large",
+          "input_tokens": 21,
+          "elapsed_ms": 414.89529999671504
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 385,
+          "cached_input_tokens": 0,
+          "output_tokens": 38,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 958.9001999993343
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 792,
+          "cached_input_tokens": 0,
+          "output_tokens": 32,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 921.7071000020951
+        },
+        {
+          "kind": "query_embedding",
+          "model": "text-embedding-3-large",
+          "input_tokens": 15,
+          "elapsed_ms": 414.30099998251535
+        },
+        {
+          "kind": "agent",
+          "model": "gpt-5.4-mini-2026-03-17",
+          "input_tokens": 846,
+          "cached_input_tokens": 0,
+          "output_tokens": 21,
+          "reasoning_tokens": 0,
+          "elapsed_ms": 920.8907000138424
+        }
+      ]
+    },
+    "elapsed_ms": 3661.66750001139
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "query_id": "T07-01",
+    "trace_sha256": "fb400ede124ab2cbd63dbf3cbe20fb21c0372e8380326a018d1c352fefe6cf1f",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-02",
+    "trace_sha256": "83dee239185a876a579fa4216955f5dd2af2c8cf4b9ee35ca7d225c72ae3afd5",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-03",
+    "trace_sha256": "a6e5b80c48b67177a536a468472f174bc0b66c59e8e0d04e83ac5a0203239f1c",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": [
+      {
+        "id": "87333265-390f-5e20-8197-f00fdae1b621",
+        "supports_claim": null,
+        "reason": ""
+      }
+    ]
+  },
+  {
+    "query_id": "T07-04",
+    "trace_sha256": "8005ed7b79c25ed7a05b3cac4184fa0064df7f570d1331c38ce5b96c74fcaf62",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "T07-05",
+    "trace_sha256": "32e953cd269e057b46dd896274001c441e83bd3fb8804b595816b812def1339a",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "TN07-01",
+    "trace_sha256": "60429d34c8822e041e0b60046e8330ae069d3d15bf144eb0d5f4f4958ce54ee3",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "abstention_correct": null,
+    "citation_reviews": []
+  },
+  {
+    "query_id": "TN07-02",
+    "trace_sha256": "f7f64deaaaefd0a4e06a5ece4a340f8ad2b796dbfa787fc55b8d592831d4282f",
+    "reviewer": "",
+    "review_state": "pending",
+    "reason": "",
+    "abstention_correct": null,
+    "citation_reviews": []
+  }
+]

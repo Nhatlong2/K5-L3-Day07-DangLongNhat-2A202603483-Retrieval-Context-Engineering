@@ -1,0 +1,246 @@
+{
+  "selected_at_utc": "2026-11-14T05:12:30+00:00",
+  "selection_order": [
+    "more successful agent queries",
+    "higher mean grounded answer grade",
+    "higher citation validity",
+    "higher reviewed Context Evidence Rate",
+    "higher original-query Evidence Hit@3",
+    "lower API cost on successful queries when known for all candidates",
+    "lower median latency on successful queries",
+    "lexicographically smaller configuration ID"
+  ],
+  "inputs_sha256": {
+    "src/__init__.py": "77ccb1315d39f7705dc40d5131053dec2aaa328c3a89346d1ae5957374f5ef70",
+    "src/agent.py": "426b30ac905bff9b3f2d800cf60307dc2a3ad921e9e6a763955e20aaecec0f15",
+    "src/common.py": "f4258173c6bd13285e76524d8caed785bda64188258da03ddc03a9a0c101b473",
+    "src/day06.py": "8ecd592f83bfaa892f50af95d89209b15643d9583b1a77b86db7bf45dbe2d33b",
+    "src/experiment.py": "9ca01a042407b8e2939c289c7b1d59a421ef360c11f470ee923ebdb829111ed7",
+    "src/grading.py": "d3011a6df26f593c9224a4c9c63c95d8a8fc593429606b552d07cad6e57cda8a",
+    "src/provider.py": "867338473d1a0986782edda99e53caca7b8cca0e32e882ee7b19d39d5cf63d0e",
+    "src/retrieval.py": "773dfa5672a66b36f2203be73212e80a1efc90ae6babeafabca321f0b5fe70f4",
+    "src/run.py": "3da41c73284fdb053db1a22a59d213ec9d7a07768dcb475127f5fda87ee73c6c",
+    "starter/baseline.py": "7bb18eb2a3fbadf5ff7a9b76ce94659f59975d173ffa67ed82e56817d9787fc2",
+    "starter/agent_metrics.py": "c82ed0321b2a227fdf3c9d29970c2a4a35d32754d288dc8c14b1a1f10336dfe4",
+    "starter/convert_day6.py": "db904579fc16cff42bd0d2a8702cf9beb7f1726274520df8e6c5d07d7afe8be3",
+    "requirements.txt": "bc4a1ebb4be916cae7e3a194ee182f66568e7c2a358ab0b0f16285fe61fef6c2",
+    "benchmark/experiments.json": "18b844ef05264052d2dc0b641a36dd19fd3ae484b02874a15a09ecd2a81c5c5d",
+    "benchmark/prices.json": "a6c1f040169c8760dcdf2dd836ad1a5691450d8219e54736dda271f03dd85032",
+    "benchmark/day06_reference.json": "1c9e7963a9b1636151f969fccb27ad657f67d44cebb63ab23add838afaffaef9"
+  },
+  "benchmark_sha256": {
+    "dev": "a606a6bb903cce7b66d3f1c350355ba4f22d82751f2aad0eb6a9c1c98bd76d0a",
+    "test": "5fdd6235b62ba797eb2a3b87056428f2a3bbc7abccb85d1dbf8a098abb274ed3"
+  },
+  "baseline": {
+    "max_searches": 2,
+    "ranking_cutoff": 3,
+    "rrf_candidates": 10,
+    "rrf_k": 60,
+    "max_completion_tokens": 1200,
+    "method": "dense",
+    "top_k": 3,
+    "context_budget_chars": 1800,
+    "agent_model": "gpt-5.4-mini-2026-03-17",
+    "id": "dense"
+  },
+  "chosen": {
+    "max_searches": 2,
+    "ranking_cutoff": 3,
+    "rrf_candidates": 10,
+    "rrf_k": 60,
+    "max_completion_tokens": 1200,
+    "method": "hybrid",
+    "top_k": 3,
+    "context_budget_chars": 1800,
+    "agent_model": "gpt-5.4-mini-2026-03-17",
+    "id": "hybrid"
+  },
+  "agent_model_observed": "gpt-5.4-mini-2026-03-17",
+  "chosen_config_sha256": "b17a4e3764d8b62d4d1fec373e5c587f7fdc36ed5e5e53a2af86904563c6d289",
+  "store": {
+    "engine": "qdrant-local",
+    "qdrant_client": "1.15.1",
+    "embedding_provider": "openai",
+    "embedding_model": "text-embedding-3-large",
+    "distance": "cosine",
+    "dimensions": 3072,
+    "point_count": 264,
+    "ingest_id": "ef88203d5d4e4aef9caf78a77aacf394",
+    "collection": "day06_b_b9b9410547c04aeaa8a13e9b90ec7ada",
+    "ingest_started_at_utc": "2026-11-13T05:03:06.077+00:00",
+    "ingest_finished_at_utc": "2026-11-13T05:03:37.183+00:00",
+    "B_ingest_seconds": 14.827480399981141,
+    "B_ingest_input_tokens": 21468,
+    "B_ingest_usd": 0.00279084
+  },
+  "chunks_sha256": "e4a7e029da185337e2b85ed3f598e990d83c5f10013da978f03751e9d3ed510f",
+  "dev": {
+    "dense": {
+      "traces_sha256": "68f7592d49b2de64dc17609446fd489392b40682b87560687d4e5a66afd3e284",
+      "reviews_sha256": "68ebd8bd59816aaa7712f52f87cac0f698730eb4184b4fda319c073d5f53e0da",
+      "reviewers": [
+        {
+          "name": "ChatGPT",
+          "state": "ai_assisted_unverified"
+        }
+      ],
+      "successes": 17,
+      "status_counts": {
+        "abstain": 10,
+        "answered": 7
+      },
+      "grounded_mean": 0.9333333333333333,
+      "citation_validity": {
+        "n": 8,
+        "N": 8,
+        "ratio": 1.0
+      },
+      "context_evidence_rate": {
+        "n": 13,
+        "N": 15,
+        "ratio": 0.8666666666666667
+      },
+      "evidence_hit_at_3": {
+        "n": 13,
+        "N": 15,
+        "ratio": 0.8666666666666667
+      },
+      "successful_api_cost_usd": 0.02592821,
+      "median_success_ms": 3159.7144000115804
+    },
+    "lexical": {
+      "traces_sha256": "683da4525df57dde4f09e34dff30afc2ae7effb42fc3487375b9ffad0b247c0a",
+      "reviews_sha256": "d4dbe114a179308d68711bcc6e25eecb8b8e0d37b4dcc530c29206e844412388",
+      "reviewers": [
+        {
+          "name": "ChatGPT",
+          "state": "ai_assisted_unverified"
+        }
+      ],
+      "successes": 17,
+      "status_counts": {
+        "abstain": 11,
+        "answered": 6
+      },
+      "grounded_mean": 0.6,
+      "citation_validity": {
+        "n": 5,
+        "N": 6,
+        "ratio": 0.8333333333333334
+      },
+      "context_evidence_rate": {
+        "n": 12,
+        "N": 15,
+        "ratio": 0.8
+      },
+      "evidence_hit_at_3": {
+        "n": 10,
+        "N": 15,
+        "ratio": 0.6666666666666666
+      },
+      "successful_api_cost_usd": 0.027374250000000006,
+      "median_success_ms": 2285.8779999951366
+    },
+    "hybrid": {
+      "traces_sha256": "4b8b0813e9169ba1ece6499af526f6eb4aefbd6ef550e4274eb437628c2218d8",
+      "reviews_sha256": "e5fe2f30d09e2831ec99c0eabb7c1c938a8e1ce68e80a755b1a2312e11bc5267",
+      "reviewers": [
+        {
+          "name": "ChatGPT",
+          "state": "ai_assisted_unverified"
+        }
+      ],
+      "successes": 17,
+      "status_counts": {
+        "abstain": 6,
+        "answered": 11
+      },
+      "grounded_mean": 1.4,
+      "citation_validity": {
+        "n": 11,
+        "N": 11,
+        "ratio": 1.0
+      },
+      "context_evidence_rate": {
+        "n": 15,
+        "N": 15,
+        "ratio": 1.0
+      },
+      "evidence_hit_at_3": {
+        "n": 13,
+        "N": 15,
+        "ratio": 0.8666666666666667
+      },
+      "successful_api_cost_usd": 0.027933009999999994,
+      "median_success_ms": 2726.3825999980327
+    },
+    "lexical_k6": {
+      "traces_sha256": "5aa7133e5ed25a686633dc702a3864140d2f2530847a3b0337ed30880f6f6314",
+      "reviews_sha256": "5a94e10c9201a922f35a12761f3855986a0e36b4ad0f6a1e0c68b7c3e5b58192",
+      "reviewers": [
+        {
+          "name": "ChatGPT",
+          "state": "ai_assisted_unverified"
+        }
+      ],
+      "successes": 17,
+      "status_counts": {
+        "abstain": 10,
+        "answered": 7
+      },
+      "grounded_mean": 0.5333333333333333,
+      "citation_validity": {
+        "n": 4,
+        "N": 7,
+        "ratio": 0.5714285714285714
+      },
+      "context_evidence_rate": {
+        "n": 10,
+        "N": 15,
+        "ratio": 0.6666666666666666
+      },
+      "evidence_hit_at_3": {
+        "n": 10,
+        "N": 15,
+        "ratio": 0.6666666666666666
+      },
+      "successful_api_cost_usd": 0.028522500000000003,
+      "median_success_ms": 2375.058600009652
+    },
+    "lexical_k6_budget3000": {
+      "traces_sha256": "7ab3a1ae02ac98a20b863055a0dafd1a527c564922481c36457797cf08e00d0d",
+      "reviews_sha256": "156716ed97bee8ca8e826da42b91e72234f657e0615c0f9878bfadd4e2571874",
+      "reviewers": [
+        {
+          "name": "ChatGPT",
+          "state": "ai_assisted_unverified"
+        }
+      ],
+      "successes": 17,
+      "status_counts": {
+        "abstain": 12,
+        "answered": 5
+      },
+      "grounded_mean": 0.6,
+      "citation_validity": {
+        "n": 5,
+        "N": 5,
+        "ratio": 1.0
+      },
+      "context_evidence_rate": {
+        "n": 14,
+        "N": 15,
+        "ratio": 0.9333333333333333
+      },
+      "evidence_hit_at_3": {
+        "n": 10,
+        "N": 15,
+        "ratio": 0.6666666666666666
+      },
+      "successful_api_cost_usd": 0.031240500000000004,
+      "median_success_ms": 2268.410999997286
+    }
+  },
+  "selection_sha256": "c68908d408171d5e9335aba859a512381336b8a48e0033096c81b6e75823261c"
+}

@@ -1,0 +1,259 @@
+[
+  {
+    "id": "D01",
+    "split": "dev",
+    "question": "What is required to keep a fire-and-forget task alive after scheduling it?",
+    "expected_answer": "Keep a strong reference to the task because the event loop only holds weak references.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-task",
+        "page": "creating-tasks",
+        "evidence": "Save a reference to the result of this function, to avoid a task disappearing mid-execution. The event loop only keeps weak references to tasks. A task that isn’t referenced elsewhere may get garbage collected at any time, even before it’s done."
+      },
+      {
+        "source_id": "asyncio-task",
+        "page": "shielding-from-cancellation",
+        "evidence": "Save a reference to tasks passed to this function, to avoid a task disappearing mid-execution. The event loop only keeps weak references to tasks. A task that isn’t referenced elsewhere may get garbage collected at any time, even before it’s done."
+      }
+    ]
+  },
+  {
+    "id": "D02",
+    "split": "dev",
+    "question": "When one member of an asynchronous task group fails with a regular exception, what happens to its siblings?",
+    "expected_answer": "The first exception other than CancelledError causes cancellation of the remaining tasks.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-task",
+        "page": "task-groups",
+        "evidence": "The first time any of the tasks belonging to the group fails with an exception other than asyncio.CancelledError, the remaining tasks in the group are cancelled."
+      }
+    ]
+  },
+  {
+    "id": "D03",
+    "split": "dev",
+    "question": "With the default gather settings, what happens to the other awaitables when one raises an error?",
+    "expected_answer": "The first exception propagates to the awaiter of gather. The other awaitables keep running.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-task",
+        "page": "running-tasks-concurrently",
+        "evidence": "If return_exceptions is False (default), the first raised exception is immediately propagated to the task that awaits on gather(). Other awaitables in the aws sequence won’t be cancelled and will continue to run."
+      }
+    ]
+  },
+  {
+    "id": "D04",
+    "split": "dev",
+    "question": "Which asyncio helper runs a blocking I/O call in a separate thread so my coroutine can await its result?",
+    "expected_answer": "Use asyncio.to_thread() to run the blocking I/O in a separate thread.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-task",
+        "page": "running-in-threads",
+        "evidence": "Instead, by using asyncio.to_thread(), we can run it in a separate thread without blocking the event loop."
+      }
+    ]
+  },
+  {
+    "id": "D05",
+    "split": "dev",
+    "question": "Which method schedules an event-loop callback safely when I am calling from another OS thread?",
+    "expected_answer": "Use loop.call_soon_threadsafe() because call_soon() is not thread-safe.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-eventloop",
+        "page": "scheduling-callbacks",
+        "evidence": "loop.call_soon_threadsafe(callback, *args, context=None)\n\nA thread-safe variant of call_soon(). When scheduling callbacks from another thread, this function must be used, since call_soon() is not thread-safe."
+      }
+    ]
+  },
+  {
+    "id": "D06",
+    "split": "dev",
+    "question": "What happens to pending callbacks when I close a stopped event loop?",
+    "expected_answer": "Pending callbacks are discarded. The loop must have stopped before close() is called.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-eventloop",
+        "page": "running-and-stopping-the-loop",
+        "evidence": "The loop must not be running when this function is called. Any pending callbacks will be discarded."
+      }
+    ]
+  },
+  {
+    "id": "D07",
+    "split": "dev",
+    "question": "Who gets the mutex next when several coroutines queued up while it was held?",
+    "expected_answer": "The first coroutine that began waiting acquires the lock next.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-sync",
+        "page": "lock",
+        "evidence": "Acquiring a lock is fair: the coroutine that proceeds will be the first coroutine that started waiting on the lock."
+      }
+    ]
+  },
+  {
+    "id": "D08",
+    "split": "dev",
+    "question": "When the semaphore's internal counter is zero, does acquire block or succeed immediately?",
+    "expected_answer": "It blocks until a release occurs, then returns True.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-sync",
+        "page": "semaphore",
+        "evidence": "If the internal counter is greater than zero, decrement it by one and return True immediately. If it is zero, wait until a release() is called and return True."
+      }
+    ]
+  },
+  {
+    "id": "D09",
+    "split": "dev",
+    "question": "What happens to the number of waiting participants if a blocked participant is cancelled while the barrier is filling?",
+    "expected_answer": "The cancelled task leaves and the number of waiting tasks decreases by one while it is filling.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-sync",
+        "page": "barrier",
+        "evidence": "When a waiting or blocked task in the barrier is cancelled, this task exits the barrier which stays in the same state. If the state of the barrier is “filling”, the number of waiting task decreases by 1."
+      }
+    ],
+    "filter": {
+      "api_family": "asyncio"
+    },
+    "filter_context": "Requested API family: asyncio"
+  },
+  {
+    "id": "D10",
+    "split": "dev",
+    "question": "When does a queue's join stop waiting for the queued work?",
+    "expected_answer": "It unblocks after each item is processed and marked with task_done(), so the unfinished-task count reaches zero.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-queue",
+        "page": "queue",
+        "evidence": "The count of unfinished tasks goes up whenever an item is added to the queue. The count goes down whenever a consumer coroutine calls task_done() to indicate that the item was retrieved and all work on it is complete. When the count of unfinished tasks drops to zero, join() unblocks."
+      },
+      {
+        "source_id": "asyncio-queue",
+        "page": "queue",
+        "evidence": "If a join() is currently blocking, it will resume when all items have been processed (meaning that a task_done() call was received for every item that had been put() into the queue)."
+      }
+    ]
+  },
+  {
+    "id": "D11",
+    "split": "dev",
+    "question": "Can a Future be awaited repeatedly, and does it give the same result?",
+    "expected_answer": "Yes. The same asyncio.Future can be awaited repeatedly and yields the same result.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-future",
+        "page": "future-object",
+        "evidence": "A Future can be awaited multiple times and the result is same."
+      }
+    ],
+    "filter": {
+      "api_family": "asyncio"
+    },
+    "filter_context": "Requested API family: asyncio"
+  },
+  {
+    "id": "D12",
+    "split": "dev",
+    "question": "Which function adapts an executor Future for use as an asyncio Future?",
+    "expected_answer": "asyncio.wrap_future(future) wraps a concurrent.futures.Future in an asyncio.Future.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-future",
+        "page": "future-functions",
+        "evidence": "asyncio.wrap_future(future, *, loop=None)\n\nWrap a concurrent.futures.Future object in a asyncio.Future object."
+      }
+    ]
+  },
+  {
+    "id": "D13",
+    "split": "dev",
+    "question": "Why can't a process pool executor be used from the interactive interpreter?",
+    "expected_answer": "Worker subprocesses have to be able to import the __main__ module.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "concurrent.futures",
+        "page": "processpoolexecutor",
+        "evidence": "The __main__ module must be importable by worker subprocesses. This means that ProcessPoolExecutor will not work in the interactive interpreter."
+      }
+    ]
+  },
+  {
+    "id": "D14",
+    "split": "dev",
+    "question": "How can a callable running in a thread pool deadlock when it depends on another submitted job?",
+    "expected_answer": "A deadlock can occur if the callable waits for the result of another Future while the work needed to resolve it cannot run.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "concurrent.futures",
+        "page": "threadpoolexecutor",
+        "evidence": "Deadlocks can occur when the callable associated with a Future waits on the results of another Future."
+      },
+      {
+        "source_id": "concurrent.futures",
+        "page": "threadpoolexecutor",
+        "evidence": "def wait_on_future():\nf = executor.submit(pow, 5, 2)\n# This will never complete because there is only one worker thread and\n# it is executing this function.\nprint(f.result())\n\nexecutor = ThreadPoolExecutor(max_workers=1)\nexecutor.submit(wait_on_future)"
+      }
+    ]
+  },
+  {
+    "id": "D15",
+    "split": "dev",
+    "question": "If an event-loop stop is requested during run_forever, are callbacks created by the current batch executed in that same pass?",
+    "expected_answer": "No. The loop completes the current batch and exits. New callbacks run on the next run_forever() or run_until_complete() call.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "asyncio-eventloop",
+        "page": "running-and-stopping-the-loop",
+        "evidence": "If stop() is called while run_forever() is running, the loop will run the current batch of callbacks and then exit. Note that new callbacks scheduled by callbacks will not run in this case; instead, they will run the next time run_forever() or run_until_complete() is called."
+      }
+    ]
+  },
+  {
+    "id": "DN01",
+    "split": "dev",
+    "question": "On Windows, what is the default stack size in bytes for a new Python threading.Thread?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The thread-objects unit covers Thread creation, lifecycle and daemon status. It gives neither a stack size nor a platform-specific default. The corpus has no stack_size entry or stack size value.",
+    "filter": {
+      "api_family": "threading"
+    },
+    "filter_context": "Requested API family: threading"
+  },
+  {
+    "id": "DN02",
+    "split": "dev",
+    "question": "What is the exact byte capacity of the internal result pipe used by ProcessPoolExecutor workers on Windows?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The processpoolexecutor unit describes picklability, worker counts and multiprocessing contexts. The corpus gives no internal result-pipe capacity. The unlimited buffer in the Condition example is application data, not an executor IPC pipe.",
+    "filter": {
+      "api_family": "concurrent.futures"
+    },
+    "filter_context": "Requested API family: concurrent.futures"
+  }
+]

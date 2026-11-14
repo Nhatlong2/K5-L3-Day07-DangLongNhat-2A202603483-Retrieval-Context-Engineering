@@ -1,0 +1,46 @@
+{
+  "version": "3.11.9",
+  "base_url": "https://docs.python.org/release/3.11.9",
+  "sources": [
+    {
+      "id": "asyncio-task",
+      "api_family": "asyncio",
+      "sections": ["coroutines", "awaitables", "creating-tasks", "task-cancellation", "task-groups", "sleeping", "running-tasks-concurrently", "shielding-from-cancellation", "timeouts", "waiting-primitives", "running-in-threads", "scheduling-from-other-threads", "introspection", "task-object"]
+    },
+    {
+      "id": "asyncio-eventloop",
+      "api_family": "asyncio",
+      "sections": ["running-and-stopping-the-loop", "scheduling-callbacks", "scheduling-delayed-callbacks", "creating-futures-and-tasks", "executing-code-in-thread-or-process-pools", "error-handling-api", "enabling-debug-mode"]
+    },
+    {
+      "id": "asyncio-sync",
+      "api_family": "asyncio",
+      "sections": ["lock", "event", "condition", "semaphore", "boundedsemaphore", "barrier"]
+    },
+    {
+      "id": "asyncio-runner",
+      "api_family": "asyncio",
+      "sections": ["running-an-asyncio-program", "runner-context-manager", "handling-keyboard-interruption"]
+    },
+    {
+      "id": "asyncio-future",
+      "api_family": "asyncio",
+      "sections": ["future-functions", "future-object"]
+    },
+    {
+      "id": "asyncio-queue",
+      "api_family": "asyncio",
+      "sections": ["queue", "priority-queue", "examples"]
+    },
+    {
+      "id": "concurrent.futures",
+      "api_family": "concurrent.futures",
+      "sections": ["executor-objects", "threadpoolexecutor", "processpoolexecutor", "future-objects", "module-functions", "exception-classes"]
+    },
+    {
+      "id": "threading",
+      "api_family": "threading",
+      "sections": ["thread-objects", "lock-objects", "condition-objects", "barrier-objects"]
+    }
+  ]
+}

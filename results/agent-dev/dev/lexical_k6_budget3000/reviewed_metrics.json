@@ -1,0 +1,70 @@
+{
+  "split": "dev",
+  "configuration": {
+    "max_searches": 2,
+    "ranking_cutoff": 3,
+    "rrf_candidates": 10,
+    "rrf_k": 60,
+    "max_completion_tokens": 1200,
+    "method": "lexical",
+    "top_k": 6,
+    "context_budget_chars": 3000,
+    "agent_model": "gpt-5.4-mini-2026-03-17",
+    "id": "lexical_k6_budget3000"
+  },
+  "traces_sha256": "7ab3a1ae02ac98a20b863055a0dafd1a527c564922481c36457797cf08e00d0d",
+  "cases": 17,
+  "provider_errors": 0,
+  "tool_use": {
+    "n": 17,
+    "N": 17,
+    "ratio": 1.0
+  },
+  "grounded_answer": {
+    "0": 10,
+    "1": 1,
+    "2": 4,
+    "N": 15,
+    "mean": 0.6
+  },
+  "citation_validity": {
+    "n": 5,
+    "N": 5,
+    "ratio": 1.0
+  },
+  "answer_citation_coverage": {
+    "n": 5,
+    "N": 5,
+    "ratio": 1.0
+  },
+  "abstention": {
+    "n": 2,
+    "N": 2,
+    "ratio": 1.0
+  },
+  "false_abstention": {
+    "n": 10,
+    "N": 15,
+    "ratio": 0.6666666666666666
+  },
+  "reviewers": [
+    {
+      "name": "ChatGPT",
+      "state": "ai_assisted_unverified"
+    }
+  ],
+  "context_grade_distribution": {
+    "0": 1,
+    "1": 0,
+    "2": 14
+  },
+  "context_evidence_rate": {
+    "n": 14,
+    "N": 15,
+    "ratio": 0.9333333333333333
+  },
+  "search_distribution": {
+    "1": 14,
+    "2": 3
+  }
+}

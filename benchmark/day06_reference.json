@@ -1,0 +1,74 @@
+{
+  "repo": "https://github.com/Nhatlong2/K5-L3A-DAY06-DANGLONGNHAT-2A202603483-DataIngestion",
+  "commit": "7d7c7ea42a620ae88cea16dabcb58f546c778ef5",
+  "data_sha256": {
+    "corpus.jsonl": "7507144bf56c9e6c7cf89ff9deac60fe5ba7786e46a68017a6f81ceecb09a840",
+    "manifest.json": "f53d3cd92ab6754608d9284274fa8ca55e7206dab125ca7830ef005faa1f6ba0",
+    "sources.json": "2c5d0819026662116fad26a89f21b4737ff7163376f56e7cdb09c36044875fd6",
+    "PYTHON_DOC_LICENSE.txt": "bb47ba675f2aa572e29f9cf4af242bc6c852cedd7138ba4634633e79956b2d50"
+  },
+  "loader_sha256": {
+    "starter/src/ingestion.py": "a7967a03b8c6fa1338fcadd708082ad232fb53b2f112d036dd0a375a89935693",
+    "starter/src/models.py": "2b15e967598e1973321079b24bfca82a0c3f85b6161d16885fd795f5f2af623e"
+  },
+  "signatures": {
+    "corpus": "7507144bf56c9e6c7cf89ff9deac60fe5ba7786e46a68017a6f81ceecb09a840",
+    "configuration": "b6d74d9a0322681b48f7d65b69fb3bf5fa024e4de6c6af3338e472cd1a3f84d8",
+    "implementation": {
+      "chunking.py": "3428e968d36c9503d35ea335096768366f847a044ccfdd18438452109aa361c3",
+      "embeddings.py": "77880ede99c646e9377cd003c9333cdf506e5f6faa765de669d80ba03a51f5ef",
+      "store.py": "da8eae4f2af2ad5bf28c5848c55255c63efcb59106bbe17c1a537fb1e6f8efb0",
+      "openai_embeddings.py": "3a32ce54c970e2c7520cfcc9b486dc93110e5369beb4ec974f04f5152f95543a"
+    },
+    "provider": "openai",
+    "model_configuration": "110f92bb0d78c8c8f644051575a7c840b58e63b8cb737642d1109fb3a443d3c6"
+  },
+  "chunks_sha256": "e4a7e029da185337e2b85ed3f598e990d83c5f10013da978f03751e9d3ed510f",
+  "published_day06_run": {
+    "source": "results/openai_large/ingest.json",
+    "ingest_id": "ef88203d5d4e4aef9caf78a77aacf394",
+    "collection_B": "day06_b_b9b9410547c04aeaa8a13e9b90ec7ada",
+    "qdrant_client": "1.15.1",
+    "model": {
+      "name": "text-embedding-3-large",
+      "dimensions": 3072,
+      "max_sequence_tokens": 8192,
+      "batch_size": 16,
+      "tokenizer": "cl100k_base",
+      "price_per_million_tokens_usd": 0.13
+    },
+    "store": {
+      "engine": "qdrant-local",
+      "metric": "cosine",
+      "exact": true
+    },
+    "statistics_B": {
+      "chunk_count": 264,
+      "chars": {
+        "min": 39,
+        "p50": 422.5,
+        "p90": 487,
+        "max": 500,
+        "mean": 388.18560606060606,
+        "total": 102481
+      },
+      "tokens_before_truncation": {
+        "min": 12,
+        "p50": 86.0,
+        "p90": 107,
+        "max": 136,
+        "mean": 81.31818181818181,
+        "total": 21468
+      },
+      "tokens_encoded_total": 21468,
+      "chunks_truncated": 0,
+      "chunking_and_tokenization_seconds": 0.01468699998804368,
+      "embedding_seconds": 11.529084399997373,
+      "vector_write_seconds": 3.2837089999957243,
+      "total_seconds": 14.827480399981141,
+      "api_input_tokens": 21468,
+      "paid_cost_usd": 0.00279084
+    },
+    "total_A_and_B_usd": 0.00587873
+  }
+}

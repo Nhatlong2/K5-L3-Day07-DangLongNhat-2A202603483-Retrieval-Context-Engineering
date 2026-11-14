@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-11-14T04:00:35+00:00",
+  "day07_api_status": "not_run",
+  "dev_agent_setup": {
+    "status": "not_run",
+    "exit_code": 2,
+    "reason": "OPENAI_API_KEY is missing. Set the environment variable or the local .env."
+  },
+  "day06_store_setup": {
+    "status": "not_run",
+    "exit_code": 2,
+    "reason": "Day 6 Qdrant store missing. Set --store to the directory with active.json and meta.json."
+  },
+  "requests_sent": 0,
+  "pending": [
+    "Day 7 dense and hybrid measurements",
+    "real agent dev and test",
+    "source review of generated answers and citations",
+    "freeze of the winning dev configuration"
+  ]
+}

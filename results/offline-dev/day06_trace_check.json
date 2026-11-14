@@ -1,0 +1,327 @@
+{
+  "source": "results/openai_large/trace_dev.jsonl",
+  "source_sha256": "e21471349190c0966154fb3fa9e4175277310c600dcdce580f6d29cf926f0aa2",
+  "ingest_id": "ef88203d5d4e4aef9caf78a77aacf394",
+  "index": "B",
+  "scope": "Day 06 dev top-3 only, payload identity check",
+  "query_count": 15,
+  "checked_rows": 45,
+  "unique_matching_ids": 37,
+  "matches": [
+    {
+      "query_id": "D01",
+      "rank": 1,
+      "chunk_id": "8f5a495e-57d2-5674-b60b-f411f7edea0a",
+      "source_id": "asyncio-task",
+      "page": "creating-tasks"
+    },
+    {
+      "query_id": "D01",
+      "rank": 2,
+      "chunk_id": "806c0a9d-7ef8-5f0d-9370-34624b27295e",
+      "source_id": "asyncio-task",
+      "page": "shielding-from-cancellation"
+    },
+    {
+      "query_id": "D01",
+      "rank": 3,
+      "chunk_id": "94c3234a-1d6f-563b-8a91-72ebabdf6a18",
+      "source_id": "asyncio-task",
+      "page": "awaitables"
+    },
+    {
+      "query_id": "D02",
+      "rank": 1,
+      "chunk_id": "ea737bc4-7072-52b1-835d-08a7dd9cd444",
+      "source_id": "asyncio-task",
+      "page": "task-groups"
+    },
+    {
+      "query_id": "D02",
+      "rank": 2,
+      "chunk_id": "8bf02339-a58e-5ae7-a4ff-7b6b607c210f",
+      "source_id": "asyncio-task",
+      "page": "task-groups"
+    },
+    {
+      "query_id": "D02",
+      "rank": 3,
+      "chunk_id": "5b10f2ac-68b2-5224-a962-f1b7c61751ec",
+      "source_id": "asyncio-task",
+      "page": "task-groups"
+    },
+    {
+      "query_id": "D03",
+      "rank": 1,
+      "chunk_id": "29b89d2b-130c-5003-baee-591370899448",
+      "source_id": "asyncio-task",
+      "page": "task-groups"
+    },
+    {
+      "query_id": "D03",
+      "rank": 2,
+      "chunk_id": "244643e1-e6d4-53da-8d50-db827721547c",
+      "source_id": "asyncio-task",
+      "page": "running-tasks-concurrently"
+    },
+    {
+      "query_id": "D03",
+      "rank": 3,
+      "chunk_id": "5b10f2ac-68b2-5224-a962-f1b7c61751ec",
+      "source_id": "asyncio-task",
+      "page": "task-groups"
+    },
+    {
+      "query_id": "D04",
+      "rank": 1,
+      "chunk_id": "b0e4de19-7fe7-579a-8981-b30cec596929",
+      "source_id": "asyncio-task",
+      "page": "running-in-threads"
+    },
+    {
+      "query_id": "D04",
+      "rank": 2,
+      "chunk_id": "83d9fe87-59e9-5120-bfb6-315957c2a6fe",
+      "source_id": "asyncio-task",
+      "page": "running-in-threads"
+    },
+    {
+      "query_id": "D04",
+      "rank": 3,
+      "chunk_id": "01e2cd26-6924-5963-a2a1-cf21168515d6",
+      "source_id": "asyncio-task",
+      "page": "running-in-threads"
+    },
+    {
+      "query_id": "D05",
+      "rank": 1,
+      "chunk_id": "e17d0cdc-e9b0-566b-86ea-cdf3685a45d7",
+      "source_id": "asyncio-eventloop",
+      "page": "scheduling-callbacks"
+    },
+    {
+      "query_id": "D05",
+      "rank": 2,
+      "chunk_id": "5e238d61-ae5f-52ea-8484-e0f320083a1e",
+      "source_id": "asyncio-task",
+      "page": "scheduling-from-other-threads"
+    },
+    {
+      "query_id": "D05",
+      "rank": 3,
+      "chunk_id": "4cdbd5df-fcbd-5916-9efb-763144c06e54",
+      "source_id": "asyncio-task",
+      "page": "task-object"
+    },
+    {
+      "query_id": "D06",
+      "rank": 1,
+      "chunk_id": "5caa5ac9-8561-5251-9499-814f077138d5",
+      "source_id": "asyncio-eventloop",
+      "page": "running-and-stopping-the-loop"
+    },
+    {
+      "query_id": "D06",
+      "rank": 2,
+      "chunk_id": "269fac4b-7441-5a02-beb5-802eecd0f641",
+      "source_id": "asyncio-eventloop",
+      "page": "running-and-stopping-the-loop"
+    },
+    {
+      "query_id": "D06",
+      "rank": 3,
+      "chunk_id": "4c3f6f17-373a-5a09-8c19-787eb6bf779d",
+      "source_id": "asyncio-eventloop",
+      "page": "running-and-stopping-the-loop"
+    },
+    {
+      "query_id": "D07",
+      "rank": 1,
+      "chunk_id": "dd465cee-93d4-5b3f-acc4-8e05830754c7",
+      "source_id": "asyncio-sync",
+      "page": "lock"
+    },
+    {
+      "query_id": "D07",
+      "rank": 2,
+      "chunk_id": "504d010b-dc97-5a97-85b3-cff447d8dbc1",
+      "source_id": "threading",
+      "page": "condition-objects"
+    },
+    {
+      "query_id": "D07",
+      "rank": 3,
+      "chunk_id": "d7315a57-fed9-5bc8-bc59-fad8f10d797f",
+      "source_id": "threading",
+      "page": "condition-objects"
+    },
+    {
+      "query_id": "D08",
+      "rank": 1,
+      "chunk_id": "1b622cac-a477-518a-89ef-d02fdc7f372b",
+      "source_id": "threading",
+      "page": "lock-objects"
+    },
+    {
+      "query_id": "D08",
+      "rank": 2,
+      "chunk_id": "0bf00c39-9783-5d5e-91df-f500602bc20f",
+      "source_id": "asyncio-sync",
+      "page": "semaphore"
+    },
+    {
+      "query_id": "D08",
+      "rank": 3,
+      "chunk_id": "d7315a57-fed9-5bc8-bc59-fad8f10d797f",
+      "source_id": "threading",
+      "page": "condition-objects"
+    },
+    {
+      "query_id": "D09",
+      "rank": 1,
+      "chunk_id": "ce79efe2-54cc-5a8f-bb5e-0ca408e0f834",
+      "source_id": "asyncio-sync",
+      "page": "barrier"
+    },
+    {
+      "query_id": "D09",
+      "rank": 2,
+      "chunk_id": "8827d50e-6590-549d-95be-e36829d7637e",
+      "source_id": "threading",
+      "page": "barrier-objects"
+    },
+    {
+      "query_id": "D09",
+      "rank": 3,
+      "chunk_id": "6c969b32-560c-5280-8da5-ce51cf2652b0",
+      "source_id": "asyncio-sync",
+      "page": "barrier"
+    },
+    {
+      "query_id": "D10",
+      "rank": 1,
+      "chunk_id": "60ab963b-ac8a-56e0-9e56-dd2c44f504b3",
+      "source_id": "asyncio-queue",
+      "page": "queue"
+    },
+    {
+      "query_id": "D10",
+      "rank": 2,
+      "chunk_id": "725fa232-1aab-5452-810f-0ad125735c70",
+      "source_id": "asyncio-queue",
+      "page": "examples"
+    },
+    {
+      "query_id": "D10",
+      "rank": 3,
+      "chunk_id": "e96b2f0d-06e0-591e-b6e9-804df70d688d",
+      "source_id": "asyncio-queue",
+      "page": "examples"
+    },
+    {
+      "query_id": "D11",
+      "rank": 1,
+      "chunk_id": "26e09698-1080-5f99-8456-e56037e73d2d",
+      "source_id": "asyncio-task",
+      "page": "awaitables"
+    },
+    {
+      "query_id": "D11",
+      "rank": 2,
+      "chunk_id": "dada2831-4dfe-54ce-bfca-0c4c5a63508d",
+      "source_id": "concurrent.futures",
+      "page": "module-functions"
+    },
+    {
+      "query_id": "D11",
+      "rank": 3,
+      "chunk_id": "d83ba5a6-3b9d-5b29-b259-756072a12703",
+      "source_id": "asyncio-task",
+      "page": "scheduling-from-other-threads"
+    },
+    {
+      "query_id": "D12",
+      "rank": 1,
+      "chunk_id": "85583722-8f75-5e5d-a52a-9bd7a455e8f7",
+      "source_id": "asyncio-eventloop",
+      "page": "executing-code-in-thread-or-process-pools"
+    },
+    {
+      "query_id": "D12",
+      "rank": 2,
+      "chunk_id": "f2ea2fd7-c419-56d8-95a1-3515652cf756",
+      "source_id": "asyncio-task",
+      "page": "awaitables"
+    },
+    {
+      "query_id": "D12",
+      "rank": 3,
+      "chunk_id": "26e09698-1080-5f99-8456-e56037e73d2d",
+      "source_id": "asyncio-task",
+      "page": "awaitables"
+    },
+    {
+      "query_id": "D13",
+      "rank": 1,
+      "chunk_id": "175ce5bb-0032-523a-943f-224e0b76273a",
+      "source_id": "concurrent.futures",
+      "page": "processpoolexecutor"
+    },
+    {
+      "query_id": "D13",
+      "rank": 2,
+      "chunk_id": "4485a19d-a280-531e-90a8-e59a5d07cc0e",
+      "source_id": "concurrent.futures",
+      "page": "threadpoolexecutor"
+    },
+    {
+      "query_id": "D13",
+      "rank": 3,
+      "chunk_id": "2142e8c9-51f0-5c19-92b0-1e4fc307107b",
+      "source_id": "concurrent.futures",
+      "page": "processpoolexecutor"
+    },
+    {
+      "query_id": "D14",
+      "rank": 1,
+      "chunk_id": "2142e8c9-51f0-5c19-92b0-1e4fc307107b",
+      "source_id": "concurrent.futures",
+      "page": "processpoolexecutor"
+    },
+    {
+      "query_id": "D14",
+      "rank": 2,
+      "chunk_id": "b1a4e56e-2964-5c09-a431-3d548a407b04",
+      "source_id": "concurrent.futures",
+      "page": "threadpoolexecutor"
+    },
+    {
+      "query_id": "D14",
+      "rank": 3,
+      "chunk_id": "4485a19d-a280-531e-90a8-e59a5d07cc0e",
+      "source_id": "concurrent.futures",
+      "page": "threadpoolexecutor"
+    },
+    {
+      "query_id": "D15",
+      "rank": 1,
+      "chunk_id": "5caa5ac9-8561-5251-9499-814f077138d5",
+      "source_id": "asyncio-eventloop",
+      "page": "running-and-stopping-the-loop"
+    },
+    {
+      "query_id": "D15",
+      "rank": 2,
+      "chunk_id": "269fac4b-7441-5a02-beb5-802eecd0f641",
+      "source_id": "asyncio-eventloop",
+      "page": "running-and-stopping-the-loop"
+    },
+    {
+      "query_id": "D15",
+      "rank": 3,
+      "chunk_id": "4c3f6f17-373a-5a09-8c19-787eb6bf779d",
+      "source_id": "asyncio-eventloop",
+      "page": "running-and-stopping-the-loop"
+    }
+  ]
+}
